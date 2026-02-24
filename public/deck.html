@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>ADVECTA — Investor Deck</title>
+<style>
+/* ── Reset & Base ──────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#000;--bg2:#09090b;--card:#18181b;--border:#27272a;
+  --fg:#ededed;--muted:#a1a1aa;--dim:#71717a;
+  --emerald:#00e5a0;--cyan:#22d3ee;--blue:#3b82f6;
+  --glow:rgba(0,229,160,.15);
+  --font-sans:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;
+  --font-mono:'JetBrains Mono','Fira Code','Cascadia Code',monospace;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-sans);overflow-x:hidden}
+a{color:var(--emerald);text-decoration:none}
+
+/* ── Slide System ──────────────────────────────────────── */
+.slide{
+  min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  padding:60px 80px;position:relative;overflow:hidden;
+  border-bottom:1px solid var(--border);
+}
+.slide::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(rgba(39,39,42,.25) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(39,39,42,.25) 1px,transparent 1px);
+  background-size:60px 60px;opacity:.3;
+}
+.slide-cover{
+  background:radial-gradient(ellipse at 50% 0%,rgba(0,229,160,.08) 0%,transparent 60%),
+             radial-gradient(ellipse at 80% 50%,rgba(59,130,246,.05) 0%,transparent 50%),
+             linear-gradient(to bottom,#000 0%,#09090b 50%,#000 100%);
+  text-align:center;
+}
+.slide-alt{
+  background:linear-gradient(to bottom,#000 0%,#09090b 40%,#09090b 60%,#000 100%);
+}
+
+/* ── Typography ────────────────────────────────────────── */
+h1{font-size:5rem;font-weight:800;letter-spacing:-.04em;line-height:1;
+  text-shadow:0 0 60px rgba(0,229,160,.35)}
+h2{font-size:2.75rem;font-weight:700;letter-spacing:-.02em;margin-bottom:1.5rem}
+h3{font-size:1.35rem;font-weight:600;margin-bottom:.75rem}
+.subtitle{font-size:1.25rem;color:var(--muted);font-weight:300;letter-spacing:.05em}
+.label{font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--dim);
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(39,39,42,.6);border:1px solid var(--border);border-radius:999px;
+  padding:4px 14px;margin-bottom:1.5rem}
+.label .dot{width:6px;height:6px;border-radius:50%;background:var(--emerald);
+  animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ── Cards & Tables ────────────────────────────────────── */
+.card{background:rgba(24,24,27,.6);border:1px solid rgba(39,39,42,.6);
+  border-radius:16px;padding:32px;transition:border-color .3s}
+.card:hover{border-color:rgba(0,229,160,.25)}
+.card-header{
+  background:linear-gradient(90deg,rgba(0,229,160,.08),rgba(34,211,238,.08));
+  padding:14px 24px;border-bottom:1px solid rgba(39,39,42,.5);
+  border-radius:16px 16px 0 0;margin:-32px -32px 24px;font-weight:600;font-size:.95rem}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+th{text-align:left;padding:10px 16px;color:var(--dim);font-weight:500;font-size:.7rem;
+  text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--border)}
+td{padding:10px 16px;border-bottom:1px solid rgba(39,39,42,.3)}
+.mono{font-family:var(--font-mono);font-weight:600}
+.green{color:var(--emerald)}
+.right{text-align:right}
+.highlight-row{background:rgba(0,229,160,.04)}
+
+/* ── KPI Grid ──────────────────────────────────────────── */
+.kpi-grid{display:grid;gap:16px}
+.kpi-grid-3{grid-template-columns:repeat(3,1fr)}
+.kpi-grid-4{grid-template-columns:repeat(4,1fr)}
+.kpi-grid-5{grid-template-columns:repeat(5,1fr)}
+.kpi-box{background:rgba(24,24,27,.5);border:1px solid rgba(39,39,42,.5);
+  border-radius:12px;padding:20px;text-align:center}
+.kpi-box .val{font-size:1.75rem;font-weight:700;color:var(--emerald);font-family:var(--font-mono)}
+.kpi-box .lbl{font-size:.7rem;color:var(--muted);margin-top:4px}
+
+/* ── Pipeline Steps ────────────────────────────────────── */
+.step{display:flex;gap:20px;align-items:flex-start;padding:20px 24px;
+  background:rgba(24,24,27,.3);border:1px solid rgba(39,39,42,.4);border-radius:12px;
+  margin-bottom:12px;transition:border-color .3s}
+.step:hover{border-color:rgba(0,229,160,.2)}
+.step-num{flex-shrink:0;width:44px;height:44px;border-radius:50%;
+  background:rgba(0,229,160,.08);border:1px solid rgba(0,229,160,.25);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-mono);font-weight:700;color:var(--emerald);font-size:.85rem}
+.step p{color:var(--dim);font-size:.9rem;line-height:1.5}
+
+/* ── Bullet List ───────────────────────────────────────── */
+.bullets{list-style:none;padding:0}
+.bullets li{padding:8px 0;padding-left:20px;position:relative;color:var(--muted);
+  font-size:.95rem;line-height:1.6}
+.bullets li::before{content:'';position:absolute;left:0;top:16px;width:6px;height:6px;
+  border-radius:50%;background:var(--emerald)}
+.bullets.large li{font-size:1.1rem;padding:12px 0 12px 24px}
+.bullets.large li::before{top:20px;width:8px;height:8px}
+
+/* ── Two Column ────────────────────────────────────────── */
+.cols{display:grid;gap:32px}
+.cols-2{grid-template-columns:1fr 1fr}
+
+/* ── Slide Number ──────────────────────────────────────── */
+.slide-no{position:absolute;bottom:24px;right:32px;font-size:.65rem;
+  color:var(--dim);font-family:var(--font-mono)}
+
+/* ── Glow Button ───────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;gap:8px;
+  padding:14px 32px;border-radius:999px;font-weight:600;font-size:1rem;
+  background:linear-gradient(135deg,var(--emerald),var(--cyan));color:#000;
+  border:none;cursor:pointer;
+  box-shadow:0 0 40px rgba(0,229,160,.15),0 0 80px rgba(0,229,160,.05)}
+
+/* ── Cover waveform ────────────────────────────────────── */
+.waveform{position:absolute;bottom:0;left:0;right:0;height:200px;opacity:.25;
+  background:linear-gradient(90deg,transparent,rgba(0,229,160,.4) 30%,rgba(34,211,238,.3) 70%,transparent);
+  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200'%3E%3Cpath d='M0 100 Q50 20 100 100 T200 100 T300 100 T400 100 T500 100 T600 100 T700 100 T800 100 T900 100 T1000 100 T1100 100 T1200 100 V200 H0Z' fill='white'/%3E%3C/svg%3E");
+  mask-size:cover;-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200'%3E%3Cpath d='M0 100 Q50 20 100 100 T200 100 T300 100 T400 100 T500 100 T600 100 T700 100 T800 100 T900 100 T1000 100 T1100 100 T1200 100 V200 H0Z' fill='white'/%3E%3C/svg%3E");
+  -webkit-mask-size:cover}
+
+/* ── Contact bar ───────────────────────────────────────── */
+.contact{display:flex;gap:32px;flex-wrap:wrap;margin-top:32px;justify-content:center}
+.contact span{font-size:.85rem;color:var(--muted)}
+.contact strong{color:var(--fg)}
+
+/* ── Chart images ──────────────────────────────────────── */
+.chart-img{width:100%;border-radius:12px;border:1px solid var(--border)}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media(max-width:900px){
+  .slide{padding:40px 28px}
+  h1{font-size:3rem} h2{font-size:2rem}
+  .cols-2{grid-template-columns:1fr}
+  .kpi-grid-4,.kpi-grid-5{grid-template-columns:repeat(2,1fr)}
+}
+@media print{
+  .slide{min-height:auto;page-break-after:always;padding:40px}
+  .slide::before{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ SLIDE 1 — COVER ═══════════════════ -->
+<section class="slide slide-cover" style="text-align:center">
+  <div style="position:relative;z-index:1">
+    <div class="label"><span class="dot"></span> Systematic Intraday Alpha Engine</div>
+    <h1>ADVECTA</h1>
+    <p class="subtitle" style="margin-top:12px">Asset Driven Volatility Execution &amp; Capital Trade Algo</p>
+    <p style="color:var(--dim);margin-top:28px;font-size:.95rem">by <strong style="color:var(--fg)">DEFF Consulting Company</strong></p>
+    <p style="color:var(--dim);margin-top:8px;font-size:.85rem">Systematic Intraday Trading Strategy</p>
+    <p style="color:var(--emerald);margin-top:4px;font-size:.85rem;font-weight:500">
+      Seeking Strategic Capital Partnership &nbsp;|&nbsp; Performance-Based Structure
+    </p>
+
+    <div style="margin-top:48px;padding:24px;display:inline-block">
+      <p style="font-size:1.1rem;font-weight:600">Daniel Fajardo</p>
+      <p style="font-size:.85rem;color:var(--muted)">Founder &amp; CEO</p>
+      <div style="margin-top:12px;font-size:.8rem;color:var(--dim);line-height:1.8">
+        Bucaramanga, Colombia<br>
+        +57 319 473 7315<br>
+        <a href="mailto:daniel.fajardo@advecta.live">daniel.fajardo@advecta.live</a>
+      </div>
+    </div>
+  </div>
+  <div class="waveform"></div>
+  <span class="slide-no">01 / 17</span>
+</section>
+
+<!-- ═══════════════ SLIDE 2 — DISCLAIMER ══════════════ -->
+<section class="slide slide-alt">
+  <div style="max-width:900px">
+    <h2>Critical Disclosures</h2>
+    <div class="card" style="border-color:rgba(239,68,68,.2)">
+      <p style="color:var(--muted);line-height:1.8;font-size:.9rem">
+        This presentation is strictly informational and does not constitute an offer to sell securities, a solicitation to invest, or financial, investment, tax, or legal advice. Consult qualified professionals before any decision.
+      </p>
+      <p style="color:var(--dim);line-height:1.8;font-size:.85rem;margin-top:20px">
+        Trading financial instruments involves <strong style="color:#ef4444">substantial risk of loss</strong>, including total capital loss, and is not suitable for all investors. Past performance, whether live or simulated, does not guarantee future results—markets can change unpredictably. All figures are illustrative; actual results may vary materially due to slippage, liquidity, regimes, and execution factors. Full logs and audits available post-NDA only. Forward-looking statements are estimates only. Deff Consulting Company and affiliates assume no liability.
+      </p>
+      <p style="color:var(--dim);font-size:.75rem;margin-top:24px;border-top:1px solid var(--border);padding-top:16px">
+        &copy; 2026 Deff Consulting Company. All rights reserved.
+      </p>
+    </div>
+  </div>
+  <span class="slide-no">02 / 17</span>
+</section>
+
+<!-- ═══════════════ SLIDE 3 — EXECUTIVE SUMMARY ═══════ -->
+<section class="slide">
+  <div style="max-width:1000px">
+    <div class="label"><span class="dot"></span> Overview</div>
+    <h2>AlgoPulse Elite: Proven Intraday Alpha Capture</h2>
+    <ul class="bullets large" style="margin-top:24px">
+      <li><strong style="color:var(--fg)">Capture</strong> — Short-term volatility edges via automation across 12 global exchanges.</li>
+      <li><strong style="color:var(--fg)">Execute</strong> — High-frequency trades (~15 rounds/day) targeting ~1% gross per round.</li>
+      <li><strong style="color:var(--fg)">Operate</strong> — 24/5 across 4 sessions (APAC, S-Asia, Europe, Americas) in validated market regimes only.</li>
+      <li><strong style="color:var(--fg)">Preserve</strong> — Ironclad risk controls, zero overnight exposure, $0 max drawdown in backtest.</li>
+      <li><strong style="color:var(--fg)">Partnership</strong> — 50/50 net profit split. $0 fees. Capital assured. Fully aligned.</li>
+    </ul>
+
+    <div class="kpi-grid kpi-grid-5" style="margin-top:40px">
+      <div class="kpi-box"><div class="val">3,784</div><div class="lbl">Trades (252d)</div></div>
+      <div class="kpi-box"><div class="val">+3.86%</div><div class="lbl">Avg Daily ROI</div></div>
+      <div class="kpi-box"><div class="val">14.87</div><div class="lbl">Sharpe Ratio</div></div>
+      <div class="kpi-box"><div class="val">100%</div><div class="lbl">Win Rate</div></div>
+      <div class="kpi-box"><div class="val">$972K</div><div class="lbl">Total PnL</div></div>
+    </div>
+  </div>
+  <span class="slide-no">03 / 17</span>
+</section>
+
+<!-- ═══════════════ SLIDE 4 — MARKET OPPORTUNITY ══════ -->
+<section class="slide slide-alt">
+  <div style="max-width:1000px">
+    <div class="label"><span class="dot"></span> Opportunity</div>
+    <h2>Trillions in Daily Global Liquidity</h2>
+    <p style="color:var(--muted);font-size:1.05rem;line-height:1.7;margin-bottom:32px">
+      Intraday edges emerge from structural inefficiencies that persist across global equity markets:
+    </p>
+    <div class="kpi-grid kpi-grid-4">
+      <div class="card" style="padding:24px;text-align:center">
+        <div style="font-size:2rem;margin-bottom:8px">📉</div>
+        <h3>Retail Panic Swings</h3>
+        <p style="color:var(--dim);font-size:.85rem">Behavioral overreaction creates micro-dislocation opportunities at session boundaries.</p>
+      </div>
+      <div class="card" style="padding:24px;text-align:center">
+        <div style="font-size:2rem;margin-bottom:8px">🤖</div>
+        <h3>Institutional Gaps</h3>
+        <p style="color:var(--dim);font-size:.85rem">Algo fragmentation leaves exploitable windows between quote-driven and order-driven venues.</p>
+      </div>
+      <div class="card" style="padding:24px;text-align:center">
+        <div style="font-size:2rem;margin-bottom:8px">🔄</div>
+        <h3>Behavioral Patterns</h3>
+        <p style="color:var(--dim);font-size:.85rem">Recurring volatility regimes at open/close produce systematic mean-reversion signals.</p>
+      </div>
+      <div class="card" style="padding:24px;text-align:center">
+        <div style="font-size:2rem;margin-bottom:8px">💧</div>
+        <h3>Liquidity Dislocations</h3>
+        <p style="color:var(--dim);font-size:.85rem">Cross-session handoffs create momentary mispricings automation can capture at scale.</p>
+      </div>
+    </div>
+    <p style="color:var(--dim);font-size:.85rem;margin-top:24px;text-align:center;font-style:italic">
+      Automation exploits fleeting opportunities across 4 global sessions that human traders systematically miss.
+    </p>
+  </div>
+  <span class="slide-no">04 / 17</span>
+</section>
+
+<!-- ═══════════════ SLIDE 5 — THE PROBLEM ═════════════ -->
+<section class="slide">
+  <div style="max-width:900px">
+    <div class="label"><span class="dot"></span> Problem</div>
+    <h2>Manual Trading Fails Systematically</h2>
+    <div class="card" style="margin-top:24px">
+      <div class="card-header">⚠️ &nbsp;Human Limitations in Intraday Execution</div>
+      <table>
+        <thead><tr><th>Issue</th><th>Impact</th><th>ADVECTA Solution</th></tr></thead>
+        <tbody>
+          <tr><td style="color:var(--fg);font-weight:600">Latency</td><td style="color:var(--muted)">Misses micro-moves and session boundaries</td><td class="green mono">60-second execution cycle</td></tr>
+          <tr><td style="color:var(--fg);font-weight:600">Psychology</td><td style="color:var(--muted)">Emotional overrides destroy edge</td><td class="green mono">Zero discretion — pure rules</td></tr>
+          <tr><td style="color:var(--fg);font-weight:600">Fatigue</td><td style="color:var(--muted)">Inconsistent sizing and timing</td><td class="green mono">24/5 automated operation</td></tr>
+          <tr><td style="color:var(--fg);font-weight:600">Regime Blindness</td><td style="color:var(--muted)">Overtrades bad market states</td><td class="green mono">11-component health filter</td></tr>
+          <tr><td style="color:var(--fg);font-weight:600">Single Market</td><td style="color:var(--muted)">Misses global opportunities</td><td class="green mono">12 exchanges, 4 sessions</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--emerald);font-weight:600;margin-top:24px;font-size:1.05rem;text-align:center">
+      AlgoPulse Elite eliminates human error at every stage.
+    </p>
+  </div>
+  <span class="slide-no">05 / 17</span>
+</section>
+
+<!-- ═══════════════ SLIDE 6 — THE SOLUTION ════════════ -->
+<section class="slide slide-alt">
+  <div style="max-width:1000px">
+    <div class="label"><span class="dot"></span> Solution</div>
+    <h2>AlgoPulse Elite Engine</h2>
+    <div class="cols cols-2" style="margin-top:24px">
+      <div>
+        <ul class="bullets large">
+          <li><strong style="color:var(--fg)">Health Filter</strong> — 11-component composite (SPY, VIX, TLT, HYG, sectors) classifies regime as GREEN / YELLOW / RED. Trades only favourable states.</li>
+          <li><strong style="color:var(--fg)">Asset Picker</strong> — Top 5 per exchange ranked by liquidity × volatility. Re-selected every 10 trading days.</li>
+          <li><strong style="color:var(--fg)">Models</strong> — Per-horizon grid search over (EMA, lookback, k) optimising for TPD × Sharpe. Statistical variance continuation.</li>
+          <li><strong style="color:var(--fg)">Execution</strong> — eToro API, fully automated 60-second cycle. Target-only exit at entry × 1.01.</li>
+        </ul>
+        <p style="color:var(--emerald);font-weight:600;margin-top:24px;font-size:1rem">
+          No discretion. Pure edge capture.
+        </p>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;gap:12px;padding:28px">
+        <div class="card-header" style="margin:-28px -28px 16px">🔬 &nbsp;Engine Components</div>
+        <div class="step" style="margin:0;background:transparent;border-color:rgba(0,229,160,.15)">
+          <div class="step-num" style="width:36px;height:36px;font-size:.75rem">MH</div>
+          <div><h3 style="font-size:.9rem;margin:0">Market Health</h3><p style="font-size:.8rem">11 signals → regime score</p></div>
+        </div>
+        <div class="step" style="margin:0;background:transparent;border-color:rgba(0,229,160,.15)">
+          <div class="step-num" style="width:36px;height:36px;font-size:.75rem">SS</div>
+          <div><h3 style="font-size:.9rem;margin:0">Stock Selection</h3><p style="font-size:.8rem">60 stocks across 12 exchanges</p></div>
+        </div>
+        <div class="step" style="margin:0;background:transparent;border-color:rgba(0,229,160,.15)">
+          <div class="step-num" style="width:36px;height:36px;font-size:.75rem">ML</div>
+          <div><h3 style="font-size:.9rem;margin:0">Model Training</h3><p style="font-size:.8rem">Walk-forward per ticker per horizon</p></div>
+        </div>
+        <div class="step" style="margin:0;background:transparent;border-color:rgba(0,229,160,.15)">
+          <div class="step-num" style="width:36px;height:36px;font-size:.75rem">EX</div>
+          <div><h3 style="font-size:.9rem;margin:0">Execution</h3><p style="font-size:.8rem">API orders → target-only exit</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="slide-no">06 / 17</span>
+</section>
+
+<!-- ═══════════════ SLIDE 7 — STRATEGY FLOW ═══════════ -->
+<section class="slide">
+  <div style="max-width:900px">
+    <div class="label"><span class="dot"></span> Pipeline</div>
+    <h2>Execution Pipeline</h2>
+    <p style="color:var(--muted);margin-bottom:28px">Six-stage systematic workflow from market regime assessment to trade execution.</p>
+    <div class="step"><div class="step-num">01</div><div><h3>Market Health</h3><p>11-component composite score (SPY, VIX, TLT, HYG, sectors) classifies regime as GREEN / YELLOW / RED.</p></div></div>
+    <div class="step"><div class="step-num">02</div><div><h3>Stock Selection</h3><p>Top 5 per exchange ranked by liquidity × volatility. Re-selected every 10 trading days.</p></div></div>
+    <div class="step"><div class="step-num">03</div><div><h3>Model Training</h3><p>Per-horizon grid search over (EMA, lookback, k) optimising for TPD × Sharpe. Re-trained every 15 days.</p></div></div>
+    <div class="step"><div class="step-num">04</div><div><h3>Signal Generation</h3><p>Predicted MA ± k×σ bands computed at each slice boundary. BUY when price ≤ lower band.</p></div></div>
+    <div class="step"><div class="step-num">05</div><div><h3>Execution</h3><p>API-based order placement with 1% target-only exit. No stop-loss — position held until target hit.</p></div></div>
+    <div class="step"><div class="step-num">06</div><div><h3>Risk &amp; Reporting</h3><p>Daily P&amp;L tracking, drawdown monitoring, Sharpe calculation, and automated performance dashboards.</p></div></div>
+  </div>
+  <span class="slide-no">07 / 17</span>
+</section>
+
+<!-- ═══════════════ SLIDE 8 — TRADE MECHANICS ═════════ -->
+<section class="slide slide-alt">
+  <div style="max-width:1000px">
+    <div class="label"><span class="dot"></span> Mechanics</div>
+    <h2>Trade Mechanics</h2>
+    <div class="cols cols-2" style="margin-top:16px">
+      <div>
+        <h3 style="color:var(--emerald)">Core Math (Backtest-Validated)</h3>
+        <ul class="bullets large">
+          <li><span class="mono green">1% gross target</span> per round (buy + sell at entry × 1.01)</li>
+          <li><span class="mono green">15 rounds/day</span> average across all horizons</li>
+          <li><span class="mono green">3 horizons</span> — 2h, 4h, 8h prediction windows</li>
+          <li><span class="mono green">4 sessions</span> — APAC → S-Asia → Europe → Americas</li>
+          <li><span class="mono green">$10,416</span> position size per trade on $100K capital</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-header">📊 &nbsp;Strategy Parameters</div>
+        <table>
+          <tbody>
+            <tr><td style="color:var(--muted)">Starting Capital</td><td class="right mono green">$100,000</td></tr>
+            <tr><td style="color:var(--muted)">Target Daily Return</td><td class="right mono green">5%</td></tr>
+            <tr><td style="color:var(--muted)">Profit / Trade</td><td class="right mono green">1%</td></tr>
+            <tr><td style="color:var(--muted)">Prediction Horizons</td><td class="right mono green">2h · 4h · 8h</td></tr>
+            <tr><td style="color:var(--muted)">Global Sessions</td><td class="right mono green">APAC · S-ASIA · EU · US</td></tr>
+            <tr><td style="color:var(--muted)">Exit Strategy</td><td class="right mono green">Target-only (×1.01)</td></tr>
+            <tr><td style="color:var(--muted)">Backtest Period</td><td class="right mono green">252 days</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <span class="slide-no">08 / 17</span>
+</section>
+
+<!-- ═══════════════ SLIDE 9 — PERFORMANCE KPIs ════════ -->
+<section class="slide">
+  <div style="max-width:1100px">
+    <div class="label"><span class="dot"></span> Performance</div>
+    <h2>Backtest Performance — KPI Dashboard</h2>
+    <p style="color:var(--muted);margin-bottom:24px;font-size:.9rem">Walk-forward backtest &bull; Apr 2025 – Feb 2026 &bull; $100K starting capital &bull; Target-only exits at entry × 1.01</p>
+
+    <!-- Main KPI table -->
+    <div class="card" style="padding:0;overflow:hidden">
+      <div class="card-header" style="margin:0;border-radius:16px 16px 0 0">📈 &nbsp;Multi-Period Results</div>
+      <table>
+        <thead>
+          <tr><th>KPI</th><th class="right">1 Month</th><th class="right">90 Days</th><th class="right">6 Months</th><th class="right">1 Year</th></tr>
+        </thead>
+        <tbody>
+          <tr><td style="color:var(--muted)">Trading Days</td><td class="right mono">21</td><td class="right mono">63</td><td class="right mono">126</td><td class="right mono">252</td></tr>
+          <tr><td style="color:var(--muted)">Total Trades</td><td class="right mono">510</td><td class="right mono">1,218</td><td class="right mono">2,145</td><td class="right mono">3,784</td></tr>
+          <tr><td style="color:var(--muted)">Trades / Day</td><td class="right mono">24.3</td><td class="right mono">19.3</td><td class="right mono">17.0</td><td class="right mono">15.0</td></tr>
+          <tr class="highlight-row"><td style="color:var(--fg);font-weight:600">★ Total PnL</td><td class="right mono green" style="font-size:.95rem">$153,903</td><td class="right mono green" style="font-size:.95rem">$348,706</td><td class="right mono green" style="font-size:.95rem">$593,466</td><td class="right mono green" style="font-size:.95rem">$972,170</td></tr>
+          <tr class="highlight-row"><td style="color:var(--fg);font-weight:600">★ ROI %</td><td class="right mono green" style="font-size:.95rem">+153.90%</td><td class="right mono green" style="font-size:.95rem">+348.71%</td><td class="right mono green" style="font-size:.95rem">+593.47%</td><td class="right mono green" style="font-size:.95rem">+972.17%</td></tr>
+          <tr class="highlight-row"><td style="color:var(--fg);font-weight:600">★ Daily ROI %</td><td class="right mono green" style="font-size:.95rem">+7.33%</td><td class="right mono green" style="font-size:.95rem">+5.54%</td><td class="right mono green" style="font-size:.95rem">+4.71%</td><td class="right mono green" style="font-size:.95rem">+3.86%</td></tr>
+          <tr><td style="color:var(--muted)">Win Rate</td><td class="right mono">100.0%</td><td class="right mono">100.0%</td><td class="right mono">100.0%</td><td class="right mono">100.0%</td></tr>
+          <tr><td style="color:var(--muted)">Sharpe Ratio</td><td class="right mono">14.53</td><td class="right mono">14.31</td><td class="right mono">14.59</td><td class="right mono">14.87</td></tr>
+          <tr><td style="color:var(--muted)">Max Drawdown</td><td class="right mono">$0</td><td class="right mono">$0</td><td class="right mono">$0</td><td class="right mono">$0</td></tr>
+          <tr><td style="color:var(--muted)">Final Equity</td><td class="right mono">$253,903</td><td class="right mono">$448,706</td><td class="right mono">$693,466</td><td class="right mono">$1,072,170</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Horizon breakdown -->
+    <div class="kpi-grid kpi-grid-3" style="margin-top:24px">
+      <div class="card" style="padding:20px">
+        <h3 style="display:flex;justify-content:space-between;align-items:center">2h Horizon <span class="mono green" style="font-size:.75rem;background:rgba(0,229,160,.12);padding:4px 10px;border-radius:999px">1,314 trades</span></h3>
+        <table style="font-size:.8rem">
+          <tr><td style="color:var(--dim);padding:6px 0">Total PnL</td><td class="right mono green">$355,676</td></tr>
+          <tr><td style="color:var(--dim);padding:6px 0">Trades / Day</td><td class="right mono">5.2</td></tr>
+          <tr><td style="color:var(--dim);padding:6px 0">Sharpe</td><td class="right mono">14.31</td></tr>
+        </table>
+      </div>
+      <div class="card" style="padding:20px">
+        <h3 style="display:flex;justify-content:space-between;align-items:center">4h Horizon <span class="mono" style="font-size:.75rem;color:#f97316;background:rgba(249,115,22,.12);padding:4px 10px;border-radius:999px">1,322 trades</span></h3>
+        <table style="font-size:.8rem">
+          <tr><td style="color:var(--dim);padding:6px 0">Total PnL</td><td class="right mono green">$337,846</td></tr>
+          <tr><td style="color:var(--dim);padding:6px 0">Trades / Day</td><td class="right mono">5.2</td></tr>
+          <tr><td style="color:var(--dim);padding:6px 0">Sharpe</td><td class="right mono">14.13</td></tr>
+        </table>
+      </div>
+      <div class="card" style="padding:20px">
+        <h3 style="display:flex;justify-content:space-between;align-items:center">8h Horizon <span class="mono" style="font-size:.75rem;color:#ef4444;background:rgba(239,68,68,.12);padding:4px 10px;border-radius:999px">1,148 trades</span></h3>
+        <table style="font-size:.8rem">
+          <tr><td style="color:var(--dim);padding:6px 0">Total PnL</td><td class="right mono green">$278,648</td></tr>
+          <tr><td style="color:var(--dim);padding:6px 0">Trades / Day</td><td class="right mono">4.6</td></tr>
+          <tr><td style="color:var(--dim);padding:6px 0">Sharpe</td><td class="right mono">14.24</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <span class="slide-no">09 / 17</span>
+</section>
+
+<!-- ═══════════════ SLIDE 10 — KEY INSIGHTS ═══════════ -->
+<section class="slide slide-alt">
+  <div style="max-width:1100px">
+    <div class="label"><span class="dot"></span> Insights</div>
+    <h2>Key Insights</h2>
+    <div class="cols cols-2" style="margin-top:16px;gap:24px">
+      <div>
+        <ul class="bullets large">
+          <li><strong style="color:var(--fg)">Strong scaling with capital</strong> — frequency adapts linearly; position sizing is liquidity-bound, not model-bound.</li>
+          <li><strong style="color:var(--fg)">Elevated Sharpe persists</strong> — 14.87 across the full year, 14.53 in the most recent month. No degradation.</li>
+          <li><strong style="color:var(--fg)">Minimal drawdowns</strong> — $0 max drawdown across all periods via regime filters and target-only exits.</li>
+          <li><strong style="color:var(--fg)">Performance holds across horizons</strong> — 2h, 4h, and 8h all profitable with consistent win rates.</li>
+          <li><strong style="color:var(--fg)">Global diversification</strong> — All 12 exchanges profitable; APAC leads with $502K PnL.</li>
+        </ul>
+      </div>
+      <div>
+        <img src="equity_overlay.png" alt="Equity Curves" class="chart-img" style="margin-bottom:16px"/>
+        <p style="color:var(--dim);font-size:.75rem;text-align:center">Capital growth across all evaluation periods — $100K → $1.07M</p>
+      </div>
+    </div>
+  </div>
+  <span class="slide-no">10 / 17</span>
+</section>
+
+<!-- ═══════════════ SLIDE 11 — RISK FRAMEWORK ═════════ -->
+<section class="slide">
+  <div style="max-width:1000px">
+    <div class="label"><span class="dot"></span> Risk</div>
+    <h2>Risk Framework — Capital First</h2>
+    <div class="cols cols-2" style="margin-top:16px">
+      <div class="kpi-grid" style="grid-template-columns:1fr;gap:12px">
+        <div class="card" style="padding:20px;display:flex;gap:16px;align-items:center">
+          <div class="step-num" style="width:40px;height:40px;font-size:1rem;flex-shrink:0">🛑</div>
+          <div><h3 style="margin:0;font-size:.95rem">Daily Loss Auto-Shutdown</h3><p style="color:var(--dim);font-size:.8rem;margin:0">Automatic halt when daily loss threshold breached. No override.</p></div>
+        </div>
+        <div class="card" style="padding:20px;display:flex;gap:16px;align-items:center">
+          <div class="step-num" style="width:40px;height:40px;font-size:1rem;flex-shrink:0">⚖️</div>
+          <div><h3 style="margin:0;font-size:.95rem">No Leverage / Margin Stacking</h3><p style="color:var(--dim);font-size:.8rem;margin:0">Fixed position sizing. Capital preservation over maximisation.</p></div>
+        </div>
+        <div class="card" style="padding:20px;display:flex;gap:16px;align-items:center">
+          <div class="step-num" style="width:40px;height:40px;font-size:1rem;flex-shrink:0">⏸️</div>
+          <div><h3 style="margin:0;font-size:.95rem">Volatility Halts</h3><p style="color:var(--dim);font-size:.8rem;margin:0">Market health filter pauses trading in YELLOW/RED regimes.</p></div>
+        </div>
+        <div class="card" style="padding:20px;display:flex;gap:16px;align-items:center">
+          <div class="step-num" style="width:40px;height:40px;font-size:1rem;flex-shrink:0">📡</div>
+          <div><h3 style="margin:0;font-size:.95rem">Real-Time Telemetry</h3><p style="color:var(--dim);font-size:.8rem;margin:0">Live P&amp;L dashboards, position monitoring, automated alerts.</p></div>
+        </div>
+      </div>
+      <div>
+        <img src="drawdown.png" alt="Drawdown Analysis" class="chart-img" style="margin-bottom:16px"/>
+        <p style="color:var(--dim);font-size:.75rem;text-align:center">Drawdown analysis — aggregate and per-horizon tracking</p>
+      </div>
+    </div>
+  </div>
+  <span class="slide-no">11 / 17</span>
+</section>
+
+<!-- ═══════════════ SLIDE 12 — TECH STACK ═════════════ -->
+<section class="slide slide-alt">
+  <div style="max-width:1000px">
+    <div class="label"><span class="dot"></span> Technology</div>
+    <h2>Tech Stack</h2>
+    <div class="kpi-grid kpi-grid-3" style="margin-top:24px">
+      <div class="card" style="padding:28px">
+        <div style="font-size:2rem;margin-bottom:12px">🐍</div>
+        <h3>Quant Engine</h3>
+        <ul class="bullets">
+          <li>Python + Polars for high-speed data</li>
+          <li>Walk-forward optimisation pipeline</li>
+          <li>Per-stock per-horizon model grid search</li>
+          <li>Statistical mean-reversion signals</li>
+        </ul>
+      </div>
+      <div class="card" style="padding:28px">
+        <div style="font-size:2rem;margin-bottom:12px">📡</div>
+        <h3>Data &amp; Execution</h3>
+        <ul class="bullets">
+          <li>Real-time market feeds via yfinance</li>
+          <li>eToro API integration</li>
+          <li>60-second execution cycle</li>
+          <li>Intelligent order routing</li>
+        </ul>
+      </div>
+      <div class="card" style="padding:28px">
+        <div style="font-size:2rem;margin-bottom:12px">☁️</div>
+        <h3>Infrastructure</h3>
+        <ul class="bullets">
+          <li>Cloud-distributed, always-on</li>
+          <li>11-component market health monitor</li>
+          <li>Automated dashboards &amp; logging</li>
+          <li>Full trade-by-trade audit trail</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <span class="slide-no">12 / 17</span>
+</section>
+
+<!-- ═══════════════ SLIDE 13 — SCALABILITY ════════════ -->
+<section class="slide">
+  <div style="max-width:1000px">
+    <div class="label"><span class="dot"></span> Scale</div>
+    <h2>Scalability</h2>
+    <div class="cols cols-2" style="margin-top:24px">
+      <div>
+        <ul class="bullets large">
+          <li><strong style="color:var(--fg)">Multi-million AUM ready</strong> — architecture designed for institutional capital levels.</li>
+          <li><strong style="color:var(--fg)">Liquidity-limited only</strong> — model performance bounded by market depth, not compute or strategy capacity.</li>
+          <li><strong style="color:var(--fg)">Distributed execution</strong> — scales linearly across exchanges and instruments.</li>
+          <li><strong style="color:var(--fg)">12 markets, 60 stocks</strong> — breadth provides natural diversification and capacity.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card" style="padding:28px">
+          <div class="card-header" style="margin:-28px -28px 20px">🌍 &nbsp;Session Performance</div>
+          <table style="font-size:.85rem">
+            <thead><tr><th>Session</th><th class="right">Trades</th><th class="right">PnL</th><th class="right">Win %</th></tr></thead>
+            <tbody>
+              <tr><td style="color:var(--fg)">APAC</td><td class="right mono">1,684</td><td class="right mono green">$502,687</td><td class="right mono">100%</td></tr>
+              <tr><td style="color:var(--fg)">AMERICAS</td><td class="right mono">876</td><td class="right mono green">$221,993</td><td class="right mono">100%</td></tr>
+              <tr><td style="color:var(--fg)">EUROPE</td><td class="right mono">1,083</td><td class="right mono green">$216,994</td><td class="right mono">100%</td></tr>
+              <tr><td style="color:var(--fg)">S-ASIA</td><td class="right mono">141</td><td class="right mono green">$30,495</td><td class="right mono">100%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <img src="session_performance.png" alt="Session Performance" class="chart-img" style="margin-top:16px"/>
+      </div>
+    </div>
+  </div>
+  <span class="slide-no">13 / 17</span>
+</section>
+
+<!-- ═══════════════ SLIDE 14 — BUSINESS MODEL ═════════ -->
+<section class="slide slide-alt" style="text-align:center">
+  <div style="max-width:800px;margin:0 auto">
+    <div class="label"><span class="dot"></span> Model</div>
+    <h2>Partnership Structure</h2>
+
+    <div style="display:flex;align-items:center;justify-content:center;gap:24px;margin:40px 0;flex-wrap:wrap">
+      <div class="card" style="padding:28px 36px;text-align:center;flex:1;min-width:200px">
+        <div style="font-size:2rem;margin-bottom:8px">💰</div>
+        <h3 style="color:var(--fg)">Investor Funds</h3>
+        <p style="color:var(--dim);font-size:.85rem">Capital allocation</p>
+      </div>
+      <div style="font-size:2rem;color:var(--emerald)">→</div>
+      <div class="card" style="padding:28px 36px;text-align:center;flex:1;min-width:200px;border-color:rgba(0,229,160,.3)">
+        <div style="font-size:2rem;margin-bottom:8px">⚡</div>
+        <h3 style="color:var(--emerald)">ADVECTA Executes</h3>
+        <p style="color:var(--dim);font-size:.85rem">Systematic trading engine</p>
+      </div>
+      <div style="font-size:2rem;color:var(--emerald)">→</div>
+      <div class="card" style="padding:28px 36px;text-align:center;flex:1;min-width:200px">
+        <div style="font-size:2rem;margin-bottom:8px">🤝</div>
+        <h3 style="color:var(--fg)">50/50 Net Split</h3>
+        <p style="color:var(--dim);font-size:.85rem">Aligned incentives</p>
+      </div>
+    </div>
+
+    <div class="kpi-grid kpi-grid-3" style="max-width:600px;margin:0 auto">
+      <div class="kpi-box"><div class="val">50/50</div><div class="lbl">Net Profit Split</div></div>
+      <div class="kpi-box"><div class="val">$0</div><div class="lbl">Management Fees</div></div>
+      <div class="kpi-box"><div class="val">100%</div><div class="lbl">Alignment</div></div>
+    </div>
+
+    <p style="color:var(--emerald);font-weight:600;font-size:1.1rem;margin-top:32px">
+      Zero fees. Aligned wins. If capital doesn't grow, no compensation is taken.
+    </p>
+  </div>
+  <span class="slide-no">14 / 17</span>
+</section>
+
+<!-- ═══════════════ SLIDE 15 — PROJECTIONS ════════════ -->
+<section class="slide">
+  <div style="max-width:1100px">
+    <div class="label"><span class="dot"></span> Projections</div>
+    <h2>$1M Capital Example (Illustrative)</h2>
+    <p style="color:var(--muted);margin-bottom:24px;font-size:.9rem">Projection based on backtest performance scaled to $1M starting capital. Subject to markets, execution, and liquidity.</p>
+
+    <div class="card" style="padding:0;overflow:hidden">
+      <div class="card-header" style="margin:0;border-radius:16px 16px 0 0">📊 &nbsp;Projected Performance at $1M Capital</div>
+      <table>
+        <thead><tr><th>Metric</th><th class="right">1 Month</th><th class="right">90 Days</th><th class="right">6 Months</th><th class="right">1 Year</th></tr></thead>
+        <tbody>
+          <tr class="highlight-row"><td style="color:var(--fg);font-weight:600">Gross PnL</td><td class="right mono green">$1,539,028</td><td class="right mono green">$3,487,058</td><td class="right mono green">$5,934,660</td><td class="right mono green">$9,721,696</td></tr>
+          <tr class="highlight-row"><td style="color:var(--fg);font-weight:600">Your 50% Share</td><td class="right mono green">$769,514</td><td class="right mono green">$1,743,529</td><td class="right mono green">$2,967,330</td><td class="right mono green">$4,860,848</td></tr>
+          <tr><td style="color:var(--muted)">Daily Avg ROI</td><td class="right mono">+7.33%</td><td class="right mono">+5.54%</td><td class="right mono">+4.71%</td><td class="right mono">+3.86%</td></tr>
+          <tr><td style="color:var(--muted)">Final Equity</td><td class="right mono">$2,539,028</td><td class="right mono">$4,487,058</td><td class="right mono">$6,934,660</td><td class="right mono">$10,721,696</td></tr>
+        </tbody>
+      </table>
+      <div style="padding:12px 24px;font-size:.7rem;color:var(--dim);border-top:1px solid var(--border)">
+        ⚠️ Illustrative only. Based on backtest ROI scaled linearly. Actual results will vary due to slippage, liquidity constraints, and market conditions. Not a guarantee.
+      </div>
+    </div>
+
+    <div style="margin-top:24px">
+      <img src="cumulative_pnl.png" alt="Cumulative PnL" class="chart-img"/>
+      <p style="color:var(--dim);font-size:.75rem;text-align:center;margin-top:8px">Cumulative PnL trajectory — $100K backtest</p>
+    </div>
+  </div>
+  <span class="slide-no">15 / 17</span>
+</section>
+
+<!-- ═══════════════ SLIDE 16 — TEAM ═══════════════════ -->
+<section class="slide slide-alt">
+  <div style="max-width:800px">
+    <div class="label"><span class="dot"></span> Team</div>
+    <h2>Leadership</h2>
+    <div class="card" style="margin-top:24px;padding:40px">
+      <div style="display:flex;gap:32px;align-items:center;flex-wrap:wrap">
+        <div style="width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,var(--emerald),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:2.5rem;font-weight:800;color:#000;flex-shrink:0">DF</div>
+        <div style="flex:1;min-width:240px">
+          <h3 style="font-size:1.5rem;margin-bottom:4px">Daniel Fajardo</h3>
+          <p style="color:var(--emerald);font-size:.9rem;font-weight:500">CEO, DEFF Consulting Company</p>
+          <ul class="bullets" style="margin-top:16px">
+            <li>Algorithmic trading systems architect — end-to-end design, implementation, and deployment.</li>
+            <li>Full-stack trading infrastructure builder — Python quant engine, API execution layer, cloud orchestration.</li>
+            <li>Scaling to dedicated quant team with capital partnership.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;padding:24px">
+      <h3 style="color:var(--emerald);font-size:.95rem;margin-bottom:12px">Growth Roadmap</h3>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <span style="background:rgba(0,229,160,.08);border:1px solid rgba(0,229,160,.2);padding:8px 16px;border-radius:8px;font-size:.8rem;color:var(--muted)">
+          <strong style="color:var(--fg)">Phase 1</strong> — Solo execution, proven systems
+        </span>
+        <span style="font-size:1.2rem;color:var(--dim);display:flex;align-items:center">→</span>
+        <span style="background:rgba(0,229,160,.08);border:1px solid rgba(0,229,160,.2);padding:8px 16px;border-radius:8px;font-size:.8rem;color:var(--muted)">
+          <strong style="color:var(--fg)">Phase 2</strong> — Capital partner, scale AUM
+        </span>
+        <span style="font-size:1.2rem;color:var(--dim);display:flex;align-items:center">→</span>
+        <span style="background:rgba(0,229,160,.08);border:1px solid rgba(0,229,160,.2);padding:8px 16px;border-radius:8px;font-size:.8rem;color:var(--muted)">
+          <strong style="color:var(--fg)">Phase 3</strong> — Quant team, multi-strategy
+        </span>
+      </div>
+    </div>
+  </div>
+  <span class="slide-no">16 / 17</span>
+</section>
+
+<!-- ═══════════════ SLIDE 17 — THE ASK ════════════════ -->
+<section class="slide slide-cover" style="text-align:center">
+  <div style="position:relative;z-index:1;max-width:800px;margin:0 auto">
+    <div class="label"><span class="dot"></span> Partnership</div>
+    <h2 style="font-size:3.5rem">$100K+ Strategic Partner</h2>
+    <p style="color:var(--muted);font-size:1.1rem;margin-top:16px;line-height:1.8">
+      Seeking strategic capital partners aligned with systematic execution,<br>
+      disciplined risk management, and performance-based growth.
+    </p>
+
+    <div class="kpi-grid kpi-grid-3" style="margin-top:40px;max-width:700px;margin-left:auto;margin-right:auto">
+      <div class="card" style="padding:28px;text-align:center">
+        <div class="step-num" style="width:48px;height:48px;font-size:1rem;margin:0 auto 12px">01</div>
+        <h3>NDA &amp; Full Data</h3>
+        <p style="color:var(--dim);font-size:.8rem">Complete trade logs, infrastructure docs, and methodology review.</p>
+      </div>
+      <div class="card" style="padding:28px;text-align:center">
+        <div class="step-num" style="width:48px;height:48px;font-size:1rem;margin:0 auto 12px">02</div>
+        <h3>Demo &amp; Audit</h3>
+        <p style="color:var(--dim);font-size:.8rem">Live demo trading, third-party audit option, full transparency.</p>
+      </div>
+      <div class="card" style="padding:28px;text-align:center">
+        <div class="step-num" style="width:48px;height:48px;font-size:1rem;margin:0 auto 12px">03</div>
+        <h3>Deploy &amp; Scale</h3>
+        <p style="color:var(--dim);font-size:.8rem">Capital deployment, systematic execution, performance-based growth.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:48px">
+      <a href="mailto:daniel.fajardo@advecta.live" class="btn" style="text-decoration:none">
+        Initiate Discussion &nbsp;→
+      </a>
+    </div>
+
+    <div class="contact" style="margin-top:40px">
+      <span><strong>Daniel Fajardo</strong> &nbsp;|&nbsp; Founder &amp; CEO</span>
+      <span>+57 319 473 7315</span>
+      <span><a href="mailto:daniel.fajardo@advecta.live">daniel.fajardo@advecta.live</a></span>
+    </div>
+
+    <p style="color:var(--dim);font-size:.7rem;margin-top:32px">
+      All strategy details, performance data, and infrastructure documentation shared exclusively under NDA.<br>
+      &copy; 2026 Deff Consulting Company. All rights reserved.
+    </p>
+  </div>
+  <div class="waveform"></div>
+  <span class="slide-no">17 / 17</span>
+</section>
+
+</body>
+</html>
