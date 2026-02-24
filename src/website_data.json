@@ -1,0 +1,388 @@
+{
+  "generated_at": "2026-02-24T22:17:44",
+  "overview": {
+    "period": "2025-04-03 to 2026-02-23",
+    "test_days": 252,
+    "starting_capital": 100000,
+    "position_size": 10416,
+    "total_trades": 3784,
+    "total_pnl": 972169.58,
+    "trades_per_day": 15.0,
+    "daily_roi_pct": 3.86,
+    "win_rate": 1.0,
+    "sharpe": 14.87,
+    "max_drawdown": 0.0
+  },
+  "kpi_by_period": {
+    "1 Month": {
+      "actual_days": 21,
+      "start": "2026-01-29",
+      "end": "2026-02-23",
+      "n_trades": 510,
+      "tpd": 24.3,
+      "total_pnl": 153902.78,
+      "roi_pct": 153.9,
+      "daily_roi_pct": 7.33,
+      "ann_return": 71779.9947,
+      "sharpe": 14.53,
+      "max_dd": 0.0,
+      "win_rate": 1.0,
+      "final_equity": 253903.0,
+      "peak_equity": 253903.0
+    },
+    "90 Days": {
+      "actual_days": 63,
+      "start": "2025-12-10",
+      "end": "2026-02-23",
+      "n_trades": 1218,
+      "tpd": 19.3,
+      "total_pnl": 348705.77,
+      "roi_pct": 348.71,
+      "daily_roi_pct": 5.54,
+      "ann_return": 404.3653,
+      "sharpe": 14.31,
+      "max_dd": 0.0,
+      "win_rate": 1.0,
+      "final_equity": 448706.0,
+      "peak_equity": 448706.0
+    },
+    "6 Months": {
+      "actual_days": 126,
+      "start": "2025-09-26",
+      "end": "2026-02-23",
+      "n_trades": 2145,
+      "tpd": 17.0,
+      "total_pnl": 593465.97,
+      "roi_pct": 593.47,
+      "daily_roi_pct": 4.71,
+      "ann_return": 47.0895,
+      "sharpe": 14.59,
+      "max_dd": 0.0,
+      "win_rate": 1.0,
+      "final_equity": 693466.0,
+      "peak_equity": 693466.0
+    },
+    "1 Year": {
+      "actual_days": 252,
+      "start": "2025-04-03",
+      "end": "2026-02-23",
+      "n_trades": 3784,
+      "tpd": 15.0,
+      "total_pnl": 972169.62,
+      "roi_pct": 972.17,
+      "daily_roi_pct": 3.86,
+      "ann_return": 9.7217,
+      "sharpe": 14.87,
+      "max_dd": 0.0,
+      "win_rate": 1.0,
+      "final_equity": 1072170.0,
+      "peak_equity": 1072170.0
+    }
+  },
+  "horizon_stats": {
+    "2h": {
+      "n_trades": 1314,
+      "tpd": 5.2,
+      "total_pnl": 355676.04,
+      "mean_pnl_pct": 2.5987,
+      "win_rate": 1.0,
+      "sharpe": 14.31,
+      "max_dd": 0.0
+    },
+    "4h": {
+      "n_trades": 1322,
+      "tpd": 5.2,
+      "total_pnl": 337845.7,
+      "mean_pnl_pct": 2.4535,
+      "win_rate": 1.0,
+      "sharpe": 14.13,
+      "max_dd": 0.0
+    },
+    "8h": {
+      "n_trades": 1148,
+      "tpd": 4.6,
+      "total_pnl": 278647.84,
+      "mean_pnl_pct": 2.3303,
+      "win_rate": 1.0,
+      "sharpe": 14.24,
+      "max_dd": 0.0
+    }
+  },
+  "session_performance": [
+    {
+      "session": "APAC",
+      "n_trades": 1684,
+      "avg_pnl_pct": 2.8659,
+      "total_pnl": 502687.38,
+      "win_pct": 100.0
+    },
+    {
+      "session": "AMERICAS",
+      "n_trades": 876,
+      "avg_pnl_pct": 2.433,
+      "total_pnl": 221993.3,
+      "win_pct": 100.0
+    },
+    {
+      "session": "EUROPE",
+      "n_trades": 1083,
+      "avg_pnl_pct": 1.9236,
+      "total_pnl": 216994.04,
+      "win_pct": 100.0
+    },
+    {
+      "session": "S-ASIA",
+      "n_trades": 141,
+      "avg_pnl_pct": 2.0764,
+      "total_pnl": 30494.86,
+      "win_pct": 100.0
+    }
+  ],
+  "exchange_performance": [
+    {
+      "exchange": "KR",
+      "name": "\ud83c\uddf0\ud83c\uddf7 South Korea",
+      "session": "APAC",
+      "n_trades": 431,
+      "avg_pnl_pct": 3.7227,
+      "total_pnl": 167123.89,
+      "win_pct": 100.0
+    },
+    {
+      "exchange": "JP",
+      "name": "\ud83c\uddef\ud83c\uddf5 Japan",
+      "session": "APAC",
+      "n_trades": 571,
+      "avg_pnl_pct": 2.6372,
+      "total_pnl": 156851.0,
+      "win_pct": 100.0
+    },
+    {
+      "exchange": "HK",
+      "name": "\ud83c\udded\ud83c\uddf0 Hong Kong",
+      "session": "APAC",
+      "n_trades": 460,
+      "avg_pnl_pct": 2.4804,
+      "total_pnl": 118843.88,
+      "win_pct": 100.0
+    },
+    {
+      "exchange": "US",
+      "name": "\ud83c\uddfa\ud83c\uddf8 United States",
+      "session": "AMERICAS",
+      "n_trades": 375,
+      "avg_pnl_pct": 2.5932,
+      "total_pnl": 101288.61,
+      "win_pct": 100.0
+    },
+    {
+      "exchange": "DE",
+      "name": "\ud83c\udde9\ud83c\uddea Germany",
+      "session": "EUROPE",
+      "n_trades": 416,
+      "avg_pnl_pct": 2.072,
+      "total_pnl": 89782.48,
+      "win_pct": 100.0
+    },
+    {
+      "exchange": "UK",
+      "name": "\ud83c\uddec\ud83c\udde7 United Kingdom",
+      "session": "EUROPE",
+      "n_trades": 349,
+      "avg_pnl_pct": 1.856,
+      "total_pnl": 67470.33,
+      "win_pct": 100.0
+    },
+    {
+      "exchange": "CA",
+      "name": "\ud83c\udde8\ud83c\udde6 Canada",
+      "session": "AMERICAS",
+      "n_trades": 249,
+      "avg_pnl_pct": 2.3581,
+      "total_pnl": 61160.74,
+      "win_pct": 100.0
+    },
+    {
+      "exchange": "AU",
+      "name": "\ud83c\udde6\ud83c\uddfa Australia",
+      "session": "APAC",
+      "n_trades": 222,
+      "avg_pnl_pct": 2.5891,
+      "total_pnl": 59868.61,
+      "win_pct": 100.0
+    },
+    {
+      "exchange": "BR",
+      "name": "\ud83c\udde7\ud83c\uddf7 Brazil",
+      "session": "AMERICAS",
+      "n_trades": 252,
+      "avg_pnl_pct": 2.2685,
+      "total_pnl": 59543.95,
+      "win_pct": 100.0
+    },
+    {
+      "exchange": "CH",
+      "name": "\ud83c\udde8\ud83c\udded Switzerland",
+      "session": "EUROPE",
+      "n_trades": 165,
+      "avg_pnl_pct": 2.0732,
+      "total_pnl": 35630.29,
+      "win_pct": 100.0
+    },
+    {
+      "exchange": "IN",
+      "name": "\ud83c\uddee\ud83c\uddf3 India",
+      "session": "S-ASIA",
+      "n_trades": 141,
+      "avg_pnl_pct": 2.0764,
+      "total_pnl": 30494.86,
+      "win_pct": 100.0
+    },
+    {
+      "exchange": "FR",
+      "name": "\ud83c\uddeb\ud83c\uddf7 France",
+      "session": "EUROPE",
+      "n_trades": 153,
+      "avg_pnl_pct": 1.5129,
+      "total_pnl": 24110.94,
+      "win_pct": 100.0
+    }
+  ],
+  "top_stocks": [
+    {
+      "ticker": "SOXL",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 128,
+      "total_pnl": 40851.81,
+      "avg_pnl_pct": 3.0641,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "6857.T",
+      "exchange": "JP",
+      "session": "APAC",
+      "n_trades": 135,
+      "total_pnl": 40146.24,
+      "avg_pnl_pct": 2.855,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "5801.T",
+      "exchange": "JP",
+      "session": "APAC",
+      "n_trades": 136,
+      "total_pnl": 38205.64,
+      "avg_pnl_pct": 2.697,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "006800.KS",
+      "exchange": "KR",
+      "session": "APAC",
+      "n_trades": 26,
+      "total_pnl": 31691.85,
+      "avg_pnl_pct": 11.7023,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "EVN.AX",
+      "exchange": "AU",
+      "session": "APAC",
+      "n_trades": 120,
+      "total_pnl": 31120.63,
+      "avg_pnl_pct": 2.4898,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "INTC",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 86,
+      "total_pnl": 29389.05,
+      "avg_pnl_pct": 3.2808,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "ENR.DE",
+      "exchange": "DE",
+      "session": "EUROPE",
+      "n_trades": 138,
+      "total_pnl": 27751.71,
+      "avg_pnl_pct": 1.9307,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "034020.KS",
+      "exchange": "KR",
+      "session": "APAC",
+      "n_trades": 89,
+      "total_pnl": 26721.46,
+      "avg_pnl_pct": 2.8825,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "6146.T",
+      "exchange": "JP",
+      "session": "APAC",
+      "n_trades": 103,
+      "total_pnl": 25876.27,
+      "avg_pnl_pct": 2.4119,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "7012.T",
+      "exchange": "JP",
+      "session": "APAC",
+      "n_trades": 82,
+      "total_pnl": 25439.46,
+      "avg_pnl_pct": 2.9785,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "2628.HK",
+      "exchange": "HK",
+      "session": "APAC",
+      "n_trades": 102,
+      "total_pnl": 23901.68,
+      "avg_pnl_pct": 2.2497,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "CCO.TO",
+      "exchange": "CA",
+      "session": "AMERICAS",
+      "n_trades": 89,
+      "total_pnl": 23447.48,
+      "avg_pnl_pct": 2.5293,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "042660.KS",
+      "exchange": "KR",
+      "session": "APAC",
+      "n_trades": 72,
+      "total_pnl": 21878.95,
+      "avg_pnl_pct": 2.9174,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "010140.KS",
+      "exchange": "KR",
+      "session": "APAC",
+      "n_trades": 38,
+      "total_pnl": 21799.05,
+      "avg_pnl_pct": 5.5075,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "2899.HK",
+      "exchange": "HK",
+      "session": "APAC",
+      "n_trades": 81,
+      "total_pnl": 21206.19,
+      "avg_pnl_pct": 2.5135,
+      "win_pct": 100.0
+    }
+  ]
+}
