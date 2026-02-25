@@ -655,10 +655,14 @@ export default function AdvectaWebsite() {
             Seeking strategic capital partners aligned with systematic execution, disciplined risk management, and performance-based growth.
           </motion.p>
           <motion.div variants={fadeUp} custom={2} className="mt-10 flex flex-wrap justify-center gap-4">
-            <Button className="rounded-full px-8 py-5 text-base bg-gradient-to-r from-emerald-500 to-cyan-500 text-black font-semibold hover:from-emerald-400 hover:to-cyan-400 glow-accent">
-              Initiate Discussion <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button variant="outline" className="rounded-full px-8 py-5 text-base">Download Overview PDF</Button>
+            <a href="mailto:invest@advecta.live">
+              <Button className="rounded-full px-8 py-5 text-base bg-gradient-to-r from-emerald-500 to-cyan-500 text-black font-semibold hover:from-emerald-400 hover:to-cyan-400 glow-accent">
+                Initiate Discussion <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </a>
+            <a href="/deck.html" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" className="rounded-full px-8 py-5 text-base">View Overview</Button>
+            </a>
           </motion.div>
           <motion.p variants={fadeUp} custom={3} className="mt-8 text-xs text-zinc-600">
             All strategy details, performance data, and infrastructure documentation are shared exclusively under NDA.
