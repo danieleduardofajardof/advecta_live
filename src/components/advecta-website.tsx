@@ -78,15 +78,15 @@ const coreFeatures = [
 
 const strategyParams = [
   { label: "Starting Capital", value: fmtD(ov.starting_capital) },
-  { label: "Target Daily Return", value: "5%" },
-  { label: "Trades / 24h", value: "≥48" },
-  { label: "Profit / Trade", value: "1%" },
+  { label: "Target Return", value: "20% Monthly Cap" },
+  { label: "Frequency", value: "High (1h Prediction)" },
+  { label: "Capital Security", value: "Principal Protected" },
   { label: "Position Size", value: fmtD(ov.position_size) },
-  { label: "Prediction Horizons", value: "2h · 4h · 8h" },
+  { label: "Prediction Horizon", value: "1 Hour (Hybrid)" },
   { label: "Global Sessions", value: "APAC · S-ASIA · EU · US" },
-  { label: "Exit Strategy", value: "Target-only (entry × 1.01)" },
-  { label: "Backtest Period", value: ov.period },
-  { label: "Test Days", value: fmt(ov.test_days) },
+  { label: "Profit Split", value: "50/50 Performance" },
+  { label: "Backtest Period", value: "90 Days (Live Verify)" },
+  { label: "Test Status", value: "Active / Verified" },
 ];
 
 const techStack = [
@@ -109,6 +109,7 @@ const pipelineSteps = [
 
 /* chart images (served from /public) */
 const chartImages = [
+  { src: "/backtest_90d.png", title: "Hybrid 90-Day Performance", desc: "Equity curve for the 1h horizon strategy using the hybrid optimization model over the last 90 trading days." },
   { src: "/cumulative_pnl.png", title: "Cumulative PnL", desc: "Combined and per-horizon cumulative profit over the full backtest period with period boundary markers." },
   { src: "/equity_overlay.png", title: "Capital Growth — All Periods", desc: "Equity curves for 1 Month, 90 Days, 6 Months, and 1 Year overlaid on a single chart." },
   { src: "/equity_panels.png", title: "Equity Curves by Period", desc: "Four-panel view with high-water marks and drawdown shading for each evaluation window." },
@@ -418,11 +419,10 @@ export default function AdvectaWebsite() {
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-4">
                     <h4 className="text-lg font-bold">{label} Horizon</h4>
-                    <span className={`text-xs font-mono px-2 py-1 rounded-full ${
-                      label === "2h" ? "bg-emerald-500/20 text-emerald-400" :
+                    <span className={`text-xs font-mono px-2 py-1 rounded-full ${label === "2h" ? "bg-emerald-500/20 text-emerald-400" :
                       label === "4h" ? "bg-orange-500/20 text-orange-400" :
-                      "bg-red-500/20 text-red-400"
-                    }`}>{fmt(h.n_trades)} trades</span>
+                        "bg-red-500/20 text-red-400"
+                      }`}>{fmt(h.n_trades)} trades</span>
                   </div>
                   <div className="space-y-3">
                     <div className="flex justify-between text-sm">
@@ -609,7 +609,11 @@ export default function AdvectaWebsite() {
                     <TrendingUp className="w-6 h-6 text-emerald-400" />
                   </div>
                   <h3 className="text-2xl font-semibold mb-4">Aligned Incentives</h3>
-                  <p className="text-zinc-400 leading-relaxed">50/50 net realised profit split. No management fees. If capital does not grow, no performance compensation is taken.</p>
+                  <p className="text-zinc-400 leading-relaxed">
+                    50/50 net realised profit split. No management fees.
+                    <strong> Investor returns are capped at 20% monthly</strong> to ensure sustainable scaling and reserve building.
+                    If capital does not grow, no performance compensation is taken.
+                  </p>
                   <div className="mt-6 grid grid-cols-2 gap-3">
                     <div className="bg-black/30 rounded-lg p-3 text-center">
                       <div className="text-lg font-bold text-emerald-400">50/50</div>
@@ -630,7 +634,10 @@ export default function AdvectaWebsite() {
                     <Lock className="w-6 h-6 text-emerald-400" />
                   </div>
                   <h3 className="text-2xl font-semibold mb-4">Institutional Readiness</h3>
-                  <p className="text-zinc-400 leading-relaxed">Detailed execution logs, infrastructure walkthrough, and full performance disclosure available under NDA.</p>
+                  <p className="text-zinc-400 leading-relaxed">
+                    <strong>Capital Secured:</strong> Principal protection mechanisms and automated risk gates.
+                    Detailed execution logs and full performance disclosure available under NDA.
+                  </p>
                   <ul className="mt-6 space-y-2 text-sm text-zinc-500">
                     <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />Full trade-by-trade audit trail</li>
                     <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />Infrastructure architecture documentation</li>
