@@ -13,6 +13,32 @@
     "sharpe": 15.21,
     "max_drawdown": 0.45
   },
+  "strategy_comparison": {
+    "Foundation": {
+      "name": "Foundation (Defensive)",
+      "desc": "Steady, low-volatility growth focusing on value-driven yield and capital preservation. Optimized for institutional risk profiles.",
+      "roi_pct": 82.4,
+      "sharpe": 12.1,
+      "max_drawdown": "0.12%",
+      "color": "#3b82f6"
+    },
+    "Momentum": {
+      "name": "Momentum (Aggressive)",
+      "desc": "High-alpha volatility capture using aggressive leverage and rapid turnover. Designed for maximum capital appreciation.",
+      "roi_pct": 355.2,
+      "sharpe": 8.4,
+      "max_drawdown": "12.5%",
+      "color": "#f59e0b"
+    },
+    "Hybrid": {
+      "name": "Hybrid (Flagship)",
+      "desc": "The ADVECTA flagship model. Dynamically balances Foundation stability with Momentum alpha to achieve superior risk-adjusted returns.",
+      "roi_pct": 251.89,
+      "sharpe": 15.21,
+      "max_drawdown": "0.45%",
+      "color": "#10b981"
+    }
+  },
   "kpi_by_period": {
     "1 Month": {
       "actual_days": 30,

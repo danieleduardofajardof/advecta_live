@@ -50,6 +50,8 @@ const horizons = backtestData.horizon_stats;
 const sessions = backtestData.session_performance;
 const exchanges = backtestData.exchange_performance;
 const topStocks = backtestData.top_stocks;
+// @ts-ignore
+const strategyComparison = backtestData.strategy_comparison;
 
 /* helpers */
 const fmt = (n: number) => n.toLocaleString("en-US");
@@ -109,6 +111,8 @@ const pipelineSteps = [
 
 /* chart images (served from /public) */
 const chartImages = [
+  { src: "/strategy_comparison.png", title: "Strategy Comparison (Equity)", desc: "Comparative equity curves for Foundation (Low-Risk), Momentum (High-Risk), and Hybrid (Balanced) models over 90 trading days." },
+  { src: "/kpi_comparison.png", title: "Strategy KPI Benchmarks", desc: "Detailed breakdown of ROI (%) and Sharpe Ratio across the three primary strategy profiles." },
   { src: "/backtest_90d.png", title: "Hybrid 90-Day Performance", desc: "Equity curve for the 1h horizon strategy using the hybrid optimization model over the last 90 trading days." },
   { src: "/cumulative_pnl.png", title: "Cumulative PnL", desc: "Combined and per-horizon cumulative profit over the full backtest period with period boundary markers." },
   { src: "/equity_overlay.png", title: "Capital Growth — All Periods", desc: "Equity curves for 1 Month, 90 Days, 6 Months, and 1 Year overlaid on a single chart." },
@@ -119,6 +123,7 @@ const chartImages = [
   { src: "/pnl_heatmap.png", title: "Stock PnL Heatmap", desc: "Daily PnL heatmap for the top 20 most-traded stocks." },
   { src: "/monthly_horizon_heatmap.png", title: "Monthly Horizon PnL", desc: "Monthly P&L breakdown by prediction horizon (2h, 4h, 8h) across the full year." },
 ];
+
 
 /* KPI period order */
 const periodOrder = ["1 Month", "90 Days", "6 Months", "1 Year"] as const;
@@ -547,6 +552,55 @@ export default function AdvectaWebsite() {
                 </div>
               </CardContent>
             </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Strategy Comparison ────────────────────────────────────── */}
+      <section id="comparison" className="px-6 py-28 border-t border-zinc-800/20">
+        <div className="max-w-7xl mx-auto">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="text-center mb-16">
+            <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-5xl font-bold">The Three ADVECTA Strategies</motion.h2>
+            <motion.p variants={fadeUp} custom={1} className="mt-4 text-zinc-500 max-w-2xl mx-auto">
+              Our core engine supports three primary risk profiles, from steady capital preservation to aggressive alpha generation.
+            </motion.p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {Object.entries(strategyComparison).map(([key, s]: [string, any], i) => (
+              <motion.div key={key} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}>
+                <Card className="bg-zinc-900/40 border-zinc-800/50 rounded-3xl h-full flex flex-col group hover:border-emerald-500/30 transition-all duration-300">
+                  <CardContent className="p-8 flex-1 flex flex-col">
+                    <div className="mb-6">
+                      <div className="h-1.5 w-12 rounded-full mb-4" style={{ backgroundColor: s.color }} />
+                      <h3 className="text-2xl font-bold text-white mb-2">{s.name}</h3>
+                      <p className="text-zinc-400 text-sm leading-relaxed">{s.desc}</p>
+                    </div>
+
+                    <div className="mt-auto space-y-4 pt-6 border-t border-zinc-800/40">
+                      <div className="flex justify-between items-end">
+                        <span className="text-xs text-zinc-500 uppercase tracking-wider font-semibold">90d ROI</span>
+                        <span className="text-2xl font-bold font-mono tracking-tight" style={{ color: s.color }}>{fmtP(s.roi_pct)}</span>
+                      </div>
+                      <div className="flex justify-between items-center text-sm">
+                        <span className="text-zinc-500">Sharpe Ratio</span>
+                        <span className="font-mono text-zinc-300">{s.sharpe}</span>
+                      </div>
+                      <div className="flex justify-between items-center text-sm">
+                        <span className="text-zinc-500">Max Drawdown</span>
+                        <span className="font-mono text-zinc-300">{s.max_drawdown}</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="mt-16 text-center">
+            <p className="text-xs text-zinc-600 italic">
+              *All figures derived from 90-day walk-forward backtests with realistic slippage and institutional fee calculation.
+            </p>
           </motion.div>
         </div>
       </section>
