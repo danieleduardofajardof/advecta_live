@@ -1,17 +1,17 @@
 {
   "generated_at": "2026-02-24T22:17:44",
   "overview": {
-    "period": "2025-12-05 to 2026-03-05",
-    "test_days": 90,
+    "period": "2025-03-06 to 2026-03-06",
+    "test_days": 306,
     "starting_capital": 100000,
-    "position_size": 10416,
-    "total_trades": 1845,
-    "total_pnl": 251892.26,
-    "trades_per_day": 20.5,
-    "daily_roi_pct": 2.8,
+    "position_size": 10000,
+    "total_trades": 3500,
+    "total_pnl": 83404078924.69,
+    "trades_per_day": 11.4,
+    "daily_roi_pct": 100.0,
     "win_rate": 1.0,
-    "sharpe": 15.21,
-    "max_drawdown": 0.45
+    "sharpe": 7.87,
+    "max_drawdown": -0.01
   },
   "strategy_comparison": {
     "Foundation": {
@@ -33,9 +33,9 @@
     "Hybrid": {
       "name": "Hybrid (Flagship)",
       "desc": "The ADVECTA flagship model. Dynamically balances Foundation stability with Momentum alpha to achieve superior risk-adjusted returns.",
-      "roi_pct": 251.89,
-      "sharpe": 15.21,
-      "max_drawdown": "0.45%",
+      "roi_pct": 83404078.92,
+      "sharpe": 7.87,
+      "max_drawdown": "-0.01%",
       "color": "#10b981"
     }
   },
@@ -57,20 +57,20 @@
       "peak_equity": 185402.0
     },
     "90 Days": {
-      "actual_days": 90,
-      "start": "2025-12-05",
-      "end": "2026-03-05",
-      "n_trades": 1845,
-      "tpd": 20.5,
-      "total_pnl": 251892.26,
-      "roi_pct": 251.89,
-      "daily_roi_pct": 2.8,
-      "ann_return": 113.8,
-      "sharpe": 15.21,
-      "max_dd": 0.45,
+      "actual_days": 106,
+      "start": "2025-10-27",
+      "end": "2026-03-06",
+      "n_trades": 120,
+      "tpd": 1.1,
+      "total_pnl": 63032.20,
+      "roi_pct": 63.03,
+      "daily_roi_pct": 0.59,
+      "ann_return": 252.1,
+      "sharpe": 19.31,
+      "max_dd": 0.0,
       "win_rate": 1.0,
-      "final_equity": 351892.0,
-      "peak_equity": 351892.0
+      "final_equity": 163032.20,
+      "peak_equity": 163032.20
     },
     "6 Months": {
       "actual_days": 126,
@@ -89,20 +89,20 @@
       "peak_equity": 693466.0
     },
     "1 Year": {
-      "actual_days": 252,
-      "start": "2025-04-03",
-      "end": "2026-02-23",
-      "n_trades": 3784,
-      "tpd": 15.0,
-      "total_pnl": 972169.62,
-      "roi_pct": 972.17,
-      "daily_roi_pct": 3.86,
-      "ann_return": 9.7217,
-      "sharpe": 14.87,
-      "max_dd": 0.0,
+      "actual_days": 306,
+      "start": "2025-03-06",
+      "end": "2026-03-06",
+      "n_trades": 3500,
+      "tpd": 11.4,
+      "total_pnl": 83404078924.69,
+      "roi_pct": 83404078.92,
+      "daily_roi_pct": 100.0,
+      "ann_return": 83404078.92,
+      "sharpe": 7.87,
+      "max_dd": -0.01,
       "win_rate": 1.0,
-      "final_equity": 1072170.0,
-      "peak_equity": 1072170.0
+      "final_equity": 83404178924.69,
+      "peak_equity": 83404178924.69
     }
   },
   "horizon_stats": {

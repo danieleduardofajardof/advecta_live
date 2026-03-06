@@ -87,7 +87,7 @@ const strategyParams = [
   { label: "Prediction Horizon", value: "1 Hour (Hybrid)" },
   { label: "Global Sessions", value: "APAC · S-ASIA · EU · US" },
   { label: "Profit Split", value: "50/50 Performance" },
-  { label: "Backtest Period", value: "90 Days (Live Verify)" },
+  { label: "Backtest Period", value: "1 Year (Live Verify)" },
   { label: "Test Status", value: "Active / Verified" },
 ];
 
@@ -111,9 +111,9 @@ const pipelineSteps = [
 
 /* chart images (served from /public) */
 const chartImages = [
-  { src: "/strategy_comparison.png", title: "Strategy Comparison (Equity)", desc: "Comparative equity curves for Foundation (Low-Risk), Momentum (High-Risk), and Hybrid (Balanced) models over 90 trading days." },
+  { src: "/strategy_comparison.png", title: "Strategy Comparison (Equity)", desc: "Comparative equity curves for Foundation (Low-Risk), Momentum (High-Risk), and Hybrid (Balanced) models over 1 Year." },
   { src: "/kpi_comparison.png", title: "Strategy KPI Benchmarks", desc: "Detailed breakdown of ROI (%) and Sharpe Ratio across the three primary strategy profiles." },
-  { src: "/backtest_90d.png", title: "Hybrid 90-Day Performance", desc: "Equity curve for the 1h horizon strategy using the hybrid optimization model over the last 90 trading days." },
+  { src: "/backtest_1y.png", title: "Hybrid 1-Year Performance", desc: "Equity curve for the 1h horizon strategy using the hybrid optimization model over the last 1 year of trading data." },
   { src: "/cumulative_pnl.png", title: "Cumulative PnL", desc: "Combined and per-horizon cumulative profit over the full backtest period with period boundary markers." },
   { src: "/equity_overlay.png", title: "Capital Growth — All Periods", desc: "Equity curves for 1 Month, 90 Days, 6 Months, and 1 Year overlaid on a single chart." },
   { src: "/equity_panels.png", title: "Equity Curves by Period", desc: "Four-panel view with high-water marks and drawdown shading for each evaluation window." },
@@ -599,7 +599,7 @@ export default function AdvectaWebsite() {
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="mt-16 text-center">
             <p className="text-xs text-zinc-600 italic">
-              *All figures derived from 90-day walk-forward backtests with realistic slippage and institutional fee calculation.
+              *All figures derived from 1-Year walk-forward backtests with realistic slippage and institutional fee calculation.
             </p>
           </motion.div>
         </div>
