@@ -1,0 +1,281 @@
+{
+  "nav": {
+    "strategy": "Estrategia",
+    "technology": "Tecnología",
+    "pipeline": "Pipeline",
+    "performance": "Rendimiento",
+    "backtest": "Backtest",
+    "partnership": "Asociación",
+    "cta": "Solicitar NDA"
+  },
+  "hero": {
+    "tagline": "Motor de Alpha Intradiario Sistemático",
+    "title": "ADVECTA",
+    "subtitle": "Asset Driven Volatility Execution & Capital Trade Algo",
+    "description": "Un motor de ejecución intradiario totalmente sistemático que captura ineficiencias de volatilidad estructurada en 12 bolsas globales con un control de riesgo disciplinado y alineación basada en el rendimiento.",
+    "cta_request": "Solicitar NDA",
+    "cta_view": "Ver Descripción de Estrategia"
+  },
+  "stats": {
+    "trades": "Operaciones ({days}d)",
+    "daily_roi": "ROI Diario Promedio",
+    "sharpe": "Ratio de Sharpe",
+    "win_rate": "Tasa de Acierto"
+  },
+  "features": {
+    "title": "Alpha Intradiario Sistemático",
+    "subtitle": "Tres pilares de un marco de ejecución disciplinado diseñado para un crecimiento de capital constante.",
+    "items": {
+      "volatility": {
+        "title": "Detección de Volatilidad",
+        "desc": "La clasificación de regímenes y el modelado de varianza identifican oportunidades intradiarias estructuradas bajo condiciones de liquidez favorables."
+      },
+      "execution": {
+        "title": "Disciplina de Ejecución",
+        "desc": "Ejecución de operaciones sistemáticas basadas en API. Sin intervención discrecional. Despliegue de capital totalmente basado en reglas."
+      },
+      "risk": {
+        "title": "Gobernanza de Riesgos",
+        "desc": "Límites de pérdida diarios, límites de posición y mecanismos de pausa por volatilidad garantizan que la preservación del capital sea lo primordial."
+      }
+    }
+  },
+  "params": {
+    "title": "Parámetros de la Estrategia",
+    "subtitle": "Configuración principal que impulsa el motor de ejecución ADVECTA.",
+    "labels": {
+      "starting_capital": "Capital Inicial",
+      "target_return": "Retorno Objetivo",
+      "target_return_val": "Límite Mensual del 20%",
+      "frequency": "Frecuencia",
+      "frequency_val": "Alta (Predicción 1h)",
+      "security": "Seguridad del Capital",
+      "security_val": "Principal Protegido",
+      "position_size": "Tamaño de Posición",
+      "horizon": "Horizonte de Predicción",
+      "horizon_val": "1 Hora (Híbrido)",
+      "sessions": "Sesiones Globales",
+      "sessions_val": "APAC · S-ASIA · EU · US",
+      "profit_split": "Reparto de Beneficios",
+      "profit_split_val": "50/50 sobre Rendimiento",
+      "period": "Período de Backtest",
+      "period_val": "1 Año (Verificación en Vivo)",
+      "status": "Estado del Test",
+      "status_val": "Activo / Verificado"
+    }
+  },
+  "tech": {
+    "title": "Tecnología e Infraestructura",
+    "subtitle": "Stack cuantitativo diseñado específicamente para la ejecución intradiaria sistemática.",
+    "items": {
+      "exchanges": {
+        "title": "12 Bolsas Globales",
+        "desc": "Cobertura de 24 horas en las sesiones de APAC, Sur de Asia, Europa y América."
+      },
+      "precision": {
+        "title": "Horizonte de Precisión 1h",
+        "desc": "Ventana de predicción única de 1h sobre el universo No-Crypto con filtrado fundamental agresivo en tiempo real."
+      },
+      "backtest": {
+        "title": "Backtest de Ventana Móvil",
+        "desc": "Optimización continua de {days} días con superposiciones de salud del mercado y selección dinámica de acciones."
+      },
+      "engine": {
+        "title": "Motor de Reversión a la Media",
+        "desc": "Compra a la MA predicha − k×σ, venta solo a la entrada + 1%. Bandas de k bajo para entradas de alta frecuencia."
+      },
+      "execution": {
+        "title": "Ejecución en Tiempo Real",
+        "desc": "Bot de ciclo de 60 segundos con integración de API en vivo, enrutamiento inteligente de órdenes y gestión de posiciones."
+      },
+      "lock": {
+        "title": "Controles de Riesgo",
+        "desc": "Filtro de salud de mercado compuesto por 11 componentes (SPY, VIX, TLT, HYG, sectores) que condiciona cada operación."
+      }
+    }
+  },
+  "pipeline": {
+    "title": "Pipeline de Ejecución",
+    "subtitle": "Flujo de trabajo sistemático de seis etapas, desde la evaluación del régimen de mercado hasta la ejecución de operaciones.",
+    "items": [
+      {
+        "step": "01",
+        "title": "Salud del Mercado",
+        "desc": "Puntuación compuesta de 11 componentes (SPY, VIX, TLT, HYG, sectores) que clasifica el régimen como VERDE / AMARILLO / ROJO."
+      },
+      {
+        "step": "02",
+        "title": "Selección de Acciones",
+        "desc": "Top 5 por bolsa clasificados por liquidez × volatilidad. Seleccionados nuevamente cada 10 días de negociación."
+      },
+      {
+        "step": "03",
+        "title": "Entrenamiento del Modelo",
+        "desc": "Búsqueda de cuadrícula por horizonte sobre (EMA, retroceso, k) optimizando para TPD × Sharpe. Re-entrenado cada 15 días."
+      },
+      {
+        "step": "04",
+        "title": "Generación de Señales",
+        "desc": "Bandas de MA predicha ± k×σ calculadas en cada límite de tramo. COMPRA cuando el precio ≤ banda inferior."
+      },
+      {
+        "step": "05",
+        "title": "Ejecución",
+        "desc": "Colocación de órdenes basada en API con salida solo por objetivo del 1%. Sin stop-loss: la posición se mantiene hasta alcanzar el objetivo."
+      },
+      {
+        "step": "06",
+        "title": "Riesgo e Informes",
+        "desc": "Seguimiento diario de P&L, monitoreo de drawdown, cálculo de Sharpe y paneles de rendimiento automatizados."
+      }
+    ]
+  },
+  "performance": {
+    "title": "Rendimiento del Backtest",
+    "subtitle": "Resultados del backtest de ventana móvil durante {days} días de negociación ({period}).",
+    "labels": {
+      "total_pnl": "PnL Total",
+      "total_trades": "Operaciones Totales",
+      "tpd": "Operaciones / Día",
+      "sharpe": "Ratio de Sharpe",
+      "win_rate": "Tasa de Acierto"
+    },
+    "kpi_dashboard": "Panel de KPI — Resultados Multi-Período",
+    "table_headers": {
+      "kpi": "KPI",
+      "days": "Días de Negociación",
+      "total_trades": "Operaciones Totales",
+      "tpd": "Operaciones / Día",
+      "total_pnl": "PnL Total",
+      "roi": "★ ROI %",
+      "daily_roi": "★ ROI Diario %",
+      "win_rate": "Tasa de Acierto",
+      "sharpe": "Ratio de Sharpe",
+      "max_dd": "Drawdown Máximo",
+      "final_equity": "Capital Final",
+      "peak_equity": "Capital Máximo"
+    },
+    "disclaimer": "Backtest de ventana móvil • {period} • {capital} de capital inicial • Salidas solo por objetivo a entrada × 1.01",
+    "horizon_card": {
+      "title": "Horizonte {label}",
+      "trades": "{count} operaciones",
+      "pnl": "PnL Total",
+      "tpd": "Operaciones / Día",
+      "win_rate": "Tasa de Acierto",
+      "sharpe": "Sharpe",
+      "max_dd": "Max DD"
+    },
+    "advanced": {
+      "title": "Analítica Avanzada",
+      "profit_factor": "Factor de Beneficio",
+      "payoff_ratio": "Ratio de Pago",
+      "win_streak": "Racha Ganadora Máx",
+      "loss_streak": "Racha Perdedora Máx",
+      "hold_time": "Tiempo de Retención Prom",
+      "days": "días"
+    }
+  },
+  "tables": {
+    "session_title": "Rendimiento por Sesión",
+    "exchange_title": "Rendimiento por Bolsa",
+    "stocks_title": "🏆 Top 15 Acciones por PnL",
+    "headers": {
+      "session": "Sesión",
+      "exchange": "Bolsa",
+      "trades": "Operaciones",
+      "pnl": "PnL",
+      "win_pct": "Acierto %",
+      "rank": "#",
+      "ticker": "Ticker",
+      "avg_pnl": "PnL Prom %"
+    }
+  },
+  "comparison": {
+    "title": "Las Tres Estrategias ADVECTA",
+    "subtitle": "Nuestro motor principal admite tres perfiles de riesgo, desde la preservación constante del capital hasta la generación de alpha agresiva.",
+    "labels": {
+      "roi_90d": "ROI 90d",
+      "sharpe": "Ratio de Sharpe",
+      "max_dd": "Drawdown Máximo"
+    },
+    "disclaimer": "*Todas las cifras se derivan de backtests de ventana móvil de 1 año con deslizamiento realista y cálculo de comisiones institucionales.",
+    "strategies": {
+      "Foundation": {
+        "name": "Foundation (Defensiva)",
+        "desc": "Crecimiento constante y de baja volatilidad."
+      },
+      "Momentum": {
+        "name": "Momentum (Agresiva)",
+        "desc": "Captura de volatilidad con alpha elevado."
+      },
+      "Hybrid": {
+        "name": "Híbrida (Insignia)",
+        "desc": "El modelo insignia de ADVECTA. Apalancamiento máximo. Ventana de predicción seleccionada: 1d con filtros Macro."
+      }
+    }
+  },
+  "backtest": {
+    "title": "Visualizaciones del Backtest",
+    "subtitle": "Gráficos completos de backtest de ventana móvil — {days} días de negociación, {trades} operaciones, {pnl} PnL total. Haga clic en cualquier gráfico para ampliarlo.",
+    "charts": {
+      "backtest_1y": {
+        "title": "Rendimiento Apalancado Híbrido a 1 Año",
+        "desc": "Curva de capital para la estrategia de horizonte 1h utilizando un apalancamiento de cartera de 5x durante el último año."
+      },
+      "drawdown": {
+        "title": "Rastreador de Drawdown de Cartera",
+        "desc": "Seguimiento granular del drawdown mapeando las brechas del punto máximo a lo largo del backtest."
+      },
+      "rolling_90d": {
+        "title": "Retornos Móviles de 90 Días",
+        "desc": "Rendimiento acumulado de la estrategia en periodos móviles de 90 días que muestra la consistencia de ejecución macroeconómica cíclica."
+      },
+      "dist": {
+        "title": "Distribuciones de Retorno Diario",
+        "desc": "Gráfico de violín que muestra la densidad y frecuencia de la distribución del PnL diario de la cartera."
+      },
+      "heatmap": {
+        "title": "Matriz de Rendimiento de Activos",
+        "desc": "Mapa de calor que revela las acciones con mayor contribución y sus perfiles de rendimiento mensual."
+      },
+      "monthly": {
+        "title": "PnL Neto Agregado Mensual",
+        "desc": "Descomposición del beneficio absoluto mensual limitada intrínsecamente a la ventaja del modelo híbrido."
+      }
+    }
+  },
+  "partnership": {
+    "title": "Asociación Basada en el Rendimiento",
+    "subtitle": "Incentivos alineados, transparencia institucional y cero comisiones de gestión.",
+    "aligned": {
+      "title": "Incentivos Alineados",
+      "desc1": "Reparto de beneficios netos realizados 50/50. Sin comisiones de gestión.",
+      "desc2": "Los retornos de los inversores están limitados al 20% mensual",
+      "desc3": " para garantizar un escalado sostenible y la creación de reservas. Si el capital no crece, no se cobra compensación por rendimiento.",
+      "split": "Reparto de Beneficios",
+      "fee": "Comisión de Gestión"
+    },
+    "readiness": {
+      "title": "Preparación Institucional",
+      "desc1": "Capital Asegurado:",
+      "desc2": " Mecanismos de protección del principal y puertas de riesgo automatizadas. Registros de ejecución detallados y divulgación completa del rendimiento disponibles bajo NDA.",
+      "items": [
+        "Rastro de auditoría completo operación por operación",
+        "Documentación de la arquitectura de infraestructura",
+        "Metodología de backtest de ventana móvil",
+        "Marco de gestión de riesgos"
+      ]
+    }
+  },
+  "cta": {
+    "title": "Asóciese con ADVECTA",
+    "description": "Buscamos socios de capital estratégico alineados con la ejecución sistemática, la gestión de riesgos disciplinada y el crecimiento basado en el rendimiento.",
+    "button": "Iniciar Discusión",
+    "view_overview": "Ver Descripción General",
+    "disclaimer": "Todos los detalles de la estrategia, los datos de rendimiento y la documentación de la infraestructura se comparten exclusivamente bajo NDA."
+  },
+  "footer": {
+    "definition": "Asset Driven Volatility Execution & Capital Trade Algo",
+    "rights": "Todos los derechos reservados."
+  }
+}

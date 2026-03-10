@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -47,6 +49,8 @@ const stagger = {
 const ov = backtestData.overview;
 const kpi = backtestData.kpi_by_period;
 const horizons = backtestData.horizon_stats;
+// @ts-ignore
+const advancedKPIs = backtestData.advanced_kpis;
 const sessions = backtestData.session_performance;
 const exchanges = backtestData.exchange_performance;
 const topStocks = backtestData.top_stocks;
@@ -54,76 +58,13 @@ const topStocks = backtestData.top_stocks;
 const strategyComparison = backtestData.strategy_comparison;
 
 /* helpers */
-const fmt = (n: number) => n.toLocaleString("en-US");
-const fmtD = (n: number) => "$" + n.toLocaleString("en-US", { maximumFractionDigits: 0 });
+const fmt = (n: number, locale: string) => n.toLocaleString(locale === "es" ? "es-ES" : "en-US");
+const fmtD = (n: number, locale: string) => (locale === "es" ? "" : "$") + n.toLocaleString(locale === "es" ? "es-ES" : "en-US", { maximumFractionDigits: 0 }) + (locale === "es" ? " $" : "");
 const fmtP = (n: number) => (n >= 0 ? "+" : "") + n.toFixed(2) + "%";
 const fmtPct = (n: number) => (n * 100).toFixed(1) + "%";
 
 /* ─────────── static data ─────────── */
-const coreFeatures = [
-  {
-    icon: Activity,
-    title: "Volatility Detection",
-    desc: "Regime classification and variance modelling identify structured intraday opportunities under favourable liquidity conditions.",
-  },
-  {
-    icon: Zap,
-    title: "Execution Discipline",
-    desc: "API-based systematic trade execution. No discretionary override. Fully rules-driven capital deployment.",
-  },
-  {
-    icon: Shield,
-    title: "Risk Governance",
-    desc: "Daily loss caps, position limits, and volatility pause mechanisms ensure capital preservation remains primary.",
-  },
-];
-
-const strategyParams = [
-  { label: "Starting Capital", value: fmtD(ov.starting_capital) },
-  { label: "Target Return", value: "20% Monthly Cap" },
-  { label: "Frequency", value: "High (1h Prediction)" },
-  { label: "Capital Security", value: "Principal Protected" },
-  { label: "Position Size", value: fmtD(ov.position_size) },
-  { label: "Prediction Horizon", value: "1 Hour (Hybrid)" },
-  { label: "Global Sessions", value: "APAC · S-ASIA · EU · US" },
-  { label: "Profit Split", value: "50/50 Performance" },
-  { label: "Backtest Period", value: "1 Year (Live Verify)" },
-  { label: "Test Status", value: "Active / Verified" },
-];
-
-const techStack = [
-  { icon: Globe, title: "12 Global Exchanges", desc: "24-hour coverage across APAC, South-Asia, Europe, and Americas sessions." },
-  { icon: Layers, title: "Multi-Horizon Prediction", desc: "Three prediction windows (2h, 4h, 8h) with independent model tuning per stock per horizon." },
-  { icon: BarChart3, title: "Walk-Forward Backtest", desc: `${ov.test_days}-day rolling optimisation with market health overlays and dynamic stock selection.` },
-  { icon: TrendingUp, title: "Mean-Reversion Engine", desc: "Buy at predicted MA − k×σ, sell only at entry + 1%. Aggressive low-k bands for high-frequency entries." },
-  { icon: Clock, title: "Real-Time Execution", desc: "60-second cycle bot with live API integration, intelligent order routing, and position management." },
-  { icon: Lock, title: "Risk Controls", desc: "Composite 11-component market health filter (SPY, VIX, TLT, HYG, sectors) gates every trade." },
-];
-
-const pipelineSteps = [
-  { step: "01", title: "Market Health", desc: "11-component composite score (SPY, VIX, TLT, HYG, sectors) classifies regime as GREEN / YELLOW / RED." },
-  { step: "02", title: "Stock Selection", desc: "Top 5 per exchange ranked by liquidity × volatility. Re-selected every 10 trading days." },
-  { step: "03", title: "Model Training", desc: "Per-horizon grid search over (EMA, lookback, k) optimising for TPD × Sharpe. Re-trained every 15 days." },
-  { step: "04", title: "Signal Generation", desc: "Predicted MA ± k×σ bands computed at each slice boundary. BUY when price ≤ lower band." },
-  { step: "05", title: "Execution", desc: "API-based order placement with 1% target-only exit. No stop-loss — position held until target hit." },
-  { step: "06", title: "Risk & Reporting", desc: "Daily P&L tracking, drawdown monitoring, Sharpe calculation, and automated performance dashboards." },
-];
-
-/* chart images (served from /public) */
-const chartImages = [
-  { src: "/strategy_comparison.png", title: "Strategy Comparison (Equity)", desc: "Comparative equity curves for Foundation (Low-Risk), Momentum (High-Risk), and Hybrid (Balanced) models over 1 Year." },
-  { src: "/kpi_comparison.png", title: "Strategy KPI Benchmarks", desc: "Detailed breakdown of ROI (%) and Sharpe Ratio across the three primary strategy profiles." },
-  { src: "/backtest_1y.png", title: "Hybrid 1-Year Performance", desc: "Equity curve for the 1h horizon strategy using the hybrid optimization model over the last 1 year of trading data." },
-  { src: "/cumulative_pnl.png", title: "Cumulative PnL", desc: "Combined and per-horizon cumulative profit over the full backtest period with period boundary markers." },
-  { src: "/equity_overlay.png", title: "Capital Growth — All Periods", desc: "Equity curves for 1 Month, 90 Days, 6 Months, and 1 Year overlaid on a single chart." },
-  { src: "/equity_panels.png", title: "Equity Curves by Period", desc: "Four-panel view with high-water marks and drawdown shading for each evaluation window." },
-  { src: "/session_performance.png", title: "Session & Horizon Performance", desc: "PnL breakdown by trading session (APAC, S-ASIA, EUROPE, AMERICAS) and prediction horizon." },
-  { src: "/drawdown.png", title: "Drawdown Analysis", desc: "Aggregate and per-horizon drawdown tracking throughout the backtest." },
-  { src: "/daily_returns_dist.png", title: "Daily Return Distributions", desc: "Violin plots showing daily ROI distribution for each evaluation period." },
-  { src: "/pnl_heatmap.png", title: "Stock PnL Heatmap", desc: "Daily PnL heatmap for the top 20 most-traded stocks." },
-  { src: "/monthly_horizon_heatmap.png", title: "Monthly Horizon PnL", desc: "Monthly P&L breakdown by prediction horizon (2h, 4h, 8h) across the full year." },
-];
-
+/* localized data arrays moved inside component */
 
 /* KPI period order */
 const periodOrder = ["1 Month", "90 Days", "6 Months", "1 Year"] as const;
@@ -158,8 +99,69 @@ function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: ()
 
 /* ═══════════════════════════════════════════════════════════════════════════ */
 
-export default function AdvectaWebsite() {
+export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any, locale: string }) {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+  const pathname = usePathname();
+
+  const t = dictionary;
+
+  /* ─────────── localized settings ─────────── */
+  const coreFeatures = [
+    {
+      icon: Activity,
+      title: t.features.items.volatility.title,
+      desc: t.features.items.volatility.desc,
+    },
+    {
+      icon: Zap,
+      title: t.features.items.execution.title,
+      desc: t.features.items.execution.desc,
+    },
+    {
+      icon: Shield,
+      title: t.features.items.risk.title,
+      desc: t.features.items.risk.desc,
+    },
+  ];
+
+  const strategyParams = [
+    { label: t.params.labels.starting_capital, value: fmtD(ov.starting_capital, locale) },
+    { label: t.params.labels.target_return, value: t.params.labels.target_return_val },
+    { label: t.params.labels.frequency, value: t.params.labels.frequency_val },
+    { label: t.params.labels.security, value: t.params.labels.security_val },
+    { label: t.params.labels.position_size, value: fmtD(ov.position_size, locale) },
+    { label: t.params.labels.horizon, value: t.params.labels.horizon_val },
+    { label: t.params.labels.sessions, value: t.params.labels.sessions_val },
+    { label: t.params.labels.profit_split, value: t.params.labels.profit_split_val },
+    { label: t.params.labels.period, value: t.params.labels.period_val },
+    { label: t.params.labels.status, value: t.params.labels.status_val },
+  ];
+
+  const techStack = [
+    { icon: Globe, title: t.tech.items.exchanges.title, desc: t.tech.items.exchanges.desc },
+    { icon: Layers, title: t.tech.items.precision.title, desc: t.tech.items.precision.desc },
+    { icon: BarChart3, title: t.tech.items.backtest.title, desc: t.tech.items.backtest.desc.replace("{days}", ov.test_days.toString()) },
+    { icon: TrendingUp, title: t.tech.items.engine.title, desc: t.tech.items.engine.desc },
+    { icon: Clock, title: t.tech.items.execution.title, desc: t.tech.items.execution.desc },
+    { icon: Lock, title: t.tech.items.lock.title, desc: t.tech.items.lock.desc },
+  ];
+
+  const pipelineSteps = t.pipeline.items;
+
+  const chartImages = [
+    { src: "/backtest_1y.png", title: t.backtest.charts.backtest_1y.title, desc: t.backtest.charts.backtest_1y.desc },
+    { src: "/drawdown.png", title: t.backtest.charts.drawdown.title, desc: t.backtest.charts.drawdown.desc },
+    { src: "/rolling_90d_return.png", title: t.backtest.charts.rolling_90d.title, desc: t.backtest.charts.rolling_90d.desc },
+    { src: "/daily_returns_dist.png", title: t.backtest.charts.dist.title, desc: t.backtest.charts.dist.desc },
+    { src: "/pnl_heatmap.png", title: t.backtest.charts.heatmap.title, desc: t.backtest.charts.heatmap.desc },
+    { src: "/monthly_horizon_heatmap.png", title: t.backtest.charts.monthly.title, desc: t.backtest.charts.monthly.desc },
+  ];
+
+  const strategyComparisonLocalized = Object.entries(strategyComparison).map(([key, s]: [string, any]) => ({
+    ...s,
+    name: t.comparison.strategies[key].name,
+    desc: t.comparison.strategies[key].desc,
+  }));
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
@@ -175,18 +177,35 @@ export default function AdvectaWebsite() {
             <span className="text-lg font-bold tracking-tight">ADVECTA</span>
           </a>
           <div className="hidden md:flex items-center gap-8 text-sm text-zinc-400">
-            <a href="#about" className="hover:text-white transition-colors">Strategy</a>
-            <a href="#technology" className="hover:text-white transition-colors">Technology</a>
-            <a href="#pipeline" className="hover:text-white transition-colors">Pipeline</a>
-            <a href="#performance" className="hover:text-white transition-colors">Performance</a>
-            <a href="#backtest" className="hover:text-white transition-colors">Backtest</a>
-            <a href="#partnership" className="hover:text-white transition-colors">Partnership</a>
+            <a href="#about" className="hover:text-white transition-colors">{t.nav.strategy}</a>
+            <a href="#technology" className="hover:text-white transition-colors">{t.nav.technology}</a>
+            <a href="#pipeline" className="hover:text-white transition-colors">{t.nav.pipeline}</a>
+            <a href="#performance" className="hover:text-white transition-colors">{t.nav.performance}</a>
+            <a href="#backtest" className="hover:text-white transition-colors">{t.nav.backtest}</a>
+            <a href="#partnership" className="hover:text-white transition-colors">{t.nav.partnership}</a>
+            
+            {/* Language Switcher */}
+            <div className="flex items-center gap-2 border-l border-zinc-800 ml-2 pl-6">
+              <Link 
+                href={pathname.replace(`/${locale}`, "/en")} 
+                className={`transition-colors ${locale === "en" ? "text-emerald-400 font-bold" : "hover:text-white"}`}
+              >
+                EN
+              </Link>
+              <span className="text-zinc-700">|</span>
+              <Link 
+                href={pathname.replace(`/${locale}`, "/es")} 
+                className={`transition-colors ${locale === "es" ? "text-emerald-400 font-bold" : "hover:text-white"}`}
+              >
+                ES
+              </Link>
+            </div>
           </div>
           <Button
             className="rounded-full px-5 text-sm h-9"
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
           >
-            Request NDA
+            {t.nav.cta}
           </Button>
         </div>
       </nav>
@@ -218,21 +237,21 @@ export default function AdvectaWebsite() {
           <motion.div variants={fadeUp} custom={4} className="mt-10 flex flex-wrap justify-center gap-4">
             <Button className="rounded-full px-7 py-5 text-base bg-gradient-to-r from-emerald-500 to-cyan-500 text-black font-semibold hover:from-emerald-400 hover:to-cyan-400 glow-accent"
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
-              Request NDA <ArrowRight className="ml-2 w-5 h-5" />
+              {t.hero.cta_request} <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button variant="outline" className="rounded-full px-7 py-5 text-base"
               onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}>
-              View Strategy Overview
+              {t.hero.cta_view}
             </Button>
           </motion.div>
 
           {/* Hero stats from real data */}
           <motion.div variants={fadeUp} custom={5} className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { value: fmt(ov.total_trades), label: `Trades (${ov.test_days}d)` },
-              { value: fmtP(ov.daily_roi_pct), label: "Avg Daily ROI" },
-              { value: ov.sharpe.toFixed(1), label: "Sharpe Ratio" },
-              { value: fmtPct(ov.win_rate), label: "Win Rate" },
+              { value: fmt(ov.total_trades, locale), label: t.stats.trades.replace("{days}", ov.test_days.toString()) },
+              { value: fmtP(ov.daily_roi_pct), label: t.stats.daily_roi },
+              { value: ov.sharpe.toFixed(2), label: t.stats.sharpe },
+              { value: fmtPct(ov.win_rate), label: t.stats.win_rate },
             ].map((s) => (
               <div key={s.label} className="bg-zinc-900/50 border border-zinc-800/50 rounded-xl px-4 py-4">
                 <div className="text-2xl md:text-3xl font-bold text-emerald-400">{s.value}</div>
@@ -251,10 +270,10 @@ export default function AdvectaWebsite() {
       <section id="about" className="px-6 py-28 max-w-7xl mx-auto">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="text-center mb-16">
           <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-5xl font-bold tracking-tight">
-            Systematic Intraday Alpha
+            {t.features.title}
           </motion.h2>
           <motion.p variants={fadeUp} custom={1} className="mt-4 text-zinc-500 max-w-2xl mx-auto">
-            Three pillars of a disciplined execution framework designed for consistent capital growth.
+            {t.features.subtitle}
           </motion.p>
         </motion.div>
 
@@ -279,8 +298,8 @@ export default function AdvectaWebsite() {
       <section className="gradient-section px-6 py-28">
         <div className="max-w-4xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="text-center mb-14">
-            <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-5xl font-bold">Strategy Parameters</motion.h2>
-            <motion.p variants={fadeUp} custom={1} className="mt-4 text-zinc-500">Core configuration driving the ADVECTA execution engine.</motion.p>
+            <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-5xl font-bold">{t.params.title}</motion.h2>
+            <motion.p variants={fadeUp} custom={1} className="mt-4 text-zinc-500">{t.params.subtitle}</motion.p>
           </motion.div>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="bg-zinc-900/40 border border-zinc-800/60 rounded-2xl overflow-hidden">
             <div className="grid grid-cols-1 divide-y divide-zinc-800/60">
@@ -298,8 +317,8 @@ export default function AdvectaWebsite() {
       {/* ── Technology Grid ────────────────────────────────────────────── */}
       <section id="technology" className="px-6 py-28 max-w-7xl mx-auto">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="text-center mb-16">
-          <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-5xl font-bold">Technology &amp; Infrastructure</motion.h2>
-          <motion.p variants={fadeUp} custom={1} className="mt-4 text-zinc-500 max-w-2xl mx-auto">Purpose-built quantitative stack for systematic intraday execution.</motion.p>
+          <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-5xl font-bold">{t.tech.title}</motion.h2>
+          <motion.p variants={fadeUp} custom={1} className="mt-4 text-zinc-500 max-w-2xl mx-auto">{t.tech.subtitle}</motion.p>
         </motion.div>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={stagger} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {techStack.map((t, i) => (
@@ -320,8 +339,8 @@ export default function AdvectaWebsite() {
       <section id="pipeline" className="gradient-section px-6 py-28">
         <div className="max-w-5xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="text-center mb-16">
-            <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-5xl font-bold">Execution Pipeline</motion.h2>
-            <motion.p variants={fadeUp} custom={1} className="mt-4 text-zinc-500 max-w-xl mx-auto">Six-stage systematic workflow from market regime assessment to trade execution.</motion.p>
+            <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-5xl font-bold">{t.pipeline.title}</motion.h2>
+            <motion.p variants={fadeUp} custom={1} className="mt-4 text-zinc-500 max-w-xl mx-auto">{t.pipeline.subtitle}</motion.p>
           </motion.div>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={stagger} className="space-y-4">
             {pipelineSteps.map((s, i) => (
@@ -341,9 +360,9 @@ export default function AdvectaWebsite() {
       <section id="performance" className="px-6 py-28">
         <div className="max-w-7xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="text-center mb-16">
-            <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-5xl font-bold">Backtest Performance</motion.h2>
+            <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-5xl font-bold">{t.performance.title}</motion.h2>
             <motion.p variants={fadeUp} custom={1} className="mt-4 text-zinc-500 max-w-2xl mx-auto">
-              Walk-forward backtest results over {ov.test_days} trading days ({ov.period}).
+              {t.performance.subtitle.replace("{days}", ov.test_days.toString()).replace("{period}", ov.period)}
             </motion.p>
           </motion.div>
 
@@ -351,11 +370,11 @@ export default function AdvectaWebsite() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
             className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12">
             {[
-              { label: "Total PnL", value: fmtD(ov.total_pnl) },
-              { label: "Total Trades", value: fmt(ov.total_trades) },
-              { label: "Trades / Day", value: ov.trades_per_day.toFixed(1) },
-              { label: "Sharpe Ratio", value: ov.sharpe.toFixed(2) },
-              { label: "Win Rate", value: fmtPct(ov.win_rate) },
+              { label: t.performance.labels.total_pnl, value: fmtD(ov.total_pnl, locale) },
+              { label: t.performance.labels.total_trades, value: fmt(ov.total_trades, locale) },
+              { label: t.performance.labels.tpd, value: ov.trades_per_day.toFixed(1) },
+              { label: t.performance.labels.sharpe, value: ov.sharpe.toFixed(2) },
+              { label: t.performance.labels.win_rate, value: fmtPct(ov.win_rate) },
             ].map((s) => (
               <div key={s.label} className="bg-zinc-900/50 border border-zinc-800/50 rounded-xl p-5 text-center">
                 <div className="text-xl md:text-2xl font-bold text-emerald-400">{s.value}</div>
@@ -371,7 +390,7 @@ export default function AdvectaWebsite() {
                 <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 px-6 py-4 border-b border-zinc-800/50">
                   <h3 className="font-semibold flex items-center gap-2">
                     <BarChart3 className="w-5 h-5 text-emerald-400" />
-                    KPI Dashboard — Multi-Period Results
+                    {t.performance.kpi_dashboard}
                   </h3>
                 </div>
                 <div className="overflow-x-auto">
@@ -386,21 +405,21 @@ export default function AdvectaWebsite() {
                     </thead>
                     <tbody className="divide-y divide-zinc-800/40">
                       {[
-                        { label: "Trading Days", fn: (k: string) => fmt((kpi as Record<string, typeof kpi[keyof typeof kpi]>)[k]?.actual_days ?? 0) },
-                        { label: "Total Trades", fn: (k: string) => fmt((kpi as Record<string, typeof kpi[keyof typeof kpi]>)[k]?.n_trades ?? 0) },
-                        { label: "Trades / Day", fn: (k: string) => ((kpi as Record<string, typeof kpi[keyof typeof kpi]>)[k]?.tpd ?? 0).toFixed(1) },
-                        { label: "Total PnL", fn: (k: string) => fmtD((kpi as Record<string, typeof kpi[keyof typeof kpi]>)[k]?.total_pnl ?? 0), highlight: true },
-                        { label: "★ ROI %", fn: (k: string) => fmtP((kpi as Record<string, typeof kpi[keyof typeof kpi]>)[k]?.roi_pct ?? 0), highlight: true },
-                        { label: "★ Daily ROI %", fn: (k: string) => fmtP((kpi as Record<string, typeof kpi[keyof typeof kpi]>)[k]?.daily_roi_pct ?? 0), highlight: true },
-                        { label: "Win Rate", fn: (k: string) => fmtPct((kpi as Record<string, typeof kpi[keyof typeof kpi]>)[k]?.win_rate ?? 0) },
-                        { label: "Sharpe Ratio", fn: (k: string) => ((kpi as Record<string, typeof kpi[keyof typeof kpi]>)[k]?.sharpe ?? 0).toFixed(2) },
-                        { label: "Max Drawdown", fn: (k: string) => fmtD((kpi as Record<string, typeof kpi[keyof typeof kpi]>)[k]?.max_dd ?? 0) },
-                        { label: "Final Equity", fn: (k: string) => fmtD((kpi as Record<string, typeof kpi[keyof typeof kpi]>)[k]?.final_equity ?? 0) },
-                        { label: "Peak Equity", fn: (k: string) => fmtD((kpi as Record<string, typeof kpi[keyof typeof kpi]>)[k]?.peak_equity ?? 0) },
-                      ].map((row) => (
+                        { label: t.performance.table_headers.days, fn: (k: string) => fmt((kpi as any)[k]?.actual_days ?? 0, locale) },
+                        { label: t.performance.table_headers.total_trades, fn: (k: string) => fmt((kpi as any)[k]?.n_trades ?? 0, locale) },
+                        { label: t.performance.table_headers.tpd, fn: (k: string) => ((kpi as any)[k]?.tpd ?? 0).toFixed(1) },
+                        { label: t.performance.table_headers.total_pnl, fn: (k: string) => fmtD((kpi as any)[k]?.total_pnl ?? 0, locale), highlight: true },
+                        { label: t.performance.table_headers.roi, fn: (k: string) => fmtP((kpi as any)[k]?.roi_pct ?? 0), highlight: true },
+                        { label: t.performance.table_headers.daily_roi, fn: (k: string) => fmtP((kpi as any)[k]?.daily_roi_pct ?? 0), highlight: true },
+                        { label: t.performance.table_headers.win_rate, fn: (k: string) => fmtPct((kpi as any)[k]?.win_rate ?? 0) },
+                        { label: t.performance.table_headers.sharpe, fn: (k: string) => ((kpi as any)[k]?.sharpe ?? 0).toFixed(2) },
+                        { label: t.performance.table_headers.max_dd, fn: (k: string) => fmtD((kpi as any)[k]?.max_dd ?? 0, locale) },
+                        { label: t.performance.table_headers.final_equity, fn: (k: string) => fmtD((kpi as any)[k]?.final_equity ?? 0, locale) },
+                        { label: t.performance.table_headers.peak_equity, fn: (k: string) => fmtD((kpi as any)[k]?.peak_equity ?? 0, locale) },
+                      ].map((row: any) => (
                         <tr key={row.label} className={row.highlight ? "bg-emerald-500/5" : ""}>
                           <td className="px-5 py-3 text-zinc-400 font-medium">{row.label}</td>
-                          {periodOrder.map((p) => (
+                          {periodOrder.map((p: string) => (
                             <td key={p} className={`text-center px-4 py-3 font-mono ${row.highlight ? "text-emerald-400 font-semibold" : "text-zinc-300"}`}>
                               {row.fn(p)}
                             </td>
@@ -411,49 +430,84 @@ export default function AdvectaWebsite() {
                   </table>
                 </div>
                 <div className="px-6 py-3 text-[10px] text-zinc-600 border-t border-zinc-800/40">
-                  Walk-forward backtest • {ov.period} • {ov.starting_capital.toLocaleString()} starting capital • Target-only exits at entry × 1.01
+                  {t.performance.disclaimer.replace("{period}", ov.period).replace("{capital}", ov.starting_capital.toLocaleString())}
                 </div>
               </CardContent>
             </Card>
           </motion.div>
 
           {/* Horizon breakdown */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="grid md:grid-cols-3 gap-6 mb-12">
-            {Object.entries(horizons).map(([label, h]) => (
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="grid md:grid-cols-1 max-w-sm mx-auto gap-6 mb-12">
+            {Object.entries(horizons).map(([label, h]: [string, any]) => (
               <Card key={label} className="bg-zinc-900/40 border-zinc-800/50 rounded-2xl">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-4">
                     <h4 className="text-lg font-bold">{label} Horizon</h4>
-                    <span className={`text-xs font-mono px-2 py-1 rounded-full ${label === "2h" ? "bg-emerald-500/20 text-emerald-400" :
+                    <span className={`text-xs font-mono px-2 py-1 rounded-full ${label === "1h" ? "bg-emerald-500/20 text-emerald-400" :
                       label === "4h" ? "bg-orange-500/20 text-orange-400" :
                         "bg-red-500/20 text-red-400"
-                      }`}>{fmt(h.n_trades)} trades</span>
+                      }`}>{fmt(h.n_trades, locale)} trades</span>
                   </div>
                   <div className="space-y-3">
                     <div className="flex justify-between text-sm">
-                      <span className="text-zinc-500">Total PnL</span>
-                      <span className="font-mono text-emerald-400">{fmtD(h.total_pnl)}</span>
+                      <span className="text-zinc-500">{t.performance.horizon_card.pnl}</span>
+                      <span className="font-mono text-emerald-400">{fmtD(h.total_pnl, locale)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-zinc-500">Trades / Day</span>
+                      <span className="text-zinc-500">{t.performance.horizon_card.tpd}</span>
                       <span className="font-mono text-zinc-300">{h.tpd.toFixed(1)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-zinc-500">Win Rate</span>
+                      <span className="text-zinc-500">{t.performance.horizon_card.win_rate}</span>
                       <span className="font-mono text-zinc-300">{fmtPct(h.win_rate)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-zinc-500">Sharpe</span>
+                      <span className="text-zinc-500">{t.performance.horizon_card.sharpe}</span>
                       <span className="font-mono text-zinc-300">{h.sharpe.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-zinc-500">Max DD</span>
-                      <span className="font-mono text-zinc-300">{fmtD(h.max_dd)}</span>
+                      <span className="text-zinc-500">{t.performance.horizon_card.max_dd}</span>
+                      <span className="font-mono text-zinc-300">{fmtD(h.max_dd, locale)}</span>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             ))}
+            
+            {/* Advanced KPIs Panel */}
+            {advancedKPIs && (
+              <Card className="bg-zinc-900/40 border-emerald-500/20 rounded-2xl">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-lg font-bold text-emerald-400">Advanced Analytics</h4>
+                    <Activity className="w-5 h-5 text-emerald-400/50" />
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-zinc-500">Profit Factor</span>
+                      <span className="font-mono text-zinc-300">{advancedKPIs.profit_factor}</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-zinc-500">Payoff Ratio</span>
+                      <span className="font-mono text-zinc-300">{advancedKPIs.payoff_ratio}</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-zinc-500">Max Win Streak</span>
+                      <span className="font-mono text-emerald-400">{advancedKPIs.max_consecutive_wins}</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-zinc-500">Max Loss Streak</span>
+                      <span className="font-mono text-red-400">{advancedKPIs.max_consecutive_losses}</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-zinc-500">Avg Hold Time</span>
+                      <span className="font-mono text-zinc-300">{advancedKPIs.avg_hold_bars} days</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+            
           </motion.div>
 
           {/* Session + Exchange tables side-by-side */}
@@ -472,11 +526,11 @@ export default function AdvectaWebsite() {
                     <th className="text-right px-4 py-2">Win %</th>
                   </tr></thead>
                   <tbody className="divide-y divide-zinc-800/30">
-                    {sessions.map((s) => (
+                    {sessions.map((s: any) => (
                       <tr key={s.session}>
                         <td className="px-4 py-2.5 font-medium text-zinc-300">{s.session}</td>
-                        <td className="px-4 py-2.5 text-right font-mono text-zinc-400">{fmt(s.n_trades)}</td>
-                        <td className="px-4 py-2.5 text-right font-mono text-emerald-400">{fmtD(s.total_pnl)}</td>
+                        <td className="px-4 py-2.5 text-right font-mono text-zinc-400">{fmt(s.n_trades, locale)}</td>
+                        <td className="px-4 py-2.5 text-right font-mono text-emerald-400">{fmtD(s.total_pnl, locale)}</td>
                         <td className="px-4 py-2.5 text-right font-mono text-zinc-400">{s.win_pct}%</td>
                       </tr>
                     ))}
@@ -500,14 +554,14 @@ export default function AdvectaWebsite() {
                       <th className="text-right px-4 py-2">Win %</th>
                     </tr></thead>
                     <tbody className="divide-y divide-zinc-800/30">
-                      {exchanges.map((e) => (
-                        <tr key={e.exchange}>
-                          <td className="px-4 py-2.5 font-medium text-zinc-300" title={e.name}>{e.exchange}</td>
-                          <td className="px-4 py-2.5 text-right font-mono text-zinc-400">{fmt(e.n_trades)}</td>
-                          <td className="px-4 py-2.5 text-right font-mono text-emerald-400">{fmtD(e.total_pnl)}</td>
-                          <td className="px-4 py-2.5 text-right font-mono text-zinc-400">{e.win_pct}%</td>
-                        </tr>
-                      ))}
+                    {exchanges.map((e: any) => (
+                      <tr key={e.exchange}>
+                        <td className="px-4 py-2.5 font-medium text-zinc-300" title={e.name}>{e.exchange}</td>
+                        <td className="px-4 py-2.5 text-right font-mono text-zinc-400">{fmt(e.n_trades, locale)}</td>
+                        <td className="px-4 py-2.5 text-right font-mono text-emerald-400">{fmtD(e.total_pnl, locale)}</td>
+                        <td className="px-4 py-2.5 text-right font-mono text-zinc-400">{e.win_pct}%</td>
+                      </tr>
+                    ))}
                     </tbody>
                   </table>
                 </div>
@@ -535,18 +589,18 @@ export default function AdvectaWebsite() {
                       <th className="text-right px-4 py-2">Win %</th>
                     </tr></thead>
                     <tbody className="divide-y divide-zinc-800/30">
-                      {topStocks.map((s, i) => (
-                        <tr key={s.ticker} className={i < 3 ? "bg-emerald-500/5" : ""}>
-                          <td className="px-4 py-2.5 text-zinc-600">{i + 1}</td>
-                          <td className="px-4 py-2.5 font-mono font-medium text-zinc-200">{s.ticker}</td>
-                          <td className="px-4 py-2.5 text-zinc-400">{s.exchange}</td>
-                          <td className="px-4 py-2.5 text-zinc-400">{s.session}</td>
-                          <td className="px-4 py-2.5 text-right font-mono text-zinc-400">{fmt(s.n_trades)}</td>
-                          <td className="px-4 py-2.5 text-right font-mono text-emerald-400">{fmtD(s.total_pnl)}</td>
-                          <td className="px-4 py-2.5 text-right font-mono text-zinc-300">{fmtP(s.avg_pnl_pct)}</td>
-                          <td className="px-4 py-2.5 text-right font-mono text-zinc-400">{s.win_pct}%</td>
-                        </tr>
-                      ))}
+                    {topStocks.map((s: any, i: number) => (
+                      <tr key={s.ticker} className={i < 3 ? "bg-emerald-500/5" : ""}>
+                        <td className="px-4 py-2.5 text-zinc-600">{i + 1}</td>
+                        <td className="px-4 py-2.5 font-mono font-medium text-zinc-200">{s.ticker}</td>
+                        <td className="px-4 py-2.5 text-zinc-400">{s.exchange}</td>
+                        <td className="px-4 py-2.5 text-zinc-400">{s.session}</td>
+                        <td className="px-4 py-2.5 text-right font-mono text-zinc-400">{fmt(s.n_trades, locale)}</td>
+                        <td className="px-4 py-2.5 text-right font-mono text-emerald-400">{fmtD(s.total_pnl, locale)}</td>
+                        <td className="px-4 py-2.5 text-right font-mono text-zinc-300">{fmtP(s.avg_pnl_pct)}</td>
+                        <td className="px-4 py-2.5 text-right font-mono text-zinc-400">{s.win_pct}%</td>
+                      </tr>
+                    ))}
                     </tbody>
                   </table>
                 </div>

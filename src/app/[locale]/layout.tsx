@@ -18,17 +18,17 @@ export const metadata: Metadata = {
     "A fully systematic intraday execution engine capturing structured volatility inefficiencies with disciplined risk control and performance-based alignment.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+export default async function RootLayout(props: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await props.params;
   return (
-    <html lang="en" className="dark">
+    <html lang={locale} className="dark">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
       >
-        {children}
+        {props.children}
       </body>
     </html>
   );

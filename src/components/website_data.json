@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-03-08T02:01:06.958306",
+  "generated_at": "2026-03-08T15:46:39.951316",
   "overview": {
     "period": "2020-03-06 to 2026-03-08",
-    "test_days": 1566,
+    "test_days": 1565,
     "starting_capital": 100000.0,
     "position_size": 25000,
     "total_trades": 84,
-    "total_pnl": 33325695.97,
+    "total_pnl": 33325681.17,
     "trades_per_day": 0.1,
-    "daily_roi_pct": 21.28,
+    "daily_roi_pct": 21.29,
     "win_rate": 0.46,
     "sharpe": 1.39,
     "max_drawdown": -0.4559
@@ -17,7 +17,7 @@
     "Foundation": {
       "name": "Foundation (Defensive)",
       "desc": "Steady, low-volatility growth.",
-      "roi_pct": 9997.71,
+      "roi_pct": 9997.7,
       "sharpe": 3.1,
       "max_drawdown": "-2.12%",
       "color": "#3b82f6"
@@ -25,7 +25,7 @@
     "Momentum": {
       "name": "Momentum (Aggressive)",
       "desc": "High-alpha volatility capture.",
-      "roi_pct": 23327.99,
+      "roi_pct": 23327.98,
       "sharpe": 2.4,
       "max_drawdown": "-15.5%",
       "color": "#f59e0b"
@@ -33,7 +33,7 @@
     "Hybrid": {
       "name": "Hybrid (Flagship)",
       "desc": "The ADVECTA flagship model. Max leverage. Selected Prediction Window: 1d with Macro filters.",
-      "roi_pct": 33325.7,
+      "roi_pct": 33325.68,
       "sharpe": 1.39,
       "max_drawdown": "-45.59%",
       "color": "#10b981"
@@ -41,60 +41,67 @@
   },
   "kpi_by_period": {
     "1d": {
-      "actual_days": 1566,
+      "actual_days": 1565,
       "start": "2020-03-06",
       "end": "2026-03-08",
       "n_trades": 84,
       "tpd": 0.1,
-      "total_pnl": 33325695.97,
-      "roi_pct": 33325.7,
-      "daily_roi_pct": 21.28,
-      "ann_return": 33325.7,
+      "total_pnl": 33325681.17,
+      "roi_pct": 33325.68,
+      "daily_roi_pct": 21.29,
+      "ann_return": 33325.68,
       "sharpe": 1.39,
       "max_dd": -0.4559,
       "win_rate": 0.46,
-      "final_equity": 33425695.97,
-      "peak_equity": 33425695.97
+      "final_equity": 33425681.17,
+      "peak_equity": 33425681.17
     }
   },
   "horizon_stats": {
     "1d": {
       "n_trades": 84,
       "tpd": 0.1,
-      "total_pnl": 33325695.97,
+      "total_pnl": 33325681.17,
       "mean_pnl_pct": 12.84,
       "win_rate": 0.46,
       "sharpe": 1.39,
       "max_dd": -0.4559
     }
   },
+  "advanced_kpis": {
+    "profit_factor": 2.77,
+    "payoff_ratio": 3.19,
+    "max_consecutive_wins": 4,
+    "max_consecutive_losses": 0,
+    "avg_hold_bars": 190.5
+  },
   "session_performance": [
     {
       "session": "AMERICAS",
       "n_trades": 22,
-      "total_pnl": 13504599.937699568,
-      "avg_pnl_pct": 23.34078668181818,
+      "total_pnl": 13504596.47968039,
+      "avg_pnl_pct": 23.34078518181818,
       "win_pct": 54.54545454545454
     },
     {
       "session": "APAC",
       "n_trades": 18,
-      "total_pnl": 6614520.060019863,
-      "avg_pnl_pct": 7.027125944444445,
+      "total_pnl": 6614517.675161436,
+      "avg_pnl_pct": 7.0271238333333335,
       "win_pct": 38.88888888888889
     },
     {
       "session": "EUROPE",
       "n_trades": 18,
-      "total_pnl": 7416046.9833511915,
-      "avg_pnl_pct": 11.272999222222222,
+      "total_pnl": 7416043.625260096,
+      "avg_pnl_pct": 11.27299938888889,
       "win_pct": 44.44444444444444
     },
     {
       "session": "S-ASIA",
       "n_trades": 26,
-      "total_pnl": 5790528.989413143,
-      "avg_pnl_pct": 9.07940853846154,
+      "total_pnl": 5790523.392828105,
+      "avg_pnl_pct": 9.079408615384615,
       "win_pct": 46.15384615384615
     }
   ],
@@ -105,7 +112,7 @@
       "session": "EUROPE",
       "n_trades": 16,
       "avg_pnl_pct": 11.2117,
-      "total_pnl": 4624006.37,
+      "total_pnl": 4624006.29,
       "win_pct": 50.0
     },
     {
@@ -114,7 +121,7 @@
       "session": "APAC",
       "n_trades": 18,
       "avg_pnl_pct": 13.1692,
-      "total_pnl": 13999240.02,
+      "total_pnl": 13999233.72,
       "win_pct": 44.44
     },
     {
@@ -123,7 +130,7 @@
       "session": "APAC",
       "n_trades": 17,
       "avg_pnl_pct": 8.3034,
-      "total_pnl": 9177188.1,
+      "total_pnl": 9177184.7,
       "win_pct": 35.29
     },
     {
@@ -132,7 +139,7 @@
       "session": "EUROPE",
       "n_trades": 16,
       "avg_pnl_pct": 14.7325,
-      "total_pnl": 2729556.4,
+      "total_pnl": 2729553.37,
       "win_pct": 56.25
     },
     {
@@ -141,7 +148,7 @@
       "session": "AMERICAS",
       "n_trades": 17,
       "avg_pnl_pct": 16.8031,
-      "total_pnl": 2795705.08,
+      "total_pnl": 2795703.1,
       "win_pct": 47.06
     }
   ],
@@ -151,7 +158,7 @@
       "exchange": "JP",
       "session": "EUROPE",
       "n_trades": 4,
-      "total_pnl": 8237492.89,
+      "total_pnl": 8237489.43,
       "avg_pnl_pct": 36.9046,
       "win_pct": 75.0
     },
@@ -160,7 +167,7 @@
       "exchange": "US",
       "session": "EUROPE",
       "n_trades": 5,
-      "total_pnl": 7844738.94,
+      "total_pnl": 7844734.8,
       "avg_pnl_pct": 12.0769,
       "win_pct": 40.0
     },
@@ -169,7 +176,7 @@
       "exchange": "HK",
       "session": "APAC",
       "n_trades": 8,
-      "total_pnl": 5232296.33,
+      "total_pnl": 5232294.29,
       "avg_pnl_pct": 0.0112,
       "win_pct": 37.5
     },
@@ -178,7 +185,7 @@
       "exchange": "HK",
       "session": "S-ASIA",
       "n_trades": 1,
-      "total_pnl": 4373639.27,
+      "total_pnl": 4373637.6,
       "avg_pnl_pct": 49.82,
       "win_pct": 100.0
     },
@@ -187,7 +194,7 @@
       "exchange": "HK",
       "session": "S-ASIA",
       "n_trades": 13,
-      "total_pnl": 3286037.13,
+      "total_pnl": 3286035.91,
       "avg_pnl_pct": 10.4346,
       "win_pct": 38.46
     },
@@ -196,7 +203,7 @@
       "exchange": "DE",
       "session": "EUROPE",
       "n_trades": 6,
-      "total_pnl": 2679329.32,
+      "total_pnl": 2679328.92,
       "avg_pnl_pct": 19.6731,
       "win_pct": 50.0
     },
@@ -205,7 +212,7 @@
       "exchange": "UK",
       "session": "S-ASIA",
       "n_trades": 3,
-      "total_pnl": 2473672.43,
+      "total_pnl": 2473672.18,
       "avg_pnl_pct": 32.762,
       "win_pct": 66.67
     },
@@ -214,7 +221,7 @@
       "exchange": "HK",
       "session": "AMERICAS",
       "n_trades": 5,
-      "total_pnl": 1470175.17,
+      "total_pnl": 1470174.94,
       "avg_pnl_pct": 17.1957,
       "win_pct": 60.0
     },
@@ -223,7 +230,7 @@
       "exchange": "US",
       "session": "APAC",
       "n_trades": 7,
-      "total_pnl": 1380136.58,
+      "total_pnl": 1380134.65,
       "avg_pnl_pct": 15.0686,
       "win_pct": 57.14
     },
@@ -232,7 +239,7 @@
       "exchange": "US",
       "session": "APAC",
       "n_trades": 2,
-      "total_pnl": 898940.47,
+      "total_pnl": 898940.27,
       "avg_pnl_pct": 42.32,
       "win_pct": 50.0
     },
@@ -241,7 +248,7 @@
       "exchange": "US",
       "session": "AMERICAS",
       "n_trades": 2,
-      "total_pnl": -74613.98,
+      "total_pnl": -74613.95,
       "avg_pnl_pct": 21.7636,
       "win_pct": 50.0
     },
@@ -250,7 +257,7 @@
       "exchange": "JP",
       "session": "S-ASIA",
       "n_trades": 11,
-      "total_pnl": -462910.63,
+      "total_pnl": -462910.49,
       "avg_pnl_pct": 4.94,
       "win_pct": 54.55
     },
@@ -259,7 +266,7 @@
       "exchange": "DE",
       "session": "APAC",
       "n_trades": 6,
-      "total_pnl": -1168334.62,
+      "total_pnl": -1168334.25,
       "avg_pnl_pct": 9.82,
       "win_pct": 33.33
     },
@@ -268,7 +275,7 @@
       "exchange": "DE",
       "session": "AMERICAS",
       "n_trades": 11,
-      "total_pnl": -2844903.34,
+      "total_pnl": -2844903.11,
       "avg_pnl_pct": 3.2902,
       "win_pct": 27.27
     }

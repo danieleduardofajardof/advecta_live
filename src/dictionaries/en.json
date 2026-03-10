@@ -1,0 +1,281 @@
+{
+  "nav": {
+    "strategy": "Strategy",
+    "technology": "Technology",
+    "pipeline": "Pipeline",
+    "performance": "Performance",
+    "backtest": "Backtest",
+    "partnership": "Partnership",
+    "cta": "Request NDA"
+  },
+  "hero": {
+    "tagline": "Systematic Intraday Alpha Engine",
+    "title": "ADVECTA",
+    "subtitle": "Asset Driven Volatility Execution & Capital Trade Algo",
+    "description": "A fully systematic intraday execution engine capturing structured volatility inefficiencies across 12 global exchanges with disciplined risk control and performance-based alignment.",
+    "cta_request": "Request NDA",
+    "cta_view": "View Strategy Overview"
+  },
+  "stats": {
+    "trades": "Trades ({days}d)",
+    "daily_roi": "Avg Daily ROI",
+    "sharpe": "Sharpe Ratio",
+    "win_rate": "Win Rate"
+  },
+  "features": {
+    "title": "Systematic Intraday Alpha",
+    "subtitle": "Three pillars of a disciplined execution framework designed for consistent capital growth.",
+    "items": {
+      "volatility": {
+        "title": "Volatility Detection",
+        "desc": "Regime classification and variance modelling identify structured intraday opportunities under favourable liquidity conditions."
+      },
+      "execution": {
+        "title": "Execution Discipline",
+        "desc": "API-based systematic trade execution. No discretionary override. Fully rules-driven capital deployment."
+      },
+      "risk": {
+        "title": "Risk Governance",
+        "desc": "Daily loss caps, position limits, and volatility pause mechanisms ensure capital preservation remains primary."
+      }
+    }
+  },
+  "params": {
+    "title": "Strategy Parameters",
+    "subtitle": "Core configuration driving the ADVECTA execution engine.",
+    "labels": {
+      "starting_capital": "Starting Capital",
+      "target_return": "Target Return",
+      "target_return_val": "20% Monthly Cap",
+      "frequency": "Frequency",
+      "frequency_val": "High (1h Prediction)",
+      "security": "Capital Security",
+      "security_val": "Principal Protected",
+      "position_size": "Position Size",
+      "horizon": "Prediction Horizon",
+      "horizon_val": "1 Hour (Hybrid)",
+      "sessions": "Global Sessions",
+      "sessions_val": "APAC · S-ASIA · EU · US",
+      "profit_split": "Profit Split",
+      "profit_split_val": "50/50 Performance",
+      "period": "Backtest Period",
+      "period_val": "1 Year (Live Verify)",
+      "status": "Test Status",
+      "status_val": "Active / Verified"
+    }
+  },
+  "tech": {
+    "title": "Technology & Infrastructure",
+    "subtitle": "Purpose-built quantitative stack for systematic intraday execution.",
+    "items": {
+      "exchanges": {
+        "title": "12 Global Exchanges",
+        "desc": "24-hour coverage across APAC, South-Asia, Europe, and Americas sessions."
+      },
+      "precision": {
+        "title": "1h Precision Horizon",
+        "desc": "Singular 1h prediction window over the Non-Crypto universe with aggressive real-time fundamental screening."
+      },
+      "backtest": {
+        "title": "Walk-Forward Backtest",
+        "desc": "{days}-day rolling optimisation with market health overlays and dynamic stock selection."
+      },
+      "engine": {
+        "title": "Mean-Reversion Engine",
+        "desc": "Buy at predicted MA − k×σ, sell only at entry + 1%. Aggressive low-k bands for high-frequency entries."
+      },
+      "execution": {
+        "title": "Real-Time Execution",
+        "desc": "60-second cycle bot with live API integration, intelligent order routing, and position management."
+      },
+      "lock": {
+        "title": "Risk Controls",
+        "desc": "Composite 11-component market health filter (SPY, VIX, TLT, HYG, sectors) gates every trade."
+      }
+    }
+  },
+  "pipeline": {
+    "title": "Execution Pipeline",
+    "subtitle": "Six-stage systematic workflow from market regime assessment to trade execution.",
+    "items": [
+      {
+        "step": "01",
+        "title": "Market Health",
+        "desc": "11-component composite score (SPY, VIX, TLT, HYG, sectors) classifies regime as GREEN / YELLOW / RED."
+      },
+      {
+        "step": "02",
+        "title": "Stock Selection",
+        "desc": "Top 5 per exchange ranked by liquidity × volatility. Re-selected every 10 trading days."
+      },
+      {
+        "step": "03",
+        "title": "Model Training",
+        "desc": "Per-horizon grid search over (EMA, lookback, k) optimising for TPD × Sharpe. Re-trained every 15 days."
+      },
+      {
+        "step": "04",
+        "title": "Signal Generation",
+        "desc": "Predicted MA ± k×σ bands computed at each slice boundary. BUY when price ≤ lower band."
+      },
+      {
+        "step": "05",
+        "title": "Execution",
+        "desc": "API-based order placement with 1% target-only exit. No stop-loss — position held until target hit."
+      },
+      {
+        "step": "06",
+        "title": "Risk & Reporting",
+        "desc": "Daily P&L tracking, drawdown monitoring, Sharpe calculation, and automated performance dashboards."
+      }
+    ]
+  },
+  "performance": {
+    "title": "Backtest Performance",
+    "subtitle": "Walk-forward backtest results over {days} trading days ({period}).",
+    "labels": {
+      "total_pnl": "Total PnL",
+      "total_trades": "Total Trades",
+      "tpd": "Trades / Day",
+      "sharpe": "Sharpe Ratio",
+      "win_rate": "Win Rate"
+    },
+    "kpi_dashboard": "KPI Dashboard — Multi-Period Results",
+    "table_headers": {
+      "kpi": "KPI",
+      "days": "Trading Days",
+      "total_trades": "Total Trades",
+      "tpd": "Trades / Day",
+      "total_pnl": "Total PnL",
+      "roi": "★ ROI %",
+      "daily_roi": "★ Daily ROI %",
+      "win_rate": "Win Rate",
+      "sharpe": "Sharpe Ratio",
+      "max_dd": "Max Drawdown",
+      "final_equity": "Final Equity",
+      "peak_equity": "Peak Equity"
+    },
+    "disclaimer": "Walk-forward backtest • {period} • {capital} starting capital • Target-only exits at entry × 1.01",
+    "horizon_card": {
+      "title": "{label} Horizon",
+      "trades": "{count} trades",
+      "pnl": "Total PnL",
+      "tpd": "Trades / Day",
+      "win_rate": "Win Rate",
+      "sharpe": "Sharpe",
+      "max_dd": "Max DD"
+    },
+    "advanced": {
+      "title": "Advanced Analytics",
+      "profit_factor": "Profit Factor",
+      "payoff_ratio": "Payoff Ratio",
+      "win_streak": "Max Win Streak",
+      "loss_streak": "Max Loss Streak",
+      "hold_time": "Avg Hold Time",
+      "days": "days"
+    }
+  },
+  "tables": {
+    "session_title": "Performance by Session",
+    "exchange_title": "Performance by Exchange",
+    "stocks_title": "🏆 Top 15 Stocks by PnL",
+    "headers": {
+      "session": "Session",
+      "exchange": "Exchange",
+      "trades": "Trades",
+      "pnl": "PnL",
+      "win_pct": "Win %",
+      "rank": "#",
+      "ticker": "Ticker",
+      "avg_pnl": "Avg PnL %"
+    }
+  },
+  "comparison": {
+    "title": "The Three ADVECTA Strategies",
+    "subtitle": "Our core engine supports three primary risk profiles, from steady capital preservation to aggressive alpha generation.",
+    "labels": {
+      "roi_90d": "90d ROI",
+      "sharpe": "Sharpe Ratio",
+      "max_dd": "Max Drawdown"
+    },
+    "disclaimer": "*All figures derived from 1-Year walk-forward backtests with realistic slippage and institutional fee calculation.",
+    "strategies": {
+      "Foundation": {
+        "name": "Foundation (Defensive)",
+        "desc": "Steady, low-volatility growth."
+      },
+      "Momentum": {
+        "name": "Momentum (Aggressive)",
+        "desc": "High-alpha volatility capture."
+      },
+      "Hybrid": {
+        "name": "Hybrid (Flagship)",
+        "desc": "The ADVECTA flagship model. Max leverage. Selected Prediction Window: 1d with Macro filters."
+      }
+    }
+  },
+  "backtest": {
+    "title": "Backtest Visualisations",
+    "subtitle": "Full walk-forward backtest charts — {days} trading days, {trades} trades, {pnl} total PnL. Click any chart to enlarge.",
+    "charts": {
+      "backtest_1y": {
+        "title": "Hybrid 1-Year Leveraged Performance",
+        "desc": "Equity curve for the 1h horizon strategy using 5x portfolio leverage over the trailing 1-year timeline."
+      },
+      "drawdown": {
+        "title": "Portfolio Drawdown Tracker",
+        "desc": "Granular drawdown tracking mapping the high-water mark gaps throughout the duration of the backtest."
+      },
+      "rolling_90d": {
+        "title": "Rolling 90-Day Returns",
+        "desc": "Trailing 90-day cumulative strategy yield showcasing cyclical macroeconomic execution consistency."
+      },
+      "dist": {
+        "title": "Daily Return Distributions",
+        "desc": "Violin plot showcasing the distribution density and frequency of daily portfolio PnL."
+      },
+      "heatmap": {
+        "title": "Asset Performance Matrix",
+        "desc": "Heatmap revealing the highest contributing stocks and their monthly output profiles."
+      },
+      "monthly": {
+        "title": "Monthly Aggregate Net PnL",
+        "desc": "Monthly absolute profit decomposition intrinsically constrained to the hybrid model edge."
+      }
+    }
+  },
+  "partnership": {
+    "title": "Performance-Based Partnership",
+    "subtitle": "Aligned incentives, institutional transparency, and zero management fees.",
+    "aligned": {
+      "title": "Aligned Incentives",
+      "desc1": "50/50 net realised profit split. No management fees.",
+      "desc2": "Investor returns are capped at 20% monthly",
+      "desc3": " to ensure sustainable scaling and reserve building. If capital does not grow, no performance compensation is taken.",
+      "split": "Profit Split",
+      "fee": "Management Fee"
+    },
+    "readiness": {
+      "title": "Institutional Readiness",
+      "desc1": "Capital Secured:",
+      "desc2": " Principal protection mechanisms and automated risk gates. Detailed execution logs and full performance disclosure available under NDA.",
+      "items": [
+        "Full trade-by-trade audit trail",
+        "Infrastructure architecture documentation",
+        "Walk-forward backtest methodology",
+        "Risk management framework"
+      ]
+    }
+  },
+  "cta": {
+    "title": "Partner with ADVECTA",
+    "description": "Seeking strategic capital partners aligned with systematic execution, disciplined risk management, and performance-based growth.",
+    "button": "Initiate Discussion",
+    "view_overview": "View Overview",
+    "disclaimer": "All strategy details, performance data, and infrastructure documentation are shared exclusively under NDA."
+  },
+  "footer": {
+    "definition": "Asset Driven Volatility Execution & Capital Trade Algo",
+    "rights": "All rights reserved."
+  }
+}
