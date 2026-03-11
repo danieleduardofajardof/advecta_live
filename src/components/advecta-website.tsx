@@ -217,21 +217,19 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
         <motion.div initial="hidden" animate="visible" variants={stagger} className="relative z-10 max-w-4xl">
           <motion.div variants={fadeUp} custom={0} className="inline-flex items-center gap-2 bg-zinc-900/80 border border-zinc-800 rounded-full px-4 py-1.5 text-xs text-zinc-400 mb-8">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            Systematic Intraday Alpha Engine
+            {t.hero.tagline}
           </motion.div>
 
           <motion.h1 variants={fadeUp} custom={1} className="text-6xl md:text-8xl font-bold tracking-tighter glow-text">
-            ADVECTA
+            {t.hero.title}
           </motion.h1>
 
           <motion.p variants={fadeUp} custom={2} className="mt-4 text-lg md:text-2xl text-zinc-400 font-light tracking-wide">
-            Asset Driven Volatility Execution &amp; Capital Trade Algo
+            {t.hero.subtitle}
           </motion.p>
 
           <motion.p variants={fadeUp} custom={3} className="mt-6 max-w-2xl mx-auto text-zinc-500 leading-relaxed">
-            A fully systematic intraday execution engine capturing structured
-            volatility inefficiencies across 12 global exchanges with
-            disciplined risk control and performance-based alignment.
+            {t.hero.description}
           </motion.p>
 
           <motion.div variants={fadeUp} custom={4} className="mt-10 flex flex-wrap justify-center gap-4">
