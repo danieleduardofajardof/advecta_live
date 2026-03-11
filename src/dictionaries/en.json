@@ -6,7 +6,8 @@
     "performance": "Performance",
     "backtest": "Backtest",
     "partnership": "Partnership",
-    "cta": "Request NDA"
+    "cta": "Request NDA",
+    "contact": "Contact"
   },
   "hero": {
     "tagline": "Systematic Intraday Alpha Engine",
@@ -276,6 +277,7 @@
   },
   "footer": {
     "definition": "Asset Driven Volatility Execution & Capital Trade Algo",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "product_of": "A product of"
   }
 }

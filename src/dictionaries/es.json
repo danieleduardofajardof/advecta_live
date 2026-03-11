@@ -6,7 +6,8 @@
     "performance": "Rendimiento",
     "backtest": "Backtest",
     "partnership": "Asociación",
-    "cta": "Solicitar NDA"
+    "cta": "Solicitar NDA",
+    "contact": "Contacto"
   },
   "hero": {
     "tagline": "Motor de Alpha Intradiario Sistemático",
@@ -276,6 +277,7 @@
   },
   "footer": {
     "definition": "Asset Driven Volatility Execution & Capital Trade Algo",
-    "rights": "Todos los derechos reservados."
+    "rights": "Todos los derechos reservados.",
+    "product_of": "Un producto de"
   }
 }

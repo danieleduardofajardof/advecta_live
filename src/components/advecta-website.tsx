@@ -612,9 +612,9 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
       <section id="comparison" className="px-6 py-28 border-t border-zinc-800/20">
         <div className="max-w-7xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="text-center mb-16">
-            <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-5xl font-bold">The Three ADVECTA Strategies</motion.h2>
+            <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-5xl font-bold">{t.comparison.title}</motion.h2>
             <motion.p variants={fadeUp} custom={1} className="mt-4 text-zinc-500 max-w-2xl mx-auto">
-              Our core engine supports three primary risk profiles, from steady capital preservation to aggressive alpha generation.
+              {t.comparison.subtitle}
             </motion.p>
           </motion.div>
 
@@ -631,15 +631,15 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
 
                     <div className="mt-auto space-y-4 pt-6 border-t border-zinc-800/40">
                       <div className="flex justify-between items-end">
-                        <span className="text-xs text-zinc-500 uppercase tracking-wider font-semibold">90d ROI</span>
+                        <span className="text-xs text-zinc-500 uppercase tracking-wider font-semibold">{t.comparison.labels.roi_90d}</span>
                         <span className="text-2xl font-bold font-mono tracking-tight" style={{ color: s.color }}>{fmtP(s.roi_pct)}</span>
                       </div>
                       <div className="flex justify-between items-center text-sm">
-                        <span className="text-zinc-500">Sharpe Ratio</span>
+                        <span className="text-zinc-500">{t.comparison.labels.sharpe}</span>
                         <span className="font-mono text-zinc-300">{s.sharpe}</span>
                       </div>
                       <div className="flex justify-between items-center text-sm">
-                        <span className="text-zinc-500">Max Drawdown</span>
+                        <span className="text-zinc-500">{t.comparison.labels.max_dd}</span>
                         <span className="font-mono text-zinc-300">{s.max_drawdown}</span>
                       </div>
                     </div>
@@ -651,7 +651,7 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="mt-16 text-center">
             <p className="text-xs text-zinc-600 italic">
-              *All figures derived from 1-Year walk-forward backtests with realistic slippage and institutional fee calculation.
+              {t.comparison.disclaimer}
             </p>
           </motion.div>
         </div>
@@ -661,9 +661,12 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
       <section id="backtest" className="gradient-section px-6 py-28">
         <div className="max-w-7xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="text-center mb-16">
-            <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-5xl font-bold">Backtest Visualisations</motion.h2>
+            <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-5xl font-bold">{t.backtest.title}</motion.h2>
             <motion.p variants={fadeUp} custom={1} className="mt-4 text-zinc-500 max-w-2xl mx-auto">
-              Full walk-forward backtest charts — {ov.test_days} trading days, {fmt(ov.total_trades, locale)} trades, {fmtD(ov.total_pnl, locale)} total PnL. Click any chart to enlarge.
+              {t.backtest.subtitle
+                .replace("{days}", ov.test_days.toString())
+                .replace("{trades}", fmt(ov.total_trades, locale))
+                .replace("{pnl}", fmtD(ov.total_pnl, locale))}
             </motion.p>
           </motion.div>
 
@@ -763,22 +766,22 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-emerald-500/5 blur-3xl" />
         </div>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="relative z-10 max-w-2xl mx-auto">
-          <motion.h2 variants={fadeUp} custom={0} className="text-4xl md:text-6xl font-bold tracking-tight">Partner with ADVECTA</motion.h2>
+          <motion.h2 variants={fadeUp} custom={0} className="text-4xl md:text-6xl font-bold tracking-tight">{t.cta.title}</motion.h2>
           <motion.p variants={fadeUp} custom={1} className="text-zinc-400 mt-6 text-lg leading-relaxed">
-            Seeking strategic capital partners aligned with systematic execution, disciplined risk management, and performance-based growth.
+            {t.cta.description}
           </motion.p>
           <motion.div variants={fadeUp} custom={2} className="mt-10 flex flex-wrap justify-center gap-4">
             <a href="mailto:invest@advecta.live">
               <Button className="rounded-full px-8 py-5 text-base bg-gradient-to-r from-emerald-500 to-cyan-500 text-black font-semibold hover:from-emerald-400 hover:to-cyan-400 glow-accent">
-                Initiate Discussion <ArrowRight className="ml-2 w-5 h-5" />
+                {t.cta.button} <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </a>
             <a href="/deck.html" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" className="rounded-full px-8 py-5 text-base">View Overview</Button>
+              <Button variant="outline" className="rounded-full px-8 py-5 text-base">{t.cta.view_overview}</Button>
             </a>
           </motion.div>
           <motion.p variants={fadeUp} custom={3} className="mt-8 text-xs text-zinc-600">
-            All strategy details, performance data, and infrastructure documentation are shared exclusively under NDA.
+            {t.cta.disclaimer}
           </motion.p>
         </motion.div>
       </section>
@@ -791,16 +794,24 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
               <Target className="w-3.5 h-3.5 text-black" />
             </div>
             <span className="font-bold tracking-tight">ADVECTA</span>
-            <span className="text-xs text-zinc-600 ml-2">Asset Driven Volatility Execution &amp; Capital Trade Algo</span>
+            <span className="text-xs text-zinc-600 ml-2">{t.footer.definition}</span>
           </div>
           <div className="flex gap-6 text-xs text-zinc-600">
-            <a href="#about" className="hover:text-zinc-400 transition-colors">Strategy</a>
-            <a href="#technology" className="hover:text-zinc-400 transition-colors">Technology</a>
-            <a href="#performance" className="hover:text-zinc-400 transition-colors">Performance</a>
-            <a href="#backtest" className="hover:text-zinc-400 transition-colors">Backtest</a>
-            <a href="#contact" className="hover:text-zinc-400 transition-colors">Contact</a>
+            <a href="#about" className="hover:text-zinc-400 transition-colors">{t.nav.strategy}</a>
+            <a href="#technology" className="hover:text-zinc-400 transition-colors">{t.nav.technology}</a>
+            <a href="#performance" className="hover:text-zinc-400 transition-colors">{t.nav.performance}</a>
+            <a href="#backtest" className="hover:text-zinc-400 transition-colors">{t.nav.backtest}</a>
+            <a href="#contact" className="hover:text-zinc-400 transition-colors">{t.nav.contact}</a>
           </div>
-          <p className="text-xs text-zinc-700">&copy; {new Date().getFullYear()} ADVECTA. All rights reserved.</p>
+          <p className="text-xs text-zinc-700">&copy; {new Date().getFullYear()} ADVECTA. {t.footer.rights}</p>
+        </div>
+        <div className="border-t border-zinc-900 py-4 text-center">
+          <p className="text-xs text-zinc-700">
+            <a href="mailto:invest@advecta.live" className="hover:text-zinc-400 transition-colors">invest@advecta.live</a>
+            {" · "}
+            {t.footer.product_of}{" "}
+            <a href="https://deff-consulting.org" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">deff-consulting.org</a>
+          </p>
         </div>
       </footer>
     </div>
