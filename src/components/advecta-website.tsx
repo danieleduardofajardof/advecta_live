@@ -343,7 +343,7 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
             <motion.p variants={fadeUp} custom={1} className="mt-4 text-zinc-500 max-w-xl mx-auto">{t.pipeline.subtitle}</motion.p>
           </motion.div>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={stagger} className="space-y-4">
-            {pipelineSteps.map((s, i) => (
+            {pipelineSteps.map((s: { step: string; title: string; desc: string }, i: number) => (
               <motion.div key={s.step} variants={fadeUp} custom={i} className="flex gap-6 items-start bg-zinc-900/30 border border-zinc-800/40 rounded-xl p-6 hover:border-emerald-500/20 transition-colors">
                 <div className="shrink-0 w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center font-mono font-bold text-emerald-400 text-sm">{s.step}</div>
                 <div>
@@ -665,7 +665,7 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="text-center mb-16">
             <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-5xl font-bold">Backtest Visualisations</motion.h2>
             <motion.p variants={fadeUp} custom={1} className="mt-4 text-zinc-500 max-w-2xl mx-auto">
-              Full walk-forward backtest charts — {ov.test_days} trading days, {fmt(ov.total_trades)} trades, {fmtD(ov.total_pnl)} total PnL. Click any chart to enlarge.
+              Full walk-forward backtest charts — {ov.test_days} trading days, {fmt(ov.total_trades, locale)} trades, {fmtD(ov.total_pnl, locale)} total PnL. Click any chart to enlarge.
             </motion.p>
           </motion.div>
 

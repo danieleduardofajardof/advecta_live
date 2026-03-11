@@ -68,6 +68,13 @@
       "max_dd": -0.4559
     }
   },
+  "advanced_kpis": {
+    "profit_factor": 2.77,
+    "payoff_ratio": 3.19,
+    "max_consecutive_wins": 4,
+    "max_consecutive_losses": 0,
+    "avg_hold_bars": 190.5
+  },
   "session_performance": [
     {
       "session": "AMERICAS",
