@@ -19,7 +19,7 @@
   },
   "stats": {
     "trades": "Trades ({days}d)",
-    "daily_roi": "Avg Daily ROI",
+    "daily_roi": "OOS ROI",
     "sharpe": "Sharpe Ratio",
     "win_rate": "Win Rate"
   },

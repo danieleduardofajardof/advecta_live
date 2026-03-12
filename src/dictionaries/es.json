@@ -19,7 +19,7 @@
   },
   "stats": {
     "trades": "Operaciones ({days}d)",
-    "daily_roi": "ROI Diario Promedio",
+    "daily_roi": "ROI OOS",
     "sharpe": "Ratio de Sharpe",
     "win_rate": "Tasa de Acierto"
   },

@@ -246,10 +246,10 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
           {/* Hero stats from real data */}
           <motion.div variants={fadeUp} custom={5} className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { value: fmt(ov.total_trades, locale), label: t.stats.trades.replace("{days}", ov.test_days.toString()) },
-              { value: fmtP(ov.daily_roi_pct), label: t.stats.daily_roi },
-              { value: ov.sharpe.toFixed(2), label: t.stats.sharpe },
+              { value: fmtP(ov.roi_pct), label: t.stats.daily_roi },
               { value: fmtPct(ov.win_rate), label: t.stats.win_rate },
+              { value: ov.sharpe.toFixed(2), label: t.stats.sharpe },
+              { value: fmt(ov.total_trades, locale), label: t.stats.trades.replace("{days}", ov.test_days.toString()) },
             ].map((s) => (
               <div key={s.label} className="bg-zinc-900/50 border border-zinc-800/50 rounded-xl px-4 py-4">
                 <div className="text-2xl md:text-3xl font-bold text-emerald-400">{s.value}</div>
@@ -411,7 +411,7 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
                         { label: t.performance.table_headers.daily_roi, fn: (k: string) => fmtP((kpi as any)[k]?.daily_roi_pct ?? 0), highlight: true },
                         { label: t.performance.table_headers.win_rate, fn: (k: string) => fmtPct((kpi as any)[k]?.win_rate ?? 0) },
                         { label: t.performance.table_headers.sharpe, fn: (k: string) => ((kpi as any)[k]?.sharpe ?? 0).toFixed(2) },
-                        { label: t.performance.table_headers.max_dd, fn: (k: string) => fmtD((kpi as any)[k]?.max_dd ?? 0, locale) },
+                        { label: t.performance.table_headers.max_dd, fn: (k: string) => fmtP(((kpi as any)[k]?.max_dd ?? 0) * 100) },
                         { label: t.performance.table_headers.final_equity, fn: (k: string) => fmtD((kpi as any)[k]?.final_equity ?? 0, locale) },
                         { label: t.performance.table_headers.peak_equity, fn: (k: string) => fmtD((kpi as any)[k]?.peak_equity ?? 0, locale) },
                       ].map((row: any) => (
