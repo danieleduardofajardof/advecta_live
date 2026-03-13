@@ -135,7 +135,7 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
     { label: t.params.labels.target_return, value: t.params.labels.target_return_val },
     { label: t.params.labels.frequency, value: t.params.labels.frequency_val },
     { label: t.params.labels.security, value: t.params.labels.security_val },
-    { label: t.params.labels.position_size, value: fmtD(ov.position_size, locale) },
+    { label: t.params.labels.position_size, value: fmtD((ov as any).position_size ?? 2500, locale) },
     { label: t.params.labels.horizon, value: t.params.labels.horizon_val },
     { label: t.params.labels.sessions, value: t.params.labels.sessions_val },
     { label: t.params.labels.profit_split, value: t.params.labels.profit_split_val },
