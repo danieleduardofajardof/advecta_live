@@ -56,6 +56,12 @@ const exchanges = backtestData.exchange_performance;
 const topStocks = backtestData.top_stocks;
 // @ts-ignore
 const strategyComparison = backtestData.strategy_comparison;
+// @ts-ignore
+const capitalGrowth = (backtestData as any).capital_growth_curve;
+// @ts-ignore
+const projections = (backtestData as any).projected_growth ?? {};
+// @ts-ignore
+const extraKPIs = (backtestData as any).extra_kpis ?? {};
 
 /* helpers */
 const fmt = (n: number, locale: string) => n.toLocaleString(locale === "es" ? "es-ES" : "en-US");
@@ -601,6 +607,112 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
                     ))}
                     </tbody>
                   </table>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Return Projections ─────────────────────────────────────────── */}
+      <section className="px-6 py-20 border-t border-zinc-800/20">
+        <div className="max-w-7xl mx-auto">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="text-center mb-12">
+            <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-4xl font-bold">What Does This Mean For Your Capital?</motion.h2>
+            <motion.p variants={fadeUp} custom={1} className="mt-4 text-zinc-500 max-w-2xl mx-auto">
+              Compounded returns based on {ov.test_days}-day backtest. Daily rate: <span className="text-emerald-400 font-mono">{fmtP(ov.daily_roi_pct)}</span>
+            </motion.p>
+          </motion.div>
+
+          {/* Return rate cards */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            {[
+              { label: "Avg Daily Return", value: fmtP(ov.daily_roi_pct), sub: "per trading day" },
+              { label: "Avg Weekly Return", value: fmtP(ov.daily_roi_pct * 5), sub: "5-day compounded" },
+              { label: "Avg Monthly Return", value: fmtP(ov.daily_roi_pct * 21), sub: "21-day compounded" },
+              { label: "Annualized Return", value: fmtP(ov.ann_return > 999 ? 999.9 : ov.ann_return), sub: "252-day compounded" },
+            ].map((s) => (
+              <div key={s.label} className="bg-zinc-900/50 border border-emerald-500/20 rounded-2xl p-5 text-center">
+                <div className="text-2xl md:text-3xl font-bold text-emerald-400 font-mono">{s.value}</div>
+                <div className="text-sm font-semibold text-white mt-2">{s.label}</div>
+                <div className="text-xs text-zinc-600 mt-1">{s.sub}</div>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Capital projection table */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+            <Card className="bg-zinc-900/40 border-zinc-800/50 rounded-2xl overflow-hidden mb-8">
+              <CardContent className="p-0">
+                <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 px-6 py-4 border-b border-zinc-800/50">
+                  <h3 className="font-semibold flex items-center gap-2">
+                    <TrendingUp className="w-5 h-5 text-emerald-400" />
+                    Capital Growth Projections (Compounded)
+                  </h3>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-zinc-900/60 text-zinc-400 text-xs">
+                        <th className="text-left px-5 py-3 font-medium">Starting Capital</th>
+                        <th className="text-center px-4 py-3 font-medium">After 1 Month</th>
+                        <th className="text-center px-4 py-3 font-medium">After 3 Months</th>
+                        <th className="text-center px-4 py-3 font-medium">After 6 Months</th>
+                        <th className="text-center px-4 py-3 font-medium">After 1 Year</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-zinc-800/40">
+                      {[
+                        { label: "$1,000", start: 1000 },
+                        { label: "$5,000", start: 5000 },
+                        { label: "$10,000", start: 10000 },
+                        { label: "$50,000", start: 50000 },
+                        { label: "$100,000", start: 100000 },
+                      ].map((row, i) => {
+                        const d = 1 + ov.daily_roi_pct / 100;
+                        const m1  = row.start * Math.pow(d, 21);
+                        const m3  = row.start * Math.pow(d, 63);
+                        const m6  = row.start * Math.pow(d, 126);
+                        const y1  = row.start * Math.pow(d, 252);
+                        return (
+                          <tr key={row.label} className={i % 2 === 0 ? "bg-zinc-900/20" : ""}>
+                            <td className="px-5 py-3 font-mono font-bold text-zinc-200">{row.label}</td>
+                            <td className="text-center px-4 py-3 font-mono text-emerald-400">{fmtD(m1, locale)}</td>
+                            <td className="text-center px-4 py-3 font-mono text-emerald-400">{fmtD(m3, locale)}</td>
+                            <td className="text-center px-4 py-3 font-mono text-emerald-400">{fmtD(m6, locale)}</td>
+                            <td className="text-center px-4 py-3 font-mono text-emerald-400 font-bold">{fmtD(y1, locale)}</td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="px-6 py-3 text-[10px] text-zinc-600 border-t border-zinc-800/40">
+                  Projections assume daily compounding at the backtest average rate. Past performance does not guarantee future results. Trading involves significant risk of capital loss.
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* Capital projection chart */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
+            className="group cursor-pointer"
+            onClick={() => setLightbox({ src: "/capital_projection.png", alt: "Capital Growth Projection" })}>
+            <Card className="bg-zinc-900/40 border-zinc-800/50 rounded-2xl overflow-hidden hover:border-emerald-500/30 transition-all duration-300">
+              <CardContent className="p-0">
+                <div className="relative overflow-hidden">
+                  <Image src="/capital_projection.png" alt="Capital Growth Projection"
+                    width={1600} height={900}
+                    className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]"
+                    quality={90} />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                    <Maximize2 className="w-8 h-8 text-white opacity-0 group-hover:opacity-80 transition-opacity" />
+                  </div>
+                </div>
+                <div className="p-5">
+                  <h4 className="font-semibold text-sm mb-1">Capital Growth Projection</h4>
+                  <p className="text-xs text-zinc-500">Log-scale view of $1K, $10K, and $100K starting capital compounded at backtest daily rate over the OOS period.</p>
                 </div>
               </CardContent>
             </Card>

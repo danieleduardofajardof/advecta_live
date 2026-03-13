@@ -1,47 +1,46 @@
 {
-  "generated_at": "2026-03-12T15:40:13.084384",
+  "generated_at": "2026-03-13T11:52:57.089530",
   "overview": {
-    "period": "2024-01-01 to 2026-03-12",
-    "train_period": "2020-03-01 to 2023-12-31",
-    "methodology": "Walk-forward: params optimized on train, simulated on OOS test period",
-    "test_days": 572,
+    "period": "2026-01-14 to 2026-03-13",
+    "train_period": "2020-03-01 to 2023-12-31 (6y research)",
+    "methodology": "Multi-strategy 15m engine: VWAP mean-reversion, RSI extremes, Bollinger Band bounce, EMA mean-reversion, Opening Range Breakout. 6y macro training (regime) + 730d 15-min OOS (no look-ahead).",
+    "test_days": 43,
     "starting_capital": 100000.0,
-    "position_size": 25000,
-    "total_trades": 28,
-    "total_pnl": 5578.16,
-    "trades_per_day": 0.0,
-    "daily_roi_pct": 0.01,
-    "win_rate": 0.32,
-    "sharpe": 0.26,
-    "sortino": 0.33,
-    "calmar": 0.19,
-    "max_drawdown": -0.1168,
-    "roi_pct": 5.09,
-    "ann_return": 2.21
+    "total_trades": 379,
+    "total_pnl": 161991.71,
+    "trades_per_day": 8.81,
+    "win_rate": 0.723,
+    "sharpe": 9.39,
+    "sortino": 13.71,
+    "calmar": 2883.54,
+    "max_drawdown": -0.0977,
+    "roi_pct": 161.99,
+    "ann_return": 28172.2,
+    "daily_roi_pct": 3.7672
   },
   "strategy_comparison": {
     "Foundation": {
-      "name": "Foundation (Defensive)",
-      "desc": "Steady, low-volatility growth. 1x leverage, tight macro filters.",
-      "roi_pct": 5.09,
-      "sharpe": 0.26,
-      "max_drawdown": "-11.68%",
+      "name": "Foundation (Conservative)",
+      "desc": "Multi-strategy 15m, min_score\u226540, tight TP/SL.",
+      "roi_pct": 161.99,
+      "sharpe": 9.39,
+      "max_drawdown": "-9.77%",
       "color": "#3b82f6"
     },
     "Momentum": {
       "name": "Momentum (Aggressive)",
-      "desc": "High-alpha capture. 2x leverage, momentum signals.",
-      "roi_pct": 2.93,
-      "sharpe": 0.17,
-      "max_drawdown": "-12.30%",
+      "desc": "Looser score gate (\u226530), higher TP targets.",
+      "roi_pct": 259.18,
+      "sharpe": 8.45,
+      "max_drawdown": "-14.65%",
       "color": "#f59e0b"
     },
     "Hybrid": {
       "name": "Hybrid (Flagship)",
-      "desc": "ADVECTA flagship model. 4x leverage. Frame: 1d.",
-      "roi_pct": 2.93,
-      "sharpe": 0.17,
-      "max_drawdown": "-12.30%",
+      "desc": "ADVECTA flagship \u2014 5 strategies, 15m candles, 51-ticker universe.",
+      "roi_pct": 356.38,
+      "sharpe": 10.33,
+      "max_drawdown": "-19.54%",
       "color": "#10b981"
     }
   },
@@ -49,292 +48,292 @@
     "1 Month": {
       "label": "1 Month",
       "actual_days": 31,
-      "start": "2025-01-07",
-      "end": "2025-02-18",
-      "n_trades": 4,
-      "tpd": 0.13,
-      "total_pnl": 4534.1,
-      "roi_pct": 3.96,
-      "daily_roi_pct": 0.1278,
-      "ann_return": 37.14,
-      "sharpe": 1.77,
-      "sortino": 3.68,
-      "calmar": 8.62,
-      "max_dd": -0.0431,
-      "win_rate": 0.5,
-      "final_equity": 118994.25,
-      "peak_equity": 118994.25
+      "start": "2026-01-30",
+      "end": "2026-03-13",
+      "n_trades": 293,
+      "tpd": 9.45,
+      "total_pnl": 163608.44,
+      "roi_pct": 166.3,
+      "daily_roi_pct": 5.3644,
+      "ann_return": 286856.67,
+      "sharpe": 13.54,
+      "max_dd": -0.0977,
+      "win_rate": 0.76,
+      "final_equity": 261991.71,
+      "peak_equity": 261991.71
     },
     "90 Days": {
       "label": "90 Days",
-      "actual_days": 91,
-      "start": "2024-10-14",
-      "end": "2025-02-18",
-      "n_trades": 7,
-      "tpd": 0.08,
-      "total_pnl": 14095.1,
-      "roi_pct": 13.44,
-      "daily_roi_pct": 0.1477,
-      "ann_return": 41.78,
-      "sharpe": 2.12,
-      "sortino": 4.42,
-      "calmar": 7.0,
-      "max_dd": -0.0597,
-      "win_rate": 0.57,
-      "final_equity": 118994.25,
-      "peak_equity": 118994.25
+      "actual_days": 43,
+      "start": "2026-01-14",
+      "end": "2026-03-13",
+      "n_trades": 379,
+      "tpd": 8.81,
+      "total_pnl": 161991.71,
+      "roi_pct": 161.99,
+      "daily_roi_pct": 3.7672,
+      "ann_return": 28172.2,
+      "sharpe": 9.39,
+      "max_dd": -0.0977,
+      "win_rate": 0.72,
+      "final_equity": 261991.71,
+      "peak_equity": 261991.71
     },
     "6 Months": {
       "label": "6 Months",
-      "actual_days": 181,
-      "start": "2024-01-01",
-      "end": "2024-09-09",
-      "n_trades": 5,
-      "tpd": 0.03,
-      "total_pnl": 4899.16,
-      "roi_pct": 4.9,
-      "daily_roi_pct": 0.0271,
-      "ann_return": 6.89,
-      "sharpe": 0.72,
-      "sortino": 1.1,
-      "calmar": 1.26,
-      "max_dd": -0.0545,
-      "win_rate": 0.4,
-      "final_equity": 104899.16,
-      "peak_equity": 104899.16
+      "actual_days": 43,
+      "start": "2026-01-14",
+      "end": "2026-03-13",
+      "n_trades": 379,
+      "tpd": 8.81,
+      "total_pnl": 161991.71,
+      "roi_pct": 161.99,
+      "daily_roi_pct": 3.7672,
+      "ann_return": 28172.2,
+      "sharpe": 9.39,
+      "max_dd": -0.0977,
+      "win_rate": 0.72,
+      "final_equity": 261991.71,
+      "peak_equity": 261991.71
     },
     "1 Year": {
       "label": "1 Year",
-      "actual_days": 253,
-      "start": "2024-01-01",
-      "end": "2024-12-18",
-      "n_trades": 7,
-      "tpd": 0.03,
-      "total_pnl": 16487.93,
-      "roi_pct": 16.49,
-      "daily_roi_pct": 0.0652,
-      "ann_return": 16.42,
-      "sharpe": 1.39,
-      "sortino": 2.44,
-      "calmar": 3.01,
-      "max_dd": -0.0545,
-      "win_rate": 0.57,
-      "final_equity": 116487.93,
-      "peak_equity": 116487.93
+      "actual_days": 43,
+      "start": "2026-01-14",
+      "end": "2026-03-13",
+      "n_trades": 379,
+      "tpd": 8.81,
+      "total_pnl": 161991.71,
+      "roi_pct": 161.99,
+      "daily_roi_pct": 3.7672,
+      "ann_return": 28172.2,
+      "sharpe": 9.39,
+      "max_dd": -0.0977,
+      "win_rate": 0.72,
+      "final_equity": 261991.71,
+      "peak_equity": 261991.71
     }
   },
   "kpi_by_year": {
-    "2024": {
-      "year": 2024,
-      "actual_days": 262,
-      "n_trades": 8,
-      "total_pnl": 15416.13,
-      "roi_pct": 14.46,
-      "sharpe": 1.2,
-      "max_dd": -0.0545,
-      "win_rate": 0.5,
-      "start_equity": 100000.0,
-      "end_equity": 114460.15
-    },
-    "2025": {
-      "year": 2025,
-      "actual_days": 260,
-      "n_trades": 14,
-      "total_pnl": -4375.36,
-      "roi_pct": -3.67,
-      "sharpe": -0.35,
-      "max_dd": -0.113,
-      "win_rate": 0.29,
-      "start_equity": 114460.15,
-      "end_equity": 110263.82
-    },
     "2026": {
       "year": 2026,
-      "actual_days": 50,
-      "n_trades": 6,
-      "total_pnl": -5462.61,
-      "roi_pct": -4.69,
-      "sharpe": -1.82,
-      "max_dd": -0.0474,
-      "win_rate": 0.17,
-      "start_equity": 110263.82,
-      "end_equity": 105090.52
+      "actual_days": 43,
+      "n_trades": 379,
+      "total_pnl": 161991.71,
+      "roi_pct": 161.99,
+      "sharpe": 9.39,
+      "max_dd": -0.0977,
+      "win_rate": 0.72,
+      "start_equity": 100000.0,
+      "end_equity": 261991.71
     }
   },
   "horizon_stats": {
-    "1d": {
-      "n_trades": 28,
-      "tpd": 0.05,
-      "total_pnl": 5578.16,
-      "mean_pnl_pct": 6.6,
-      "win_rate": 0.32,
-      "sharpe": 0.26,
-      "sortino": 0.33,
-      "calmar": 0.19,
-      "max_dd": -0.1168
+    "15m": {
+      "n_trades": 379,
+      "tpd": 8.81,
+      "total_pnl": 161991.71,
+      "mean_pnl_pct": 4.97,
+      "win_rate": 0.723,
+      "sharpe": 9.39,
+      "max_dd": -0.0977
     }
   },
   "advanced_kpis": {
-    "profit_factor": 1.15,
-    "payoff_ratio": 2.42,
-    "max_consecutive_wins": 4,
+    "profit_factor": 2.05,
+    "payoff_ratio": 0.79,
+    "max_consecutive_wins": 0,
     "max_consecutive_losses": 0,
-    "avg_hold_bars": 6.7,
-    "ann_return": 2.21,
-    "roi_oos": 5.09,
-    "sortino": 0.33,
-    "calmar": 0.19,
-    "max_drawdown_pct": -11.68
+    "avg_hold_bars": 3.3,
+    "ann_return": 28172.2,
+    "roi_oos": 161.99,
+    "sortino": 13.71,
+    "calmar": 2883.54,
+    "max_drawdown_pct": -9.77,
+    "trades_per_day": 8.81,
+    "avg_net_pct_per_trade": 4.97,
+    "avg_win_pct_per_trade": 13.4,
+    "target_trades_per_day": 50,
+    "target_net_pct": 6.0,
+    "target_met": false,
+    "best_params": {
+      "target_pct": 14.0,
+      "stop_loss_pct": 6.0,
+      "max_hold_bars": 16,
+      "min_score": 60,
+      "vwap_sigma": 1.0
+    }
   },
-  "session_performance": [
-    {
-      "session": "AMERICAS",
-      "n_trades": 5,
-      "total_pnl": 3412.3828123714384,
-      "avg_pnl_pct": 21.075118800000002,
-      "win_pct": 40.0
-    },
-    {
-      "session": "APAC",
-      "n_trades": 9,
-      "total_pnl": 12346.691801013549,
-      "avg_pnl_pct": 39.01567166666667,
-      "win_pct": 44.44444444444444
-    },
-    {
-      "session": "EUROPE",
-      "n_trades": 6,
-      "total_pnl": -13488.797380852771,
-      "avg_pnl_pct": -49.44196066666667,
-      "win_pct": 0.0
-    },
-    {
-      "session": "S-ASIA",
-      "n_trades": 8,
-      "total_pnl": 3307.886761022297,
-      "avg_pnl_pct": 3.1043628750000014,
-      "win_pct": 37.5
-    }
-  ],
-  "exchange_performance": [
-    {
-      "exchange": "DE",
-      "name": "Germany",
-      "session": "EUROPE",
-      "n_trades": 5,
-      "avg_pnl_pct": -18.1342,
-      "total_pnl": -4012.31,
-      "win_pct": 20.0
-    },
-    {
-      "exchange": "HK",
-      "name": "Hong Kong",
-      "session": "APAC",
-      "n_trades": 9,
-      "avg_pnl_pct": 26.7995,
-      "total_pnl": 8921.66,
-      "win_pct": 44.44
-    },
-    {
-      "exchange": "JP",
-      "name": "Japan",
-      "session": "APAC",
-      "n_trades": 4,
-      "avg_pnl_pct": 38.2958,
-      "total_pnl": 7802.68,
-      "win_pct": 50.0
-    },
-    {
-      "exchange": "UK",
-      "name": "United Kingdom",
-      "session": "EUROPE",
-      "n_trades": 4,
-      "avg_pnl_pct": 36.7,
-      "total_pnl": 6046.93,
-      "win_pct": 50.0
-    },
-    {
-      "exchange": "US",
-      "name": "United States",
-      "session": "AMERICAS",
-      "n_trades": 6,
-      "avg_pnl_pct": -44.3012,
-      "total_pnl": -13180.79,
-      "win_pct": 0.0
-    }
-  ],
+  "session_performance": [],
+  "exchange_performance": [],
   "top_stocks": [
     {
-      "ticker": "META",
-      "exchange": "UK",
-      "session": "AMERICAS",
-      "n_trades": 5,
-      "total_pnl": 5166.51,
-      "avg_pnl_pct": 32.839,
-      "win_pct": 40.0
-    },
-    {
-      "ticker": "JPM",
-      "exchange": "UK",
-      "session": "AMERICAS",
-      "n_trades": 1,
-      "total_pnl": 5009.5,
-      "avg_pnl_pct": 123.983,
-      "win_pct": 100.0
-    },
-    {
-      "ticker": "AAPL",
-      "exchange": "UK",
-      "session": "S-ASIA",
-      "n_trades": 5,
-      "total_pnl": 4444.85,
-      "avg_pnl_pct": 20.4,
-      "win_pct": 40.0
-    },
-    {
       "ticker": "XLK",
-      "exchange": "HK",
-      "session": "APAC",
-      "n_trades": 2,
-      "total_pnl": 3342.0,
-      "avg_pnl_pct": 37.0,
-      "win_pct": 50.0
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 10,
+      "total_pnl": 18192.48,
+      "avg_pnl_pct": 12.4958,
+      "win_pct": 90.0
     },
     {
       "ticker": "QQQ",
-      "exchange": "HK",
-      "session": "APAC",
-      "n_trades": 5,
-      "total_pnl": -1904.91,
-      "avg_pnl_pct": -4.7684,
-      "win_pct": 20.0
-    },
-    {
-      "ticker": "SPY",
-      "exchange": "HK",
-      "session": "AMERICAS",
-      "n_trades": 1,
-      "total_pnl": -1949.46,
-      "avg_pnl_pct": -43.6,
-      "win_pct": 0.0
-    },
-    {
-      "ticker": "COST",
-      "exchange": "DE",
-      "session": "EUROPE",
-      "n_trades": 3,
-      "total_pnl": -4248.55,
-      "avg_pnl_pct": -25.9217,
-      "win_pct": 33.33
-    },
-    {
-      "ticker": "MSFT",
       "exchange": "US",
-      "session": "S-ASIA",
+      "session": "AMERICAS",
+      "n_trades": 10,
+      "total_pnl": 16640.71,
+      "avg_pnl_pct": 10.443,
+      "win_pct": 90.0
+    },
+    {
+      "ticker": "GOOGL",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 14,
+      "total_pnl": 13739.93,
+      "avg_pnl_pct": 11.536,
+      "win_pct": 85.71
+    },
+    {
+      "ticker": "XLY",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 9,
+      "total_pnl": 10609.49,
+      "avg_pnl_pct": 14.2235,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "MS",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 8,
+      "total_pnl": 8945.77,
+      "avg_pnl_pct": 6.1394,
+      "win_pct": 62.5
+    },
+    {
+      "ticker": "JPM",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 8,
+      "total_pnl": 7268.82,
+      "avg_pnl_pct": 7.138,
+      "win_pct": 62.5
+    },
+    {
+      "ticker": "V",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 10,
+      "total_pnl": 7158.33,
+      "avg_pnl_pct": 6.4278,
+      "win_pct": 70.0
+    },
+    {
+      "ticker": "JNJ",
+      "exchange": "US",
+      "session": "AMERICAS",
       "n_trades": 6,
-      "total_pnl": -4281.79,
-      "avg_pnl_pct": -22.3785,
-      "win_pct": 16.67
+      "total_pnl": 6490.05,
+      "avg_pnl_pct": 22.177,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "MA",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 7,
+      "total_pnl": 5998.08,
+      "avg_pnl_pct": 9.3668,
+      "win_pct": 85.71
+    },
+    {
+      "ticker": "XLI",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 7,
+      "total_pnl": 5984.51,
+      "avg_pnl_pct": 11.0423,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "IWM",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 9,
+      "total_pnl": 5927.27,
+      "avg_pnl_pct": 8.6258,
+      "win_pct": 88.89
+    },
+    {
+      "ticker": "MRK",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 11,
+      "total_pnl": 5866.98,
+      "avg_pnl_pct": 7.7425,
+      "win_pct": 72.73
+    },
+    {
+      "ticker": "AMD",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 7,
+      "total_pnl": 5825.46,
+      "avg_pnl_pct": 6.0523,
+      "win_pct": 85.71
+    },
+    {
+      "ticker": "XLP",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 8,
+      "total_pnl": 5469.83,
+      "avg_pnl_pct": 11.037,
+      "win_pct": 100.0
     }
-  ]
+  ],
+  "extra_kpis": {
+    "mean_daily_return_pct": 2.4021,
+    "mean_weekly_return_pct": 13.2717,
+    "mean_monthly_return_pct": 66.218,
+    "mean_yearly_return_pct": 605.335
+  },
+  "projected_growth": {
+    "projected_1k_1m": 1646.22,
+    "projected_1k_3m": 4461.33,
+    "projected_1k_6m": 19903.48,
+    "projected_1k_1y": 396148.51,
+    "projected_10k_1m": 16462.21,
+    "projected_10k_1y": 3961485.1,
+    "projected_100k_1m": 164622.11,
+    "projected_100k_1y": 39614850.96
+  },
+  "capital_growth_curve": {
+    "dates": [
+      "2026-01-14",
+      "2026-01-21",
+      "2026-01-28",
+      "2026-02-04",
+      "2026-02-11",
+      "2026-02-18",
+      "2026-02-25",
+      "2026-03-04",
+      "2026-03-11",
+      "2026-03-13"
+    ],
+    "equity": [
+      100000.0,
+      94446.7,
+      94675.14,
+      102576.4,
+      129485.51,
+      143652.16,
+      172560.55,
+      220214.99,
+      232888.47,
+      261991.71
+    ]
+  }
 }
