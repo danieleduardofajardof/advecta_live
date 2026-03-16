@@ -72,8 +72,9 @@ const fmtPct = (n: number) => (n * 100).toFixed(1) + "%";
 /* ─────────── static data ─────────── */
 /* localized data arrays moved inside component */
 
-/* KPI period order */
-const periodOrder = ["1 Month", "90 Days", "6 Months", "1 Year"] as const;
+/* KPI period order — only show periods present in data */
+const allPeriods = ["Full Period", "1 Month", "90 Days", "6 Months", "1 Year"] as const;
+const periodOrder = allPeriods.filter(p => !!(kpi as any)[p]) as string[];
 
 /* ── Lightbox component ────────────────────────────────────────────────────── */
 function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
@@ -617,21 +618,29 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
       {/* ── Return Projections ─────────────────────────────────────────── */}
       <section className="px-6 py-20 border-t border-zinc-800/20">
         <div className="max-w-7xl mx-auto">
+          {(() => {
+            // Geometric daily rate from actual OOS equity curve
+            const geoDailyPct  = (extraKPIs as any)?.mean_daily_return_pct  ?? ov.daily_roi_pct;
+            const geoWeeklyPct = (extraKPIs as any)?.mean_weekly_return_pct ?? geoDailyPct * 5;
+            const geoMonthlyPct= (extraKPIs as any)?.mean_monthly_return_pct ?? geoDailyPct * 21;
+            const d = 1 + geoDailyPct / 100;
+            const cpd = (start: number, days: number) => Math.round(start * Math.pow(d, days));
+            return (<>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="text-center mb-12">
             <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-4xl font-bold">What Does This Mean For Your Capital?</motion.h2>
             <motion.p variants={fadeUp} custom={1} className="mt-4 text-zinc-500 max-w-2xl mx-auto">
-              Compounded returns based on {ov.test_days}-day backtest. Daily rate: <span className="text-emerald-400 font-mono">{fmtP(ov.daily_roi_pct)}</span>
+              Geometric-compounded returns from {ov.test_days}-day OOS backtest. Geometric daily rate: <span className="text-emerald-400 font-mono">{fmtP(geoDailyPct)}</span>
             </motion.p>
           </motion.div>
 
-          {/* Return rate cards */}
+          {/* Return rate cards — geometric */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
             className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {[
-              { label: "Avg Daily Return", value: fmtP(ov.daily_roi_pct), sub: "per trading day" },
-              { label: "Avg Weekly Return", value: fmtP(ov.daily_roi_pct * 5), sub: "5-day compounded" },
-              { label: "Avg Monthly Return", value: fmtP(ov.daily_roi_pct * 21), sub: "21-day compounded" },
-              { label: "Annualized Return", value: fmtP(ov.ann_return > 999 ? 999.9 : ov.ann_return), sub: "252-day compounded" },
+              { label: "Daily Return", value: fmtP(geoDailyPct),   sub: "geometric avg / trading day" },
+              { label: "Weekly Return",  value: fmtP(geoWeeklyPct),  sub: "5 trading days compounded" },
+              { label: "Monthly Return", value: fmtP(geoMonthlyPct), sub: "21 trading days compounded" },
+              { label: "OOS ROI",        value: fmtP(ov.roi_pct),    sub: `actual ${ov.test_days}-day backtest` },
             ].map((s) => (
               <div key={s.label} className="bg-zinc-900/50 border border-emerald-500/20 rounded-2xl p-5 text-center">
                 <div className="text-2xl md:text-3xl font-bold text-emerald-400 font-mono">{s.value}</div>
@@ -641,14 +650,14 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
             ))}
           </motion.div>
 
-          {/* Capital projection table */}
+          {/* Capital projection table — geometric compounding, 6-month max */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
             <Card className="bg-zinc-900/40 border-zinc-800/50 rounded-2xl overflow-hidden mb-8">
               <CardContent className="p-0">
                 <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 px-6 py-4 border-b border-zinc-800/50">
                   <h3 className="font-semibold flex items-center gap-2">
                     <TrendingUp className="w-5 h-5 text-emerald-400" />
-                    Capital Growth Projections (Compounded)
+                    Theoretical Capital Growth — Geometric Compounding
                   </h3>
                 </div>
                 <div className="overflow-x-auto">
@@ -659,37 +668,29 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
                         <th className="text-center px-4 py-3 font-medium">After 1 Month</th>
                         <th className="text-center px-4 py-3 font-medium">After 3 Months</th>
                         <th className="text-center px-4 py-3 font-medium">After 6 Months</th>
-                        <th className="text-center px-4 py-3 font-medium">After 1 Year</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-zinc-800/40">
                       {[
-                        { label: "$1,000", start: 1000 },
-                        { label: "$5,000", start: 5000 },
-                        { label: "$10,000", start: 10000 },
-                        { label: "$50,000", start: 50000 },
+                        { label: "$1,000",   start: 1000 },
+                        { label: "$5,000",   start: 5000 },
+                        { label: "$10,000",  start: 10000 },
+                        { label: "$50,000",  start: 50000 },
                         { label: "$100,000", start: 100000 },
-                      ].map((row, i) => {
-                        const d = 1 + ov.daily_roi_pct / 100;
-                        const m1  = row.start * Math.pow(d, 21);
-                        const m3  = row.start * Math.pow(d, 63);
-                        const m6  = row.start * Math.pow(d, 126);
-                        const y1  = row.start * Math.pow(d, 252);
-                        return (
-                          <tr key={row.label} className={i % 2 === 0 ? "bg-zinc-900/20" : ""}>
-                            <td className="px-5 py-3 font-mono font-bold text-zinc-200">{row.label}</td>
-                            <td className="text-center px-4 py-3 font-mono text-emerald-400">{fmtD(m1, locale)}</td>
-                            <td className="text-center px-4 py-3 font-mono text-emerald-400">{fmtD(m3, locale)}</td>
-                            <td className="text-center px-4 py-3 font-mono text-emerald-400">{fmtD(m6, locale)}</td>
-                            <td className="text-center px-4 py-3 font-mono text-emerald-400 font-bold">{fmtD(y1, locale)}</td>
-                          </tr>
-                        );
-                      })}
+                      ].map((row, i) => (
+                        <tr key={row.label} className={i % 2 === 0 ? "bg-zinc-900/20" : ""}>
+                          <td className="px-5 py-3 font-mono font-bold text-zinc-200">{row.label}</td>
+                          <td className="text-center px-4 py-3 font-mono text-emerald-400">{fmtD(cpd(row.start, 21), locale)}</td>
+                          <td className="text-center px-4 py-3 font-mono text-emerald-400">{fmtD(cpd(row.start, 63), locale)}</td>
+                          <td className="text-center px-4 py-3 font-mono text-emerald-400 font-bold">{fmtD(cpd(row.start, 126), locale)}</td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
                 <div className="px-6 py-3 text-[10px] text-zinc-600 border-t border-zinc-800/40">
-                  Projections assume daily compounding at the backtest average rate. Past performance does not guarantee future results. Trading involves significant risk of capital loss.
+                  ⚠ Theoretical projections based on {ov.test_days}-day OOS backtest geometric daily rate of {fmtP(geoDailyPct)}.
+                  Actual results will vary. Past performance is not indicative of future results. Trading at leverage involves risk of significant capital loss.
                 </div>
               </CardContent>
             </Card>
@@ -717,6 +718,8 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
               </CardContent>
             </Card>
           </motion.div>
+          </>);
+          })()}
         </div>
       </section>
 
