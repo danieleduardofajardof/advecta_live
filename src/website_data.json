@@ -1,133 +1,133 @@
 {
-  "generated_at": "2026-03-16T09:49:12.889360",
+  "generated_at": "2026-03-24T10:43:41.326227",
   "overview": {
-    "period": "2026-01-19 to 2026-03-16",
+    "period": "2026-01-26 to 2026-03-24",
     "train_period": "2020-03-01 to 2023-12-31 (6y research)",
     "methodology": "Multi-strategy 15m engine: VWAP mean-reversion, RSI extremes, Bollinger Band bounce, EMA mean-reversion, Opening Range Breakout. 6y macro training (regime) + 730d 15-min OOS (no look-ahead).",
-    "test_days": 41,
+    "test_days": 42,
     "starting_capital": 100000.0,
     "position_size": 2500.0,
-    "total_trades": 355,
-    "total_pnl": 194621.74,
-    "trades_per_day": 8.66,
-    "win_rate": 0.732,
-    "sharpe": 11.18,
-    "sortino": 15.29,
-    "calmar": 7830.69,
-    "max_drawdown": -0.0977,
-    "roi_pct": 194.62,
-    "ann_return": 76505.8,
-    "daily_roi_pct": 2.6704
+    "total_trades": 415,
+    "total_pnl": 614322.11,
+    "trades_per_day": 9.88,
+    "win_rate": 0.723,
+    "sharpe": 10.81,
+    "sortino": 23.08,
+    "calmar": 984073.44,
+    "max_drawdown": -0.135,
+    "roi_pct": 614.32,
+    "ann_return": 13284991.5,
+    "daily_roi_pct": 4.7926
   },
   "strategy_comparison": {
     "Foundation": {
       "name": "Foundation (Conservative)",
       "desc": "Multi-strategy 15m, min_score\u226540, tight TP/SL.",
-      "roi_pct": 194.62,
-      "sharpe": 11.18,
-      "max_drawdown": "-9.77%",
+      "roi_pct": 614.32,
+      "sharpe": 10.81,
+      "max_drawdown": "-13.50%",
       "color": "#3b82f6"
     },
     "Momentum": {
       "name": "Momentum (Aggressive)",
       "desc": "Looser score gate (\u226530), higher TP targets.",
-      "roi_pct": 311.39,
-      "sharpe": 10.06,
-      "max_drawdown": "-14.65%",
+      "roi_pct": 982.91,
+      "sharpe": 9.73,
+      "max_drawdown": "-20.25%",
       "color": "#f59e0b"
     },
     "Hybrid": {
       "name": "Hybrid (Flagship)",
-      "desc": "ADVECTA flagship \u2014 5 strategies, 15m candles, 51-ticker universe.",
-      "roi_pct": 428.16,
-      "sharpe": 12.3,
-      "max_drawdown": "-19.54%",
+      "desc": "ADVECTA flagship \u2014 5 strategies, 15m candles, 60-ticker universe.",
+      "roi_pct": 1351.5,
+      "sharpe": 11.89,
+      "max_drawdown": "-27.00%",
       "color": "#10b981"
     }
   },
   "kpi_by_period": {
     "Full Period": {
       "label": "Full Period",
-      "actual_days": 41,
-      "start": "2026-01-19",
-      "end": "2026-03-16",
-      "n_trades": 355,
-      "tpd": 8.66,
-      "total_pnl": 194621.74,
-      "roi_pct": 194.62,
-      "daily_roi_pct": 2.6705,
-      "ann_return": 76505.8,
-      "sharpe": 11.18,
-      "max_dd": -0.0977,
-      "win_rate": 0.73,
-      "final_equity": 294621.74,
-      "peak_equity": 294621.74
+      "actual_days": 42,
+      "start": "2026-01-26",
+      "end": "2026-03-24",
+      "n_trades": 415,
+      "tpd": 9.88,
+      "total_pnl": 614574.37,
+      "roi_pct": 616.13,
+      "daily_roi_pct": 4.7989,
+      "ann_return": 13487860.74,
+      "sharpe": 10.81,
+      "max_dd": -0.135,
+      "win_rate": 0.72,
+      "final_equity": 714322.11,
+      "peak_equity": 824883.88
     },
     "1 Month": {
       "label": "1 Month",
       "actual_days": 31,
-      "start": "2026-02-02",
-      "end": "2026-03-16",
-      "n_trades": 293,
-      "tpd": 9.45,
-      "total_pnl": 186087.18,
-      "roi_pct": 171.45,
-      "daily_roi_pct": 3.2738,
-      "ann_return": 335278.07,
-      "sharpe": 13.69,
-      "max_dd": -0.0977,
-      "win_rate": 0.78,
-      "final_equity": 294621.74,
-      "peak_equity": 294621.74
+      "start": "2026-02-10",
+      "end": "2026-03-24",
+      "n_trades": 310,
+      "tpd": 10.0,
+      "total_pnl": 524546.48,
+      "roi_pct": 276.4,
+      "daily_roi_pct": 4.3685,
+      "ann_return": 4780771.33,
+      "sharpe": 10.29,
+      "max_dd": -0.135,
+      "win_rate": 0.71,
+      "final_equity": 714322.11,
+      "peak_equity": 824883.88
     }
   },
   "kpi_by_year": {
     "2026": {
       "year": 2026,
-      "actual_days": 41,
-      "n_trades": 355,
-      "total_pnl": 194621.74,
-      "roi_pct": 194.62,
-      "sharpe": 11.18,
-      "max_dd": -0.0977,
-      "win_rate": 0.73,
-      "start_equity": 100000.0,
-      "end_equity": 294621.74
+      "actual_days": 42,
+      "n_trades": 415,
+      "total_pnl": 614322.11,
+      "roi_pct": 616.13,
+      "sharpe": 10.81,
+      "max_dd": -0.135,
+      "win_rate": 0.72,
+      "start_equity": 99747.74,
+      "end_equity": 714322.11
     }
   },
   "horizon_stats": {
     "15m": {
-      "n_trades": 355,
-      "tpd": 8.66,
-      "total_pnl": 194621.74,
-      "mean_pnl_pct": 5.51,
-      "win_rate": 0.732,
-      "sharpe": 11.18,
-      "max_dd": -0.0977
+      "n_trades": 415,
+      "tpd": 9.88,
+      "total_pnl": 614322.11,
+      "mean_pnl_pct": 8.54,
+      "win_rate": 0.723,
+      "sharpe": 10.81,
+      "max_dd": -0.135
     }
   },
   "advanced_kpis": {
-    "profit_factor": 2.3,
-    "payoff_ratio": 0.84,
+    "profit_factor": 2.52,
+    "payoff_ratio": 0.97,
     "max_consecutive_wins": 0,
     "max_consecutive_losses": 0,
-    "avg_hold_bars": 3.0,
-    "ann_return": 76505.8,
-    "roi_oos": 194.62,
-    "sortino": 15.29,
-    "calmar": 7830.69,
-    "max_drawdown_pct": -9.77,
-    "trades_per_day": 8.66,
-    "avg_net_pct_per_trade": 5.51,
-    "avg_win_pct_per_trade": 13.32,
+    "avg_hold_bars": 5.2,
+    "ann_return": 13284991.5,
+    "roi_oos": 614.32,
+    "sortino": 23.08,
+    "calmar": 984073.44,
+    "max_drawdown_pct": -13.5,
+    "trades_per_day": 9.88,
+    "avg_net_pct_per_trade": 8.54,
+    "avg_win_pct_per_trade": 19.58,
     "target_trades_per_day": 50,
     "target_net_pct": 6.0,
     "target_met": false,
     "best_params": {
-      "target_pct": 14.0,
-      "stop_loss_pct": 6.0,
+      "target_pct": 18.0,
+      "stop_loss_pct": 5.0,
       "max_hold_bars": 16,
-      "min_score": 60,
+      "min_score": 50,
       "vwap_sigma": 1.0
     }
   },
@@ -135,152 +135,151 @@
   "exchange_performance": [],
   "top_stocks": [
     {
+      "ticker": "IWM",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 13,
+      "total_pnl": 59740.6,
+      "avg_pnl_pct": 19.9295,
+      "win_pct": 100.0
+    },
+    {
       "ticker": "XLK",
       "exchange": "US",
       "session": "AMERICAS",
-      "n_trades": 10,
-      "total_pnl": 19213.6,
-      "avg_pnl_pct": 12.4958,
-      "win_pct": 90.0
+      "n_trades": 9,
+      "total_pnl": 58488.36,
+      "avg_pnl_pct": 17.9448,
+      "win_pct": 88.89
     },
     {
-      "ticker": "QQQ",
+      "ticker": "EEM",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 13,
+      "total_pnl": 49877.59,
+      "avg_pnl_pct": 19.1888,
+      "win_pct": 92.31
+    },
+    {
+      "ticker": "META",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 11,
+      "total_pnl": 44477.46,
+      "avg_pnl_pct": 27.2125,
+      "win_pct": 72.73
+    },
+    {
+      "ticker": "NFLX",
       "exchange": "US",
       "session": "AMERICAS",
       "n_trades": 9,
-      "total_pnl": 16458.93,
-      "avg_pnl_pct": 10.3701,
+      "total_pnl": 38623.5,
+      "avg_pnl_pct": 12.2988,
       "win_pct": 88.89
+    },
+    {
+      "ticker": "GS",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 11,
+      "total_pnl": 34996.94,
+      "avg_pnl_pct": 11.138,
+      "win_pct": 72.73
     },
     {
       "ticker": "GOOGL",
       "exchange": "US",
       "session": "AMERICAS",
-      "n_trades": 14,
-      "total_pnl": 15445.3,
-      "avg_pnl_pct": 11.5431,
-      "win_pct": 85.71
-    },
-    {
-      "ticker": "MS",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 6,
-      "total_pnl": 11437.58,
-      "avg_pnl_pct": 14.4982,
-      "win_pct": 66.67
+      "n_trades": 15,
+      "total_pnl": 34552.69,
+      "avg_pnl_pct": 14.9337,
+      "win_pct": 86.67
     },
     {
       "ticker": "XLY",
       "exchange": "US",
       "session": "AMERICAS",
-      "n_trades": 7,
-      "total_pnl": 10446.14,
-      "avg_pnl_pct": 16.1582,
+      "n_trades": 9,
+      "total_pnl": 31463.83,
+      "avg_pnl_pct": 20.3066,
       "win_pct": 100.0
     },
     {
-      "ticker": "JPM",
+      "ticker": "BAC",
       "exchange": "US",
       "session": "AMERICAS",
       "n_trades": 9,
-      "total_pnl": 9128.61,
-      "avg_pnl_pct": 7.5114,
+      "total_pnl": 27339.0,
+      "avg_pnl_pct": 6.9012,
       "win_pct": 66.67
-    },
-    {
-      "ticker": "V",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 10,
-      "total_pnl": 7560.12,
-      "avg_pnl_pct": 6.4278,
-      "win_pct": 70.0
-    },
-    {
-      "ticker": "XLV",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 7,
-      "total_pnl": 7540.27,
-      "avg_pnl_pct": 11.0705,
-      "win_pct": 100.0
-    },
-    {
-      "ticker": "XLP",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 9,
-      "total_pnl": 7307.48,
-      "avg_pnl_pct": 11.04,
-      "win_pct": 100.0
-    },
-    {
-      "ticker": "MRK",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 10,
-      "total_pnl": 6674.6,
-      "avg_pnl_pct": 9.4767,
-      "win_pct": 80.0
-    },
-    {
-      "ticker": "IWM",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 8,
-      "total_pnl": 6659.67,
-      "avg_pnl_pct": 8.3291,
-      "win_pct": 87.5
-    },
-    {
-      "ticker": "MA",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 7,
-      "total_pnl": 6334.74,
-      "avg_pnl_pct": 9.3668,
-      "win_pct": 85.71
-    },
-    {
-      "ticker": "AMD",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 7,
-      "total_pnl": 6152.44,
-      "avg_pnl_pct": 6.0523,
-      "win_pct": 85.71
     },
     {
       "ticker": "XLF",
       "exchange": "US",
       "session": "AMERICAS",
+      "n_trades": 11,
+      "total_pnl": 24355.13,
+      "avg_pnl_pct": 11.2125,
+      "win_pct": 72.73
+    },
+    {
+      "ticker": "XLI",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 12,
+      "total_pnl": 22681.7,
+      "avg_pnl_pct": 14.7938,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "PFE",
+      "exchange": "US",
+      "session": "AMERICAS",
       "n_trades": 8,
-      "total_pnl": 5771.14,
-      "avg_pnl_pct": 7.9902,
-      "win_pct": 87.5
+      "total_pnl": 20707.47,
+      "avg_pnl_pct": 14.5885,
+      "win_pct": 100.0
+    },
+    {
+      "ticker": "XLB",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 10,
+      "total_pnl": 18845.5,
+      "avg_pnl_pct": 17.6932,
+      "win_pct": 90.0
+    },
+    {
+      "ticker": "AAPL",
+      "exchange": "US",
+      "session": "AMERICAS",
+      "n_trades": 5,
+      "total_pnl": 17183.43,
+      "avg_pnl_pct": 14.5308,
+      "win_pct": 100.0
     }
   ],
   "extra_kpis": {
-    "mean_daily_return_pct": 2.6704,
-    "mean_weekly_return_pct": 14.0846,
-    "mean_monthly_return_pct": 73.9217,
-    "mean_yearly_return_pct": 76503.02,
-    "oos_days": 41
+    "mean_daily_return_pct": 4.7926,
+    "mean_weekly_return_pct": 26.3729,
+    "mean_monthly_return_pct": 167.2677,
+    "mean_yearly_return_pct": 13284756.26,
+    "oos_days": 42
   },
   "projected_growth": {
-    "projected_1k_1m": 1739.22,
-    "projected_1k_3m": 5260.92,
-    "projected_1k_6m": 27677.25,
-    "projected_1k_1y": 766030.17,
-    "projected_10k_1m": 17392.17,
-    "projected_10k_1y": 7660301.65,
-    "projected_100k_1m": 173921.72,
-    "projected_100k_1y": 76603016.51
+    "projected_1k_1m": 2672.68,
+    "projected_1k_3m": 19091.46,
+    "projected_1k_6m": 364483.97,
+    "projected_1k_1y": 132848562.59,
+    "projected_10k_1m": 26726.77,
+    "projected_10k_1y": 1328485625.89,
+    "projected_100k_1m": 267267.66,
+    "projected_100k_1y": 13284856258.9
   },
   "capital_growth_curve": {
     "dates": [
-      "2026-01-19",
       "2026-01-26",
       "2026-02-02",
       "2026-02-09",
@@ -288,18 +287,21 @@
       "2026-02-23",
       "2026-03-02",
       "2026-03-09",
-      "2026-03-16"
+      "2026-03-16",
+      "2026-03-23",
+      "2026-03-24"
     ],
     "equity": [
-      100000.0,
-      102699.29,
-      108534.57,
-      125801.45,
-      147484.16,
-      170415.92,
-      210427.66,
-      263645.74,
-      294621.74
+      99747.74,
+      146804.68,
+      179291.21,
+      198528.11,
+      267666.36,
+      325161.53,
+      564390.22,
+      778492.9,
+      731746.42,
+      714322.11
     ]
   }
 }

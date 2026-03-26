@@ -818,6 +818,208 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
         </div>
       </section>
 
+      {/* ── Asset Class Universe ─────────────────────────────────────── */}
+      <section id="universe" className="px-6 py-24 bg-zinc-950/40">
+        <div className="max-w-6xl mx-auto">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="text-center mb-14">
+            <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-4xl font-bold">Full Asset Class Universe</motion.h2>
+            <motion.p variants={fadeUp} custom={1} className="mt-3 text-zinc-500 max-w-2xl mx-auto text-sm">
+              Asset-specific strategies per CLAUDE.md rules — ATR-based stops, session filters, and optimal leverage per class.
+            </motion.p>
+          </motion.div>
+
+          {/* Asset sub-class breakdown table */}
+          {(() => {
+            // @ts-ignore
+            const assetBreakdown: Record<string, any> = (backtestData as any).asset_breakdown ?? {};
+            const subclassColors: Record<string, string> = {
+              FOREX_MAJORS:      "#3b82f6",
+              YEN_CROSSES:       "#8b5cf6",
+              COMMODITY_CROSSES: "#06b6d4",
+              EUR_GBP_CROSSES:   "#6366f1",
+              EXOTIC_USD:        "#f97316",
+              GOLD:              "#f59e0b",
+              OIL:               "#84cc16",
+              US_INDICES:        "#10b981",
+              CRYPTO_BTC:        "#ef4444",
+              CRYPTO_ETH:        "#f43f5e",
+              CRYPTO_MID:        "#ec4899",
+              CRYPTO_LOW:        "#db2777",
+            };
+            const subclassLabels: Record<string, string> = {
+              FOREX_MAJORS:      "Forex Majors",
+              YEN_CROSSES:       "Yen Crosses",
+              COMMODITY_CROSSES: "Commodity Crosses",
+              EUR_GBP_CROSSES:   "EUR & GBP Crosses",
+              EXOTIC_USD:        "Exotic USD",
+              GOLD:              "Gold (XAUUSD)",
+              OIL:               "Oil (WTI/Brent)",
+              US_INDICES:        "US Indices",
+              CRYPTO_BTC:        "Bitcoin",
+              CRYPTO_ETH:        "Ethereum",
+              CRYPTO_MID:        "Mid-Tier Crypto",
+              CRYPTO_LOW:        "Lower-Tier Crypto",
+            };
+
+            const hasData = Object.keys(assetBreakdown).length > 0;
+
+            if (!hasData) {
+              // Static fallback when backtest hasn't run yet
+              const staticRows = [
+                { key: "FOREX_MAJORS",      name: "Forex Majors",      strategy: "Trend-following",    tf: "15m",   lev: "10-20×", atr_sl: "1.5×", sessions: "London + NY open" },
+                { key: "YEN_CROSSES",       name: "Yen Crosses",       strategy: "Pure trend (no MR)", tf: "1h",    lev: "5-15×",  atr_sl: "2.0×", sessions: "Tokyo-London overlap" },
+                { key: "COMMODITY_CROSSES", name: "Commodity Crosses", strategy: "Range + breakout",   tf: "4h",    lev: "10-20×", atr_sl: "1.5×", sessions: "London session" },
+                { key: "EUR_GBP_CROSSES",   name: "EUR & GBP Crosses", strategy: "Multi-TF trend",     tf: "4h",    lev: "10-20×", atr_sl: "1.75×", sessions: "London session" },
+                { key: "EXOTIC_USD",        name: "Exotic USD",        strategy: "Swing only",         tf: "1d",    lev: "2-5×",   atr_sl: "2.5×", sessions: "Daily chart" },
+                { key: "GOLD",              name: "Gold (XAUUSD)",     strategy: "Trend + ORB",        tf: "15m",   lev: "10-20×", atr_sl: "1.75×", sessions: "NY 9:30 EST" },
+                { key: "OIL",               name: "Oil (WTI/Brent)",   strategy: "ORB + swing",        tf: "15m",   lev: "5-10×",  atr_sl: "1.5×", sessions: "NY 9:00 EST" },
+                { key: "US_INDICES",        name: "US Indices",        strategy: "Intraday momentum",  tf: "15m",   lev: "10-20×", atr_sl: "1.5×", sessions: "NY 9:30-11:30 EST" },
+                { key: "CRYPTO_BTC",        name: "Bitcoin",           strategy: "Swing 4H",           tf: "1h/4h", lev: "2-5×",   atr_sl: "2.0×", sessions: "NY-London overlap" },
+                { key: "CRYPTO_ETH",        name: "Ethereum",          strategy: "Swing 4H",           tf: "1h/4h", lev: "3-5×",   atr_sl: "2.2×", sessions: "NY-London overlap" },
+                { key: "CRYPTO_MID",        name: "Mid-Tier Alts",     strategy: "Trend-following",    tf: "4h",    lev: "2-3×",   atr_sl: "2.5×", sessions: "NY-London overlap" },
+                { key: "CRYPTO_LOW",        name: "Lower-Tier Alts",   strategy: "Daily swing",        tf: "1d",    lev: "1-2×",   atr_sl: "2.75×", sessions: "Daily chart" },
+              ];
+              return (
+                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+                  <div className="overflow-x-auto rounded-2xl border border-zinc-800/50">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="border-b border-zinc-800/50 bg-zinc-900/50">
+                          <th className="text-left px-4 py-3 text-zinc-400 font-medium text-xs uppercase tracking-wider">Asset Class</th>
+                          <th className="text-left px-4 py-3 text-zinc-400 font-medium text-xs uppercase tracking-wider">Strategy</th>
+                          <th className="text-center px-4 py-3 text-zinc-400 font-medium text-xs uppercase tracking-wider">Entry TF</th>
+                          <th className="text-center px-4 py-3 text-zinc-400 font-medium text-xs uppercase tracking-wider">Leverage</th>
+                          <th className="text-center px-4 py-3 text-zinc-400 font-medium text-xs uppercase tracking-wider">ATR Stop</th>
+                          <th className="text-left px-4 py-3 text-zinc-400 font-medium text-xs uppercase tracking-wider">Sessions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {staticRows.map((row, i) => (
+                          <motion.tr key={row.key} variants={fadeUp} custom={i}
+                            className="border-b border-zinc-900/50 hover:bg-zinc-900/30 transition-colors">
+                            <td className="px-4 py-3">
+                              <div className="flex items-center gap-2">
+                                <div className="w-2 h-2 rounded-full flex-shrink-0"
+                                     style={{ backgroundColor: subclassColors[row.key] ?? "#666" }} />
+                                <span className="font-medium text-white text-xs">{row.name}</span>
+                              </div>
+                            </td>
+                            <td className="px-4 py-3 text-zinc-400 text-xs">{row.strategy}</td>
+                            <td className="px-4 py-3 text-center"><span className="text-xs font-mono bg-zinc-800 px-2 py-0.5 rounded text-zinc-300">{row.tf}</span></td>
+                            <td className="px-4 py-3 text-center text-xs text-emerald-400 font-semibold">{row.lev}</td>
+                            <td className="px-4 py-3 text-center text-xs text-amber-400 font-semibold">{row.atr_sl}</td>
+                            <td className="px-4 py-3 text-zinc-500 text-xs">{row.sessions}</td>
+                          </motion.tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </motion.div>
+              );
+            }
+
+            // Dynamic data from backtest
+            const activeClasses = Object.entries(assetBreakdown).filter(([, v]: any) => v.n_trades > 0);
+            return (
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+                  {activeClasses.slice(0, 8).map(([key, data]: any, i) => (
+                    <motion.div key={key} variants={fadeUp} custom={i}>
+                      <Card className="bg-zinc-900/40 border-zinc-800/50 rounded-xl hover:border-zinc-700/50 transition-colors">
+                        <CardContent className="p-4">
+                          <div className="flex items-center gap-2 mb-3">
+                            <div className="w-2 h-2 rounded-full flex-shrink-0"
+                                 style={{ backgroundColor: subclassColors[key] ?? "#666" }} />
+                            <span className="text-xs font-medium text-zinc-300 truncate">
+                              {subclassLabels[key] ?? key}
+                            </span>
+                          </div>
+                          <div className="grid grid-cols-2 gap-2 text-xs">
+                            <div>
+                              <div className="text-zinc-600">Sharpe</div>
+                              <div className={`font-bold ${(data.sharpe ?? 0) >= 1 ? "text-emerald-400" : "text-amber-400"}`}>
+                                {(data.sharpe ?? 0).toFixed(2)}
+                              </div>
+                            </div>
+                            <div>
+                              <div className="text-zinc-600">Win Rate</div>
+                              <div className="font-bold text-white">
+                                {((data.win_rate ?? 0) * 100).toFixed(0)}%
+                              </div>
+                            </div>
+                            <div>
+                              <div className="text-zinc-600">Trades</div>
+                              <div className="font-bold text-zinc-300">{data.n_trades}</div>
+                            </div>
+                            <div>
+                              <div className="text-zinc-600">Mean PnL</div>
+                              <div className={`font-bold ${(data.mean_pnl ?? 0) >= 0 ? "text-emerald-400" : "text-red-400"}`}>
+                                {fmtP(data.mean_pnl ?? 0)}
+                              </div>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Full table for all classes */}
+                <div className="overflow-x-auto rounded-2xl border border-zinc-800/50">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-zinc-800/50 bg-zinc-900/50">
+                        <th className="text-left px-4 py-3 text-zinc-400 font-medium text-xs uppercase tracking-wider">Asset Class</th>
+                        <th className="text-center px-4 py-3 text-zinc-400 font-medium text-xs uppercase tracking-wider">Trades</th>
+                        <th className="text-center px-4 py-3 text-zinc-400 font-medium text-xs uppercase tracking-wider">Win Rate</th>
+                        <th className="text-center px-4 py-3 text-zinc-400 font-medium text-xs uppercase tracking-wider">Mean PnL</th>
+                        <th className="text-center px-4 py-3 text-zinc-400 font-medium text-xs uppercase tracking-wider">Sharpe</th>
+                        <th className="text-center px-4 py-3 text-zinc-400 font-medium text-xs uppercase tracking-wider">Max DD</th>
+                        <th className="text-center px-4 py-3 text-zinc-400 font-medium text-xs uppercase tracking-wider">Total Return</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {Object.entries(assetBreakdown).map(([key, data]: any, i) => (
+                        <motion.tr key={key} variants={fadeUp} custom={i}
+                          className="border-b border-zinc-900/50 hover:bg-zinc-900/30 transition-colors">
+                          <td className="px-4 py-3">
+                            <div className="flex items-center gap-2">
+                              <div className="w-2 h-2 rounded-full flex-shrink-0"
+                                   style={{ backgroundColor: subclassColors[key] ?? "#666" }} />
+                              <span className="font-medium text-white text-xs">{subclassLabels[key] ?? key}</span>
+                            </div>
+                          </td>
+                          <td className="px-4 py-3 text-center text-xs text-zinc-300">{data.n_trades}</td>
+                          <td className="px-4 py-3 text-center text-xs font-semibold text-white">
+                            {((data.win_rate ?? 0) * 100).toFixed(1)}%
+                          </td>
+                          <td className="px-4 py-3 text-center text-xs font-semibold">
+                            <span className={(data.mean_pnl ?? 0) >= 0 ? "text-emerald-400" : "text-red-400"}>
+                              {fmtP(data.mean_pnl ?? 0)}
+                            </span>
+                          </td>
+                          <td className="px-4 py-3 text-center text-xs font-semibold">
+                            <span className={(data.sharpe ?? 0) >= 1 ? "text-emerald-400" : (data.sharpe ?? 0) >= 0 ? "text-amber-400" : "text-red-400"}>
+                              {(data.sharpe ?? 0).toFixed(2)}
+                            </span>
+                          </td>
+                          <td className="px-4 py-3 text-center text-xs text-red-400">{(data.max_dd ?? 0).toFixed(1)}%</td>
+                          <td className="px-4 py-3 text-center text-xs font-semibold">
+                            <span className={(data.total_return ?? 0) >= 0 ? "text-emerald-400" : "text-red-400"}>
+                              {fmtP(data.total_return ?? 0)}
+                            </span>
+                          </td>
+                        </motion.tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </motion.div>
+            );
+          })()}
+        </div>
+      </section>
+
       {/* ── Partnership ────────────────────────────────────────────────── */}
       <section id="partnership" className="px-6 py-28">
         <div className="max-w-6xl mx-auto">
