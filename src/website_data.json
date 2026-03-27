@@ -1,307 +1,1167 @@
 {
-  "generated_at": "2026-03-24T10:43:41.326227",
   "overview": {
-    "period": "2026-01-26 to 2026-03-24",
-    "train_period": "2020-03-01 to 2023-12-31 (6y research)",
-    "methodology": "Multi-strategy 15m engine: VWAP mean-reversion, RSI extremes, Bollinger Band bounce, EMA mean-reversion, Opening Range Breakout. 6y macro training (regime) + 730d 15-min OOS (no look-ahead).",
-    "test_days": 42,
-    "starting_capital": 100000.0,
-    "position_size": 2500.0,
-    "total_trades": 415,
-    "total_pnl": 614322.11,
-    "trades_per_day": 9.88,
-    "win_rate": 0.723,
-    "sharpe": 10.81,
-    "sortino": 23.08,
-    "calmar": 984073.44,
-    "max_drawdown": -0.135,
-    "roi_pct": 614.32,
-    "ann_return": 13284991.5,
-    "daily_roi_pct": 4.7926
-  },
-  "strategy_comparison": {
-    "Foundation": {
-      "name": "Foundation (Conservative)",
-      "desc": "Multi-strategy 15m, min_score\u226540, tight TP/SL.",
-      "roi_pct": 614.32,
-      "sharpe": 10.81,
-      "max_drawdown": "-13.50%",
-      "color": "#3b82f6"
-    },
-    "Momentum": {
-      "name": "Momentum (Aggressive)",
-      "desc": "Looser score gate (\u226530), higher TP targets.",
-      "roi_pct": 982.91,
-      "sharpe": 9.73,
-      "max_drawdown": "-20.25%",
-      "color": "#f59e0b"
-    },
-    "Hybrid": {
-      "name": "Hybrid (Flagship)",
-      "desc": "ADVECTA flagship \u2014 5 strategies, 15m candles, 60-ticker universe.",
-      "roi_pct": 1351.5,
-      "sharpe": 11.89,
-      "max_drawdown": "-27.00%",
-      "color": "#10b981"
-    }
+    "total_return_pct": 13.53,
+    "cagr_pct": 13.57,
+    "sharpe": 1.795,
+    "max_dd_pct": -4.94,
+    "win_rate": 0.543,
+    "n_trades": 289,
+    "trades_per_day": 0.79,
+    "final_equity": 113718.26,
+    "strategy": "Asset-Specific (CLAUDE.md)",
+    "universe_size": 21,
+    "oos_start": "2025-03-27",
+    "oos_end": "2026-03-26",
+    "roi_pct": 13.53,
+    "starting_capital": 100000,
+    "test_days": 364,
+    "position_size": 2500,
+    "total_trades": 289,
+    "total_pnl": 13718.26,
+    "daily_roi_pct": 0.0372,
+    "period": "Mar 2025 \u2013 Mar 2026"
   },
   "kpi_by_period": {
     "Full Period": {
-      "label": "Full Period",
-      "actual_days": 42,
-      "start": "2026-01-26",
-      "end": "2026-03-24",
-      "n_trades": 415,
-      "tpd": 9.88,
-      "total_pnl": 614574.37,
-      "roi_pct": 616.13,
-      "daily_roi_pct": 4.7989,
-      "ann_return": 13487860.74,
-      "sharpe": 10.81,
-      "max_dd": -0.135,
-      "win_rate": 0.72,
-      "final_equity": 714322.11,
-      "peak_equity": 824883.88
+      "total_return_pct": 13.53,
+      "cagr_pct": 13.57,
+      "sharpe": 1.795,
+      "max_dd_pct": -4.94,
+      "max_dd": -4.94,
+      "n_trades": 289,
+      "win_rate": 0.543,
+      "profit_factor": 1.35,
+      "roi_pct": 13.53,
+      "daily_roi_pct": 13.53
     },
     "1 Month": {
-      "label": "1 Month",
-      "actual_days": 31,
-      "start": "2026-02-10",
-      "end": "2026-03-24",
-      "n_trades": 310,
-      "tpd": 10.0,
-      "total_pnl": 524546.48,
-      "roi_pct": 276.4,
-      "daily_roi_pct": 4.3685,
-      "ann_return": 4780771.33,
-      "sharpe": 10.29,
-      "max_dd": -0.135,
-      "win_rate": 0.71,
-      "final_equity": 714322.11,
-      "peak_equity": 824883.88
+      "total_return_pct": 2.38,
+      "cagr_pct": 34.5,
+      "sharpe": 3.079,
+      "max_dd_pct": -2.83,
+      "max_dd": -2.83,
+      "n_trades": 65,
+      "win_rate": 0.569,
+      "profit_factor": 1.52,
+      "roi_pct": 2.38,
+      "daily_roi_pct": 2.38
+    },
+    "90 Days": {
+      "total_return_pct": 1.85,
+      "cagr_pct": 7.72,
+      "sharpe": 0.901,
+      "max_dd_pct": -4.93,
+      "max_dd": -4.93,
+      "n_trades": 114,
+      "win_rate": 0.535,
+      "profit_factor": 1.19,
+      "roi_pct": 1.85,
+      "daily_roi_pct": 1.85
+    },
+    "6 Months": {
+      "total_return_pct": 7.42,
+      "cagr_pct": 15.72,
+      "sharpe": 1.689,
+      "max_dd_pct": -4.94,
+      "max_dd": -4.94,
+      "n_trades": 179,
+      "win_rate": 0.553,
+      "profit_factor": 1.36,
+      "roi_pct": 7.42,
+      "daily_roi_pct": 7.42
+    },
+    "1 Year": {
+      "total_return_pct": 13.53,
+      "cagr_pct": 13.57,
+      "sharpe": 1.795,
+      "max_dd_pct": -4.94,
+      "max_dd": -4.94,
+      "n_trades": 289,
+      "win_rate": 0.543,
+      "profit_factor": 1.35,
+      "roi_pct": 13.53,
+      "daily_roi_pct": 13.53
     }
   },
-  "kpi_by_year": {
-    "2026": {
-      "year": 2026,
-      "actual_days": 42,
-      "n_trades": 415,
-      "total_pnl": 614322.11,
-      "roi_pct": 616.13,
-      "sharpe": 10.81,
-      "max_dd": -0.135,
-      "win_rate": 0.72,
-      "start_equity": 99747.74,
-      "end_equity": 714322.11
+  "asset_breakdown": {
+    "FOREX_MAJORS": {
+      "n_trades": 37,
+      "win_rate": 0.649,
+      "mean_pnl": 1.707,
+      "sharpe": 8.618,
+      "total_return": 3.2,
+      "max_dd": -0.31,
+      "symbols": [
+        "EURUSD",
+        "GBPUSD",
+        "AUDUSD",
+        "NZDUSD",
+        "USDCAD",
+        "USDCHF",
+        "USDJPY"
+      ]
+    },
+    "YEN_CROSSES": {
+      "n_trades": 16,
+      "win_rate": 0.5,
+      "mean_pnl": 0.245,
+      "sharpe": 0.936,
+      "total_return": 0.19,
+      "max_dd": -0.99,
+      "symbols": [
+        "AUDJPY",
+        "CADJPY",
+        "CHFJPY",
+        "EURJPY",
+        "GBPJPY",
+        "NZDJPY"
+      ]
+    },
+    "EUR_GBP_CROSSES": {
+      "n_trades": 35,
+      "win_rate": 0.571,
+      "mean_pnl": 0.39,
+      "sharpe": 1.508,
+      "total_return": 0.68,
+      "max_dd": -1.58,
+      "symbols": [
+        "EURCAD",
+        "EURCHF",
+        "EURNZD",
+        "GBPCAD",
+        "GBPCHF",
+        "GBPNZD",
+        "EURGBP"
+      ]
+    },
+    "CRYPTO_BTC": {
+      "n_trades": 112,
+      "win_rate": 0.518,
+      "mean_pnl": 0.516,
+      "sharpe": 1.173,
+      "total_return": 2.86,
+      "max_dd": -2.66,
+      "symbols": [
+        "BTCUSD"
+      ]
+    },
+    "CRYPTO_ETH": {
+      "n_trades": 89,
+      "win_rate": 0.528,
+      "mean_pnl": 0.951,
+      "sharpe": 1.796,
+      "total_return": 4.24,
+      "max_dd": -5.94,
+      "symbols": [
+        "ETHUSD"
+      ]
     }
   },
-  "horizon_stats": {
-    "15m": {
-      "n_trades": 415,
-      "tpd": 9.88,
-      "total_pnl": 614322.11,
-      "mean_pnl_pct": 8.54,
-      "win_rate": 0.723,
-      "sharpe": 10.81,
-      "max_dd": -0.135
-    }
-  },
-  "advanced_kpis": {
-    "profit_factor": 2.52,
-    "payoff_ratio": 0.97,
-    "max_consecutive_wins": 0,
-    "max_consecutive_losses": 0,
-    "avg_hold_bars": 5.2,
-    "ann_return": 13284991.5,
-    "roi_oos": 614.32,
-    "sortino": 23.08,
-    "calmar": 984073.44,
-    "max_drawdown_pct": -13.5,
-    "trades_per_day": 9.88,
-    "avg_net_pct_per_trade": 8.54,
-    "avg_win_pct_per_trade": 19.58,
-    "target_trades_per_day": 50,
-    "target_net_pct": 6.0,
-    "target_met": false,
-    "best_params": {
-      "target_pct": 18.0,
-      "stop_loss_pct": 5.0,
-      "max_hold_bars": 16,
-      "min_score": 50,
-      "vwap_sigma": 1.0
-    }
-  },
-  "session_performance": [],
-  "exchange_performance": [],
   "top_stocks": [
     {
-      "ticker": "IWM",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 13,
-      "total_pnl": 59740.6,
-      "avg_pnl_pct": 19.9295,
-      "win_pct": 100.0
+      "ticker": "GBPNZD",
+      "n_trades": 3,
+      "win_rate": 1.0,
+      "mean_pnl": 4.752,
+      "subclass": "EUR_GBP_CROSSES"
     },
     {
-      "ticker": "XLK",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 9,
-      "total_pnl": 58488.36,
-      "avg_pnl_pct": 17.9448,
-      "win_pct": 88.89
-    },
-    {
-      "ticker": "EEM",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 13,
-      "total_pnl": 49877.59,
-      "avg_pnl_pct": 19.1888,
-      "win_pct": 92.31
-    },
-    {
-      "ticker": "META",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 11,
-      "total_pnl": 44477.46,
-      "avg_pnl_pct": 27.2125,
-      "win_pct": 72.73
-    },
-    {
-      "ticker": "NFLX",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 9,
-      "total_pnl": 38623.5,
-      "avg_pnl_pct": 12.2988,
-      "win_pct": 88.89
-    },
-    {
-      "ticker": "GS",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 11,
-      "total_pnl": 34996.94,
-      "avg_pnl_pct": 11.138,
-      "win_pct": 72.73
-    },
-    {
-      "ticker": "GOOGL",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 15,
-      "total_pnl": 34552.69,
-      "avg_pnl_pct": 14.9337,
-      "win_pct": 86.67
-    },
-    {
-      "ticker": "XLY",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 9,
-      "total_pnl": 31463.83,
-      "avg_pnl_pct": 20.3066,
-      "win_pct": 100.0
-    },
-    {
-      "ticker": "BAC",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 9,
-      "total_pnl": 27339.0,
-      "avg_pnl_pct": 6.9012,
-      "win_pct": 66.67
-    },
-    {
-      "ticker": "XLF",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 11,
-      "total_pnl": 24355.13,
-      "avg_pnl_pct": 11.2125,
-      "win_pct": 72.73
-    },
-    {
-      "ticker": "XLI",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 12,
-      "total_pnl": 22681.7,
-      "avg_pnl_pct": 14.7938,
-      "win_pct": 100.0
-    },
-    {
-      "ticker": "PFE",
-      "exchange": "US",
-      "session": "AMERICAS",
+      "ticker": "NZDUSD",
       "n_trades": 8,
-      "total_pnl": 20707.47,
-      "avg_pnl_pct": 14.5885,
-      "win_pct": 100.0
+      "win_rate": 1.0,
+      "mean_pnl": 4.228,
+      "subclass": "FOREX_MAJORS"
     },
     {
-      "ticker": "XLB",
-      "exchange": "US",
-      "session": "AMERICAS",
-      "n_trades": 10,
-      "total_pnl": 18845.5,
-      "avg_pnl_pct": 17.6932,
-      "win_pct": 90.0
-    },
-    {
-      "ticker": "AAPL",
-      "exchange": "US",
-      "session": "AMERICAS",
+      "ticker": "EURUSD",
       "n_trades": 5,
-      "total_pnl": 17183.43,
-      "avg_pnl_pct": 14.5308,
-      "win_pct": 100.0
+      "win_rate": 0.8,
+      "mean_pnl": 2.935,
+      "subclass": "FOREX_MAJORS"
+    },
+    {
+      "ticker": "EURCHF",
+      "n_trades": 3,
+      "win_rate": 0.667,
+      "mean_pnl": 3.113,
+      "subclass": "EUR_GBP_CROSSES"
+    },
+    {
+      "ticker": "EURJPY",
+      "n_trades": 3,
+      "win_rate": 1.0,
+      "mean_pnl": 2.067,
+      "subclass": "YEN_CROSSES"
+    },
+    {
+      "ticker": "GBPJPY",
+      "n_trades": 3,
+      "win_rate": 1.0,
+      "mean_pnl": 1.927,
+      "subclass": "YEN_CROSSES"
+    },
+    {
+      "ticker": "EURNZD",
+      "n_trades": 6,
+      "win_rate": 0.833,
+      "mean_pnl": 2.052,
+      "subclass": "EUR_GBP_CROSSES"
+    },
+    {
+      "ticker": "EURGBP",
+      "n_trades": 3,
+      "win_rate": 1.0,
+      "mean_pnl": 1.398,
+      "subclass": "EUR_GBP_CROSSES"
+    },
+    {
+      "ticker": "GBPUSD",
+      "n_trades": 4,
+      "win_rate": 0.75,
+      "mean_pnl": 1.566,
+      "subclass": "FOREX_MAJORS"
+    },
+    {
+      "ticker": "AUDUSD",
+      "n_trades": 4,
+      "win_rate": 0.5,
+      "mean_pnl": 1.722,
+      "subclass": "FOREX_MAJORS"
+    },
+    {
+      "ticker": "USDCHF",
+      "n_trades": 5,
+      "win_rate": 0.8,
+      "mean_pnl": 0.981,
+      "subclass": "FOREX_MAJORS"
+    },
+    {
+      "ticker": "AUDJPY",
+      "n_trades": 3,
+      "win_rate": 0.333,
+      "mean_pnl": 1.567,
+      "subclass": "YEN_CROSSES"
+    },
+    {
+      "ticker": "ETHUSD",
+      "n_trades": 89,
+      "win_rate": 0.528,
+      "mean_pnl": 0.951,
+      "subclass": "CRYPTO_ETH"
+    },
+    {
+      "ticker": "BTCUSD",
+      "n_trades": 112,
+      "win_rate": 0.518,
+      "mean_pnl": 0.516,
+      "subclass": "CRYPTO_BTC"
+    },
+    {
+      "ticker": "GBPCHF",
+      "n_trades": 6,
+      "win_rate": 0.5,
+      "mean_pnl": 0.006,
+      "subclass": "EUR_GBP_CROSSES"
+    },
+    {
+      "ticker": "CADJPY",
+      "n_trades": 2,
+      "win_rate": 0.0,
+      "mean_pnl": -2.586,
+      "subclass": "YEN_CROSSES"
+    },
+    {
+      "ticker": "USDCAD",
+      "n_trades": 7,
+      "win_rate": 0.286,
+      "mean_pnl": -0.111,
+      "subclass": "FOREX_MAJORS"
+    },
+    {
+      "ticker": "EURCAD",
+      "n_trades": 4,
+      "win_rate": 0.5,
+      "mean_pnl": -0.128,
+      "subclass": "EUR_GBP_CROSSES"
+    },
+    {
+      "ticker": "USDJPY",
+      "n_trades": 4,
+      "win_rate": 0.25,
+      "mean_pnl": -0.654,
+      "subclass": "FOREX_MAJORS"
+    },
+    {
+      "ticker": "CHFJPY",
+      "n_trades": 5,
+      "win_rate": 0.2,
+      "mean_pnl": -1.52,
+      "subclass": "YEN_CROSSES"
     }
   ],
-  "extra_kpis": {
-    "mean_daily_return_pct": 4.7926,
-    "mean_weekly_return_pct": 26.3729,
-    "mean_monthly_return_pct": 167.2677,
-    "mean_yearly_return_pct": 13284756.26,
-    "oos_days": 42
+  "capital_growth_curve": [
+    {
+      "date": "2025-03-27 00:00:00",
+      "value": 100164.42
+    },
+    {
+      "date": "2025-03-28 00:00:00",
+      "value": 100976.94
+    },
+    {
+      "date": "2025-03-31 00:00:00",
+      "value": 100568.99
+    },
+    {
+      "date": "2025-04-01 00:00:00",
+      "value": 100603.71
+    },
+    {
+      "date": "2025-04-02 00:00:00",
+      "value": 100246.45
+    },
+    {
+      "date": "2025-04-03 00:00:00",
+      "value": 101779.73
+    },
+    {
+      "date": "2025-04-08 00:00:00",
+      "value": 101863.2
+    },
+    {
+      "date": "2025-04-10 00:00:00",
+      "value": 101455.71
+    },
+    {
+      "date": "2025-04-11 00:00:00",
+      "value": 100820.21
+    },
+    {
+      "date": "2025-04-12 00:00:00",
+      "value": 100189.3
+    },
+    {
+      "date": "2025-04-13 00:00:00",
+      "value": 100760.27
+    },
+    {
+      "date": "2025-04-17 00:00:00",
+      "value": 100502.37
+    },
+    {
+      "date": "2025-04-21 00:00:00",
+      "value": 100977.38
+    },
+    {
+      "date": "2025-04-22 00:00:00",
+      "value": 99716.95
+    },
+    {
+      "date": "2025-04-25 00:00:00",
+      "value": 99092.95
+    },
+    {
+      "date": "2025-04-26 00:00:00",
+      "value": 99124.98
+    },
+    {
+      "date": "2025-04-27 00:00:00",
+      "value": 99181.03
+    },
+    {
+      "date": "2025-04-28 00:00:00",
+      "value": 99158.37
+    },
+    {
+      "date": "2025-04-30 00:00:00",
+      "value": 98627.53
+    },
+    {
+      "date": "2025-05-01 00:00:00",
+      "value": 98318.64
+    },
+    {
+      "date": "2025-05-04 00:00:00",
+      "value": 98251.0
+    },
+    {
+      "date": "2025-05-08 00:00:00",
+      "value": 99044.92
+    },
+    {
+      "date": "2025-05-12 00:00:00",
+      "value": 98640.82
+    },
+    {
+      "date": "2025-05-13 00:00:00",
+      "value": 98793.88
+    },
+    {
+      "date": "2025-05-19 00:00:00",
+      "value": 98476.55
+    },
+    {
+      "date": "2025-05-20 00:00:00",
+      "value": 98511.96
+    },
+    {
+      "date": "2025-05-21 00:00:00",
+      "value": 98419.36
+    },
+    {
+      "date": "2025-05-23 00:00:00",
+      "value": 99047.72
+    },
+    {
+      "date": "2025-05-24 00:00:00",
+      "value": 99220.58
+    },
+    {
+      "date": "2025-05-26 00:00:00",
+      "value": 98599.68
+    },
+    {
+      "date": "2025-05-27 00:00:00",
+      "value": 98873.04
+    },
+    {
+      "date": "2025-05-28 00:00:00",
+      "value": 98668.92
+    },
+    {
+      "date": "2025-05-29 00:00:00",
+      "value": 98699.56
+    },
+    {
+      "date": "2025-06-03 00:00:00",
+      "value": 98500.19
+    },
+    {
+      "date": "2025-06-05 00:00:00",
+      "value": 98183.81
+    },
+    {
+      "date": "2025-06-09 00:00:00",
+      "value": 98889.26
+    },
+    {
+      "date": "2025-06-16 00:00:00",
+      "value": 98691.46
+    },
+    {
+      "date": "2025-06-18 00:00:00",
+      "value": 98751.22
+    },
+    {
+      "date": "2025-06-19 00:00:00",
+      "value": 98669.02
+    },
+    {
+      "date": "2025-06-20 00:00:00",
+      "value": 98638.21
+    },
+    {
+      "date": "2025-06-22 00:00:00",
+      "value": 98537.69
+    },
+    {
+      "date": "2025-06-23 00:00:00",
+      "value": 99245.98
+    },
+    {
+      "date": "2025-06-30 00:00:00",
+      "value": 99404.27
+    },
+    {
+      "date": "2025-07-02 00:00:00",
+      "value": 99727.36
+    },
+    {
+      "date": "2025-07-04 00:00:00",
+      "value": 99401.95
+    },
+    {
+      "date": "2025-07-05 00:00:00",
+      "value": 99579.08
+    },
+    {
+      "date": "2025-07-06 00:00:00",
+      "value": 99697.19
+    },
+    {
+      "date": "2025-07-07 00:00:00",
+      "value": 99754.42
+    },
+    {
+      "date": "2025-07-09 00:00:00",
+      "value": 100401.96
+    },
+    {
+      "date": "2025-07-10 00:00:00",
+      "value": 101901.33
+    },
+    {
+      "date": "2025-07-14 00:00:00",
+      "value": 101897.66
+    },
+    {
+      "date": "2025-07-16 00:00:00",
+      "value": 102756.51
+    },
+    {
+      "date": "2025-07-17 00:00:00",
+      "value": 104233.12
+    },
+    {
+      "date": "2025-07-19 00:00:00",
+      "value": 104302.76
+    },
+    {
+      "date": "2025-07-20 00:00:00",
+      "value": 103881.37
+    },
+    {
+      "date": "2025-07-21 00:00:00",
+      "value": 103189.03
+    },
+    {
+      "date": "2025-07-22 00:00:00",
+      "value": 103539.51
+    },
+    {
+      "date": "2025-07-24 00:00:00",
+      "value": 103772.43
+    },
+    {
+      "date": "2025-07-28 00:00:00",
+      "value": 103722.68
+    },
+    {
+      "date": "2025-07-30 00:00:00",
+      "value": 103657.26
+    },
+    {
+      "date": "2025-08-01 00:00:00",
+      "value": 102099.02
+    },
+    {
+      "date": "2025-08-04 00:00:00",
+      "value": 101459.49
+    },
+    {
+      "date": "2025-08-05 00:00:00",
+      "value": 101541.88
+    },
+    {
+      "date": "2025-08-06 00:00:00",
+      "value": 101375.37
+    },
+    {
+      "date": "2025-08-08 00:00:00",
+      "value": 101509.34
+    },
+    {
+      "date": "2025-08-09 00:00:00",
+      "value": 102634.93
+    },
+    {
+      "date": "2025-08-10 00:00:00",
+      "value": 102711.58
+    },
+    {
+      "date": "2025-08-11 00:00:00",
+      "value": 102829.83
+    },
+    {
+      "date": "2025-08-13 00:00:00",
+      "value": 103837.55
+    },
+    {
+      "date": "2025-08-15 00:00:00",
+      "value": 103965.52
+    },
+    {
+      "date": "2025-08-16 00:00:00",
+      "value": 104132.68
+    },
+    {
+      "date": "2025-08-19 00:00:00",
+      "value": 103781.86
+    },
+    {
+      "date": "2025-08-21 00:00:00",
+      "value": 104106.82
+    },
+    {
+      "date": "2025-08-22 00:00:00",
+      "value": 104397.72
+    },
+    {
+      "date": "2025-08-30 00:00:00",
+      "value": 104472.54
+    },
+    {
+      "date": "2025-09-02 00:00:00",
+      "value": 104445.84
+    },
+    {
+      "date": "2025-09-04 00:00:00",
+      "value": 104526.16
+    },
+    {
+      "date": "2025-09-06 00:00:00",
+      "value": 104415.61
+    },
+    {
+      "date": "2025-09-10 00:00:00",
+      "value": 104952.93
+    },
+    {
+      "date": "2025-09-12 00:00:00",
+      "value": 105303.52
+    },
+    {
+      "date": "2025-09-17 00:00:00",
+      "value": 105851.49
+    },
+    {
+      "date": "2025-09-19 00:00:00",
+      "value": 105754.67
+    },
+    {
+      "date": "2025-09-20 00:00:00",
+      "value": 105785.26
+    },
+    {
+      "date": "2025-09-22 00:00:00",
+      "value": 105075.75
+    },
+    {
+      "date": "2025-09-28 00:00:00",
+      "value": 105859.73
+    },
+    {
+      "date": "2025-09-29 00:00:00",
+      "value": 106062.91
+    },
+    {
+      "date": "2025-09-30 00:00:00",
+      "value": 106031.13
+    },
+    {
+      "date": "2025-10-02 00:00:00",
+      "value": 107196.64
+    },
+    {
+      "date": "2025-10-05 00:00:00",
+      "value": 107551.96
+    },
+    {
+      "date": "2025-10-06 00:00:00",
+      "value": 107737.82
+    },
+    {
+      "date": "2025-10-07 00:00:00",
+      "value": 107906.77
+    },
+    {
+      "date": "2025-10-08 00:00:00",
+      "value": 107718.62
+    },
+    {
+      "date": "2025-10-10 00:00:00",
+      "value": 106338.46
+    },
+    {
+      "date": "2025-10-12 00:00:00",
+      "value": 105672.38
+    },
+    {
+      "date": "2025-10-13 00:00:00",
+      "value": 107630.66
+    },
+    {
+      "date": "2025-10-14 00:00:00",
+      "value": 107432.2
+    },
+    {
+      "date": "2025-10-15 00:00:00",
+      "value": 106950.71
+    },
+    {
+      "date": "2025-10-16 00:00:00",
+      "value": 105580.39
+    },
+    {
+      "date": "2025-10-20 00:00:00",
+      "value": 105035.52
+    },
+    {
+      "date": "2025-10-21 00:00:00",
+      "value": 103938.53
+    },
+    {
+      "date": "2025-10-25 00:00:00",
+      "value": 104238.63
+    },
+    {
+      "date": "2025-10-28 00:00:00",
+      "value": 103393.93
+    },
+    {
+      "date": "2025-10-29 00:00:00",
+      "value": 103185.07
+    },
+    {
+      "date": "2025-11-01 00:00:00",
+      "value": 103146.39
+    },
+    {
+      "date": "2025-11-02 00:00:00",
+      "value": 103277.38
+    },
+    {
+      "date": "2025-11-03 00:00:00",
+      "value": 103425.79
+    },
+    {
+      "date": "2025-11-04 00:00:00",
+      "value": 103805.31
+    },
+    {
+      "date": "2025-11-07 00:00:00",
+      "value": 103251.68
+    },
+    {
+      "date": "2025-11-09 00:00:00",
+      "value": 103593.22
+    },
+    {
+      "date": "2025-11-11 00:00:00",
+      "value": 103745.01
+    },
+    {
+      "date": "2025-11-14 00:00:00",
+      "value": 104538.41
+    },
+    {
+      "date": "2025-11-18 00:00:00",
+      "value": 104447.75
+    },
+    {
+      "date": "2025-11-24 00:00:00",
+      "value": 104776.46
+    },
+    {
+      "date": "2025-11-25 00:00:00",
+      "value": 104628.67
+    },
+    {
+      "date": "2025-11-26 00:00:00",
+      "value": 105297.74
+    },
+    {
+      "date": "2025-12-02 00:00:00",
+      "value": 106811.5
+    },
+    {
+      "date": "2025-12-03 00:00:00",
+      "value": 108346.38
+    },
+    {
+      "date": "2025-12-04 00:00:00",
+      "value": 109330.56
+    },
+    {
+      "date": "2025-12-05 00:00:00",
+      "value": 108444.6
+    },
+    {
+      "date": "2025-12-07 00:00:00",
+      "value": 111318.59
+    },
+    {
+      "date": "2025-12-09 00:00:00",
+      "value": 111926.13
+    },
+    {
+      "date": "2025-12-10 00:00:00",
+      "value": 112531.2
+    },
+    {
+      "date": "2025-12-12 00:00:00",
+      "value": 112751.18
+    },
+    {
+      "date": "2025-12-13 00:00:00",
+      "value": 113002.9
+    },
+    {
+      "date": "2025-12-15 00:00:00",
+      "value": 112276.29
+    },
+    {
+      "date": "2025-12-17 00:00:00",
+      "value": 112648.72
+    },
+    {
+      "date": "2025-12-18 00:00:00",
+      "value": 111258.32
+    },
+    {
+      "date": "2025-12-20 00:00:00",
+      "value": 111427.41
+    },
+    {
+      "date": "2025-12-21 00:00:00",
+      "value": 111639.07
+    },
+    {
+      "date": "2025-12-26 00:00:00",
+      "value": 111653.26
+    },
+    {
+      "date": "2025-12-27 00:00:00",
+      "value": 111753.93
+    },
+    {
+      "date": "2025-12-30 00:00:00",
+      "value": 111302.44
+    },
+    {
+      "date": "2026-01-01 00:00:00",
+      "value": 112284.09
+    },
+    {
+      "date": "2026-01-02 00:00:00",
+      "value": 112523.33
+    },
+    {
+      "date": "2026-01-05 00:00:00",
+      "value": 112527.07
+    },
+    {
+      "date": "2026-01-06 00:00:00",
+      "value": 112995.28
+    },
+    {
+      "date": "2026-01-07 00:00:00",
+      "value": 112052.78
+    },
+    {
+      "date": "2026-01-12 00:00:00",
+      "value": 112296.37
+    },
+    {
+      "date": "2026-01-14 00:00:00",
+      "value": 111961.84
+    },
+    {
+      "date": "2026-01-16 00:00:00",
+      "value": 111911.53
+    },
+    {
+      "date": "2026-01-20 00:00:00",
+      "value": 111192.61
+    },
+    {
+      "date": "2026-01-21 00:00:00",
+      "value": 110639.75
+    },
+    {
+      "date": "2026-01-23 00:00:00",
+      "value": 110760.17
+    },
+    {
+      "date": "2026-01-25 00:00:00",
+      "value": 110047.98
+    },
+    {
+      "date": "2026-01-26 00:00:00",
+      "value": 109603.38
+    },
+    {
+      "date": "2026-01-27 00:00:00",
+      "value": 109924.77
+    },
+    {
+      "date": "2026-01-28 00:00:00",
+      "value": 110175.78
+    },
+    {
+      "date": "2026-01-29 00:00:00",
+      "value": 109876.38
+    },
+    {
+      "date": "2026-01-30 00:00:00",
+      "value": 108468.57
+    },
+    {
+      "date": "2026-01-31 00:00:00",
+      "value": 107772.56
+    },
+    {
+      "date": "2026-02-01 00:00:00",
+      "value": 107426.07
+    },
+    {
+      "date": "2026-02-05 00:00:00",
+      "value": 109971.29
+    },
+    {
+      "date": "2026-02-12 00:00:00",
+      "value": 110482.9
+    },
+    {
+      "date": "2026-02-14 00:00:00",
+      "value": 111006.42
+    },
+    {
+      "date": "2026-02-15 00:00:00",
+      "value": 110694.14
+    },
+    {
+      "date": "2026-02-17 00:00:00",
+      "value": 109648.63
+    },
+    {
+      "date": "2026-02-20 00:00:00",
+      "value": 110280.74
+    },
+    {
+      "date": "2026-02-21 00:00:00",
+      "value": 110032.74
+    },
+    {
+      "date": "2026-02-22 00:00:00",
+      "value": 110281.04
+    },
+    {
+      "date": "2026-02-23 00:00:00",
+      "value": 109572.59
+    },
+    {
+      "date": "2026-02-25 00:00:00",
+      "value": 111071.83
+    },
+    {
+      "date": "2026-02-27 00:00:00",
+      "value": 111244.05
+    },
+    {
+      "date": "2026-02-28 00:00:00",
+      "value": 110536.63
+    },
+    {
+      "date": "2026-03-02 00:00:00",
+      "value": 108713.69
+    },
+    {
+      "date": "2026-03-03 00:00:00",
+      "value": 108100.2
+    },
+    {
+      "date": "2026-03-04 00:00:00",
+      "value": 108134.47
+    },
+    {
+      "date": "2026-03-07 00:00:00",
+      "value": 108342.36
+    },
+    {
+      "date": "2026-03-09 00:00:00",
+      "value": 109143.5
+    },
+    {
+      "date": "2026-03-10 00:00:00",
+      "value": 110167.93
+    },
+    {
+      "date": "2026-03-11 00:00:00",
+      "value": 111071.93
+    },
+    {
+      "date": "2026-03-12 00:00:00",
+      "value": 110999.12
+    },
+    {
+      "date": "2026-03-13 00:00:00",
+      "value": 110322.99
+    },
+    {
+      "date": "2026-03-16 00:00:00",
+      "value": 111022.23
+    },
+    {
+      "date": "2026-03-17 00:00:00",
+      "value": 111707.97
+    },
+    {
+      "date": "2026-03-18 00:00:00",
+      "value": 111549.37
+    },
+    {
+      "date": "2026-03-19 00:00:00",
+      "value": 111820.31
+    },
+    {
+      "date": "2026-03-20 00:00:00",
+      "value": 111781.39
+    },
+    {
+      "date": "2026-03-24 00:00:00",
+      "value": 111858.35
+    },
+    {
+      "date": "2026-03-25 00:00:00",
+      "value": 112513.62
+    },
+    {
+      "date": "2026-03-26 00:00:00",
+      "value": 113718.26
+    }
+  ],
+  "advanced_kpis": {
+    "profit_factor": 1.35,
+    "sortino": 1.795,
+    "expectancy": 0.0077,
+    "total_symbols": 21,
+    "total_subclasses": 5,
+    "payoff_ratio": 1.35,
+    "max_consecutive_wins": 8,
+    "max_consecutive_losses": 3,
+    "avg_hold_bars": 17.1
   },
-  "projected_growth": {
-    "projected_1k_1m": 2672.68,
-    "projected_1k_3m": 19091.46,
-    "projected_1k_6m": 364483.97,
-    "projected_1k_1y": 132848562.59,
-    "projected_10k_1m": 26726.77,
-    "projected_10k_1y": 1328485625.89,
-    "projected_100k_1m": 267267.66,
-    "projected_100k_1y": 13284856258.9
+  "session_performance": [
+    {
+      "session": "FOREX_MAJORS",
+      "exchange": "FOREX_MAJORS",
+      "n_trades": 37,
+      "win_rate": 64.9,
+      "avg_pnl_pct": 1.707,
+      "total_pnl": 3158.0
+    },
+    {
+      "session": "YEN_CROSSES",
+      "exchange": "YEN_CROSSES",
+      "n_trades": 16,
+      "win_rate": 50.0,
+      "avg_pnl_pct": 0.245,
+      "total_pnl": 196.0
+    },
+    {
+      "session": "EUR_GBP_CROSSES",
+      "exchange": "EUR_GBP_CROS",
+      "n_trades": 35,
+      "win_rate": 57.1,
+      "avg_pnl_pct": 0.39,
+      "total_pnl": 682.0
+    },
+    {
+      "session": "CRYPTO_BTC",
+      "exchange": "CRYPTO_BTC",
+      "n_trades": 112,
+      "win_rate": 51.8,
+      "avg_pnl_pct": 0.516,
+      "total_pnl": 2890.0
+    },
+    {
+      "session": "CRYPTO_ETH",
+      "exchange": "CRYPTO_ETH",
+      "n_trades": 89,
+      "win_rate": 52.8,
+      "avg_pnl_pct": 0.951,
+      "total_pnl": 4232.0
+    }
+  ],
+  "strategy_comparison": {
+    "FOREX_MAJORS": {
+      "roi_pct": 3.2,
+      "sharpe": 8.618,
+      "win_rate": 64.9,
+      "max_dd": 0.31,
+      "n_trades": 37,
+      "color": "#10b981"
+    },
+    "YEN_CROSSES": {
+      "roi_pct": 0.19,
+      "sharpe": 0.936,
+      "win_rate": 50.0,
+      "max_dd": 0.99,
+      "n_trades": 16,
+      "color": "#10b981"
+    },
+    "EUR_GBP_CROSSES": {
+      "roi_pct": 0.68,
+      "sharpe": 1.508,
+      "win_rate": 57.1,
+      "max_dd": 1.58,
+      "n_trades": 35,
+      "color": "#10b981"
+    },
+    "CRYPTO_BTC": {
+      "roi_pct": 2.86,
+      "sharpe": 1.173,
+      "win_rate": 51.8,
+      "max_dd": 2.66,
+      "n_trades": 112,
+      "color": "#10b981"
+    },
+    "CRYPTO_ETH": {
+      "roi_pct": 4.24,
+      "sharpe": 1.796,
+      "win_rate": 52.8,
+      "max_dd": 5.94,
+      "n_trades": 89,
+      "color": "#10b981"
+    }
   },
-  "capital_growth_curve": {
-    "dates": [
-      "2026-01-26",
-      "2026-02-02",
-      "2026-02-09",
-      "2026-02-16",
-      "2026-02-23",
-      "2026-03-02",
-      "2026-03-09",
-      "2026-03-16",
-      "2026-03-23",
-      "2026-03-24"
-    ],
-    "equity": [
-      99747.74,
-      146804.68,
-      179291.21,
-      198528.11,
-      267666.36,
-      325161.53,
-      564390.22,
-      778492.9,
-      731746.42,
-      714322.11
-    ]
-  }
+  "exchange_performance": [
+    {
+      "exchange": "FOREX_MAJO",
+      "name": "FOREX_MAJORS",
+      "n_trades": 37,
+      "total_pnl": 3158.0,
+      "win_pct": 64.9
+    },
+    {
+      "exchange": "YEN_CROSSE",
+      "name": "YEN_CROSSES",
+      "n_trades": 16,
+      "total_pnl": 196.0,
+      "win_pct": 50.0
+    },
+    {
+      "exchange": "EUR_GBP_CR",
+      "name": "EUR_GBP_CROSSES",
+      "n_trades": 35,
+      "total_pnl": 682.0,
+      "win_pct": 57.1
+    },
+    {
+      "exchange": "CRYPTO_BTC",
+      "name": "CRYPTO_BTC",
+      "n_trades": 112,
+      "total_pnl": 2890.0,
+      "win_pct": 51.8
+    },
+    {
+      "exchange": "CRYPTO_ETH",
+      "name": "CRYPTO_ETH",
+      "n_trades": 89,
+      "total_pnl": 4232.0,
+      "win_pct": 52.8
+    }
+  ],
+  "horizon_stats": {
+    "Asset-Specific": {
+      "n_trades": 289,
+      "win_rate": 0.543,
+      "sharpe": 1.795,
+      "max_dd": -2057.739,
+      "total_pnl": 13718.26,
+      "tpd": 0.79
+    }
+  },
+  "projected_growth": {}
 }
