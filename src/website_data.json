@@ -1240,22 +1240,22 @@
     },
     "hard_blocked": {
       "name": "Context-Filtered",
-      "desc": "17 hard-blocked losing contexts removed",
-      "roi_pct": -1.78,
-      "sharpe": -0.555,
-      "max_drawdown": "-4.18",
-      "win_rate": 44.5,
-      "n_trades": 200,
+      "desc": "18 hard-blocked losing contexts removed",
+      "roi_pct": 1.06,
+      "sharpe": 0.528,
+      "max_drawdown": "-1.50",
+      "win_rate": 47.7,
+      "n_trades": 130,
       "color": "#f59e0b"
     },
     "rl_enhanced": {
       "name": "RL-Enhanced (Live)",
       "desc": "Adaptive thresholds via contextual bandit",
-      "roi_pct": -5.83,
-      "sharpe": -2.84,
-      "max_drawdown": "-7.07",
-      "win_rate": 43.0,
-      "n_trades": 158,
+      "roi_pct": 0.99,
+      "sharpe": 0.529,
+      "max_drawdown": "-1.50",
+      "win_rate": 48.0,
+      "n_trades": 123,
       "color": "#10b981"
     }
   },
@@ -1309,14 +1309,15 @@
   "projected_growth": {},
   "rl_analysis": {
     "n_contexts_tracked": 42,
-    "n_hard_blocks": 16,
+    "n_hard_blocks": 18,
+    "n_blocked_trades": 375,
     "total_observations": 505,
     "fixed_return": -34.0,
-    "hard_blocked_return": -1.78,
-    "rl_enhanced_return": -5.83,
-    "oracle_return": 0.53,
-    "rl_improvement_vs_fixed": 28.17,
-    "oracle_potential": 34.53,
-    "rl_capture_pct": 81.6
+    "hard_blocked_return": 1.06,
+    "rl_enhanced_return": 0.99,
+    "oracle_return": 2.57,
+    "rl_improvement_vs_fixed": 34.99,
+    "oracle_potential": 36.57,
+    "rl_capture_pct": 95.7
   }
 }

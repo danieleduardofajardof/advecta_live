@@ -891,9 +891,9 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
                 <div className="flex-1">
                   <h4 className="font-semibold mb-2 text-emerald-400">Hard-Block Filter</h4>
                   <p className="text-sm text-zinc-400">
-                    {rlAnalysis.n_hard_blocks ?? 16} losing context patterns deterministically blocked —
-                    eliminating {Math.round((505 - (rlAnalysis.total_observations ?? 505)) + 305)} trades that account for the majority of drawdown.
-                    Context-filtered strategy improves return by <span className="text-emerald-400 font-mono">+{((rlAnalysis.hard_blocked_return ?? -1.78) - (rlAnalysis.fixed_return ?? -34.0)).toFixed(1)}%</span>.
+                    {rlAnalysis.n_hard_blocks ?? 18} losing context patterns deterministically blocked —
+                    eliminating {rlAnalysis.n_blocked_trades ?? 375} of {rlAnalysis.total_observations ?? 505} trades that account for the majority of drawdown.
+                    Context-filtered strategy improves return by <span className="text-emerald-400 font-mono">+{((rlAnalysis.hard_blocked_return ?? 1.06) - (rlAnalysis.fixed_return ?? -34.0)).toFixed(1)}%</span>.
                   </p>
                 </div>
                 <div className="flex-1">
