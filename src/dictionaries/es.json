@@ -219,29 +219,29 @@
     "title": "Visualizaciones del Backtest",
     "subtitle": "Gráficos completos de backtest de ventana móvil — {days} días de negociación, {trades} operaciones, {pnl} PnL total. Haga clic en cualquier gráfico para ampliarlo.",
     "charts": {
-      "backtest_1y": {
-        "title": "Rendimiento Apalancado Híbrido a 1 Año",
-        "desc": "Curva de capital para la estrategia de horizonte 1h utilizando un apalancamiento de cartera de 5x durante el último año."
+      "equity_drawdown": {
+        "title": "Curva de Capital y Drawdown",
+        "desc": "Crecimiento OOS de 1 año desde $100k hasta $113,7k junto al perfil de drawdown — drawdown máximo contenido en -4,94% en 5 clases de activos."
       },
-      "drawdown": {
-        "title": "Rastreador de Drawdown de Cartera",
-        "desc": "Seguimiento granular del drawdown mapeando las brechas del punto máximo a lo largo del backtest."
+      "returns_dist": {
+        "title": "Distribución de Retornos Diarios",
+        "desc": "Distribución del P&L diario en 287 operaciones que muestra sesgo positivo y cola derecha pronunciada de la estrategia multi-clase."
       },
-      "rolling_90d": {
-        "title": "Retornos Móviles de 90 Días",
-        "desc": "Rendimiento acumulado de la estrategia en periodos móviles de 90 días que muestra la consistencia de ejecución macroeconómica cíclica."
+      "subclass_comparison": {
+        "title": "Comparativa por Clase de Activo",
+        "desc": "Comparación de Sharpe, tasa de acierto y retorno entre las subclases activas: Forex Majors, Cruces Yen, Cruces EUR/GBP, BTC y ETH."
       },
-      "dist": {
-        "title": "Distribuciones de Retorno Diario",
-        "desc": "Gráfico de violín que muestra la densidad y frecuencia de la distribución del PnL diario de la cartera."
+      "top_symbols": {
+        "title": "Mejores Símbolos por Rendimiento",
+        "desc": "Mejores símbolos individuales por retorno OOS — liderados por Forex majors con 65% de tasa de acierto y criptos con alto ratio R:R por operación."
       },
-      "heatmap": {
-        "title": "Matriz de Rendimiento de Activos",
-        "desc": "Mapa de calor que revela las acciones con mayor contribución y sus perfiles de rendimiento mensual."
+      "risk_metrics": {
+        "title": "Riesgo y Eficiencia de Capital",
+        "desc": "Ratio Calmar, Sortino y VaR por clase de activo — ilustrando cómo las stops ATR preservan el capital en distintos regímenes de mercado."
       },
-      "monthly": {
-        "title": "PnL Neto Agregado Mensual",
-        "desc": "Descomposición del beneficio absoluto mensual limitada intrínsecamente a la ventaja del modelo híbrido."
+      "optimal_params": {
+        "title": "Parámetros Óptimos de Estrategia",
+        "desc": "TP/SL/multiplicadores ATR y barras de retención por clase de activo seleccionados en datos TRAIN y validados en OOS no visto."
       }
     }
   },

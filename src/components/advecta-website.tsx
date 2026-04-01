@@ -156,12 +156,12 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
   const pipelineSteps = t.pipeline.items;
 
   const chartImages = [
-    { src: "/backtest_1y.png", title: t.backtest.charts.backtest_1y.title, desc: t.backtest.charts.backtest_1y.desc },
-    { src: "/drawdown.png", title: t.backtest.charts.drawdown.title, desc: t.backtest.charts.drawdown.desc },
-    { src: "/rolling_90d_return.png", title: t.backtest.charts.rolling_90d.title, desc: t.backtest.charts.rolling_90d.desc },
-    { src: "/daily_returns_dist.png", title: t.backtest.charts.dist.title, desc: t.backtest.charts.dist.desc },
-    { src: "/pnl_heatmap.png", title: t.backtest.charts.heatmap.title, desc: t.backtest.charts.heatmap.desc },
-    { src: "/monthly_horizon_heatmap.png", title: t.backtest.charts.monthly.title, desc: t.backtest.charts.monthly.desc },
+    { src: "/kpi_equity_drawdown.png", title: t.backtest.charts.equity_drawdown.title, desc: t.backtest.charts.equity_drawdown.desc },
+    { src: "/kpi_returns_distribution.png", title: t.backtest.charts.returns_dist.title, desc: t.backtest.charts.returns_dist.desc },
+    { src: "/kpi_subclass_comparison.png", title: t.backtest.charts.subclass_comparison.title, desc: t.backtest.charts.subclass_comparison.desc },
+    { src: "/kpi_top_symbols.png", title: t.backtest.charts.top_symbols.title, desc: t.backtest.charts.top_symbols.desc },
+    { src: "/kpi_risk_metrics.png", title: t.backtest.charts.risk_metrics.title, desc: t.backtest.charts.risk_metrics.desc },
+    { src: "/kpi_optimal_params.png", title: t.backtest.charts.optimal_params.title, desc: t.backtest.charts.optimal_params.desc },
   ];
 
   const strategyComparisonLocalized = Object.entries(strategyComparison).map(([key, s]: [string, any]) => ({
