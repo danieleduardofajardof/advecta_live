@@ -166,8 +166,9 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
 
   const strategyComparisonLocalized = Object.entries(strategyComparison).map(([key, s]: [string, any]) => ({
     ...s,
-    name: t.comparison.strategies[key].name,
-    desc: t.comparison.strategies[key].desc,
+    _key: key,
+    name: t.comparison.strategies[key]?.name ?? s.name ?? key,
+    desc: t.comparison.strategies[key]?.desc ?? s.desc ?? "",
   }));
 
   return (
@@ -734,8 +735,8 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
           </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {Object.entries(strategyComparison).map(([key, s]: [string, any], i) => (
-              <motion.div key={key} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}>
+            {strategyComparisonLocalized.map((s: any, i) => (
+              <motion.div key={s._key} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}>
                 <Card className="bg-zinc-900/40 border-zinc-800/50 rounded-3xl h-full flex flex-col group hover:border-emerald-500/30 transition-all duration-300">
                   <CardContent className="p-8 flex-1 flex flex-col">
                     <div className="mb-6">
