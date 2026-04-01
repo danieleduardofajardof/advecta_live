@@ -1187,7 +1187,8 @@
       "n_trades": 31,
       "win_rate": 54.8,
       "avg_pnl_pct": 0.345,
-      "total_pnl": 535.0
+      "total_pnl": 535.0,
+      "n": 31
     },
     {
       "session": "YEN_CROSSES",
@@ -1195,7 +1196,8 @@
       "n_trades": 158,
       "win_rate": 57.0,
       "avg_pnl_pct": 0.785,
-      "total_pnl": 6202.0
+      "total_pnl": 6202.0,
+      "n": 158
     },
     {
       "session": "EUR_GBP_CROSSES",
@@ -1203,7 +1205,8 @@
       "n_trades": 35,
       "win_rate": 57.1,
       "avg_pnl_pct": 0.39,
-      "total_pnl": 682.0
+      "total_pnl": 682.0,
+      "n": 35
     },
     {
       "session": "CRYPTO_BTC",
@@ -1211,7 +1214,8 @@
       "n_trades": 111,
       "win_rate": 50.5,
       "avg_pnl_pct": 0.398,
-      "total_pnl": 2209.0
+      "total_pnl": 2209.0,
+      "n": 111
     },
     {
       "session": "CRYPTO_ETH",
@@ -1219,48 +1223,39 @@
       "n_trades": 98,
       "win_rate": 41.8,
       "avg_pnl_pct": 0.706,
-      "total_pnl": 3459.0
+      "total_pnl": 3459.0,
+      "n": 98
     }
   ],
   "strategy_comparison": {
-    "FOREX_MAJORS": {
-      "roi_pct": 0.53,
-      "sharpe": 2.143,
-      "win_rate": 54.8,
-      "max_dd": 1.01,
-      "n_trades": 31,
-      "color": "#10b981"
+    "fixed_baseline": {
+      "name": "Unfiltered Baseline",
+      "desc": "All signals, no context filtering",
+      "roi_pct": -34.0,
+      "sharpe": -5.786,
+      "max_drawdown": "-34.27",
+      "win_rate": 32.3,
+      "n_trades": 505,
+      "color": "#ef4444"
     },
-    "YEN_CROSSES": {
-      "roi_pct": 6.34,
-      "sharpe": 2.391,
-      "win_rate": 57.0,
-      "max_dd": 1.41,
+    "hard_blocked": {
+      "name": "Context-Filtered",
+      "desc": "17 hard-blocked losing contexts removed",
+      "roi_pct": -1.78,
+      "sharpe": -0.555,
+      "max_drawdown": "-4.18",
+      "win_rate": 44.5,
+      "n_trades": 200,
+      "color": "#f59e0b"
+    },
+    "rl_enhanced": {
+      "name": "RL-Enhanced (Live)",
+      "desc": "Adaptive thresholds via contextual bandit",
+      "roi_pct": -5.83,
+      "sharpe": -2.84,
+      "max_drawdown": "-7.07",
+      "win_rate": 43.0,
       "n_trades": 158,
-      "color": "#10b981"
-    },
-    "EUR_GBP_CROSSES": {
-      "roi_pct": 0.68,
-      "sharpe": 1.508,
-      "win_rate": 57.1,
-      "max_dd": 1.58,
-      "n_trades": 35,
-      "color": "#10b981"
-    },
-    "CRYPTO_BTC": {
-      "roi_pct": 2.2,
-      "sharpe": 1.422,
-      "win_rate": 50.5,
-      "max_dd": 1.77,
-      "n_trades": 111,
-      "color": "#10b981"
-    },
-    "CRYPTO_ETH": {
-      "roi_pct": 3.47,
-      "sharpe": 1.842,
-      "win_rate": 41.8,
-      "max_dd": 5.21,
-      "n_trades": 98,
       "color": "#10b981"
     }
   },
@@ -1311,5 +1306,17 @@
       "tpd": 1.18
     }
   },
-  "projected_growth": {}
+  "projected_growth": {},
+  "rl_analysis": {
+    "n_contexts_tracked": 42,
+    "n_hard_blocks": 16,
+    "total_observations": 505,
+    "fixed_return": -34.0,
+    "hard_blocked_return": -1.78,
+    "rl_enhanced_return": -5.83,
+    "oracle_return": 0.53,
+    "rl_improvement_vs_fixed": 28.17,
+    "oracle_potential": 34.53,
+    "rl_capture_pct": 81.6
+  }
 }
