@@ -536,8 +536,8 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
                       <tr key={s.session}>
                         <td className="px-4 py-2.5 font-medium text-zinc-300">{s.session}</td>
                         <td className="px-4 py-2.5 text-right font-mono text-zinc-400">{fmt(s.n_trades, locale)}</td>
-                        <td className="px-4 py-2.5 text-right font-mono text-emerald-400">{fmtD(s.total_pnl, locale)}</td>
-                        <td className="px-4 py-2.5 text-right font-mono text-zinc-400">{s.win_pct}%</td>
+                        <td className="px-4 py-2.5 text-right font-mono text-emerald-400">{fmtD(s.total_pnl ?? 0, locale)}</td>
+                        <td className="px-4 py-2.5 text-right font-mono text-zinc-400">{s.win_pct ?? s.win_rate}%</td>
                       </tr>
                     ))}
                   </tbody>
@@ -599,12 +599,12 @@ export default function AdvectaWebsite({ dictionary, locale }: { dictionary: any
                       <tr key={s.ticker} className={i < 3 ? "bg-emerald-500/5" : ""}>
                         <td className="px-4 py-2.5 text-zinc-600">{i + 1}</td>
                         <td className="px-4 py-2.5 font-mono font-medium text-zinc-200">{s.ticker}</td>
-                        <td className="px-4 py-2.5 text-zinc-400">{s.exchange}</td>
-                        <td className="px-4 py-2.5 text-zinc-400">{s.session}</td>
+                        <td className="px-4 py-2.5 text-zinc-400">{s.exchange ?? s.subclass ?? "—"}</td>
+                        <td className="px-4 py-2.5 text-zinc-400">{s.session ?? s.subclass ?? "—"}</td>
                         <td className="px-4 py-2.5 text-right font-mono text-zinc-400">{fmt(s.n_trades, locale)}</td>
-                        <td className="px-4 py-2.5 text-right font-mono text-emerald-400">{fmtD(s.total_pnl, locale)}</td>
-                        <td className="px-4 py-2.5 text-right font-mono text-zinc-300">{fmtP(s.avg_pnl_pct)}</td>
-                        <td className="px-4 py-2.5 text-right font-mono text-zinc-400">{s.win_pct}%</td>
+                        <td className="px-4 py-2.5 text-right font-mono text-emerald-400">{s.total_pnl != null ? fmtD(s.total_pnl, locale) : "—"}</td>
+                        <td className="px-4 py-2.5 text-right font-mono text-zinc-300">{fmtP(s.avg_pnl_pct ?? s.mean_pnl ?? 0)}</td>
+                        <td className="px-4 py-2.5 text-right font-mono text-zinc-400">{(s.win_pct ?? ((s.win_rate ?? 0) * 100).toFixed(1))}%</td>
                       </tr>
                     ))}
                     </tbody>
