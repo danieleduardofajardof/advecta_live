@@ -221,27 +221,27 @@
     "charts": {
       "equity_drawdown": {
         "title": "Equity Curve & Drawdown",
-        "desc": "1-year OOS equity growth from $100k to $113.7k alongside the drawdown profile — max drawdown held to -4.94% across 5 asset classes."
+        "desc": "180-day OOS equity growth from $100k to $147.7k alongside the drawdown profile — max drawdown held to -5.84% across 4 active asset classes (V_W43)."
       },
       "returns_dist": {
         "title": "Daily Returns Distribution",
-        "desc": "Distribution of daily P&L across 287 trades showing positive skew and fat right tail from the asset-specific multi-class strategy."
+        "desc": "Distribution of daily P&L across 188 trades showing positive skew with Sharpe 4.64 and profit factor 1.82 from the V_W43 asset-specific strategy."
       },
       "subclass_comparison": {
         "title": "Asset Class Performance Breakdown",
-        "desc": "Side-by-side Sharpe, win rate, and return comparison across active sub-classes: Forex Majors, Yen Crosses, EUR/GBP Crosses, BTC, and ETH."
+        "desc": "Side-by-side Sharpe, win rate, and return comparison across active sub-classes: GOLD, FOREX Majors, CRYPTO BTC, and EURGBP rescue (V_W43, 180d OOS)."
       },
       "top_symbols": {
         "title": "Top Performing Symbols",
-        "desc": "Best individual symbols by OOS return — led by Forex majors at 65% win rate and crypto with high per-trade R:R multiples."
+        "desc": "Best individual symbols by OOS return — XAUUSD ($19.4k / 101 trades) and BTCUSD ($9.9k / 49 trades) lead, with Forex majors at 60.6% win rate."
       },
       "risk_metrics": {
         "title": "Risk & Capital Efficiency",
-        "desc": "Calmar ratio, Sortino ratio, and VaR breakdown per asset class — illustrating how tight ATR-based stops preserve capital across regimes."
+        "desc": "0 daily-loss-cap (3% CLAUDE.md) breaches across 90d/180d/270d windows. Sortino, expectancy, payoff ratio per asset class with hard ATR-based stops."
       },
       "optimal_params": {
         "title": "Optimal Strategy Parameters",
-        "desc": "Grid-search selected TP/SL/ATR multipliers and hold bars per asset class — chosen on TRAIN data only, validated on unseen OOS."
+        "desc": "Per-asset config: GOLD min_score=42 + 4H bias + 3×ATR trail; FX London 7-15 GMT + score=60 + hold=24; BTC trend_only + ADX≥25 + score=55."
       }
     }
   },

@@ -221,27 +221,27 @@
     "charts": {
       "equity_drawdown": {
         "title": "Curva de Capital y Drawdown",
-        "desc": "Crecimiento OOS de 1 año desde $100k hasta $113,7k junto al perfil de drawdown — drawdown máximo contenido en -4,94% en 5 clases de activos."
+        "desc": "Crecimiento OOS de 180 días desde $100k hasta $147,7k junto al perfil de drawdown — drawdown máximo contenido en -5,84% en 4 clases de activos activas (V_W43)."
       },
       "returns_dist": {
         "title": "Distribución de Retornos Diarios",
-        "desc": "Distribución del P&L diario en 287 operaciones que muestra sesgo positivo y cola derecha pronunciada de la estrategia multi-clase."
+        "desc": "Distribución del P&L diario en 188 operaciones que muestra sesgo positivo con Sharpe 4,64 y profit factor 1,82 de la estrategia V_W43 por activo."
       },
       "subclass_comparison": {
         "title": "Comparativa por Clase de Activo",
-        "desc": "Comparación de Sharpe, tasa de acierto y retorno entre las subclases activas: Forex Majors, Cruces Yen, Cruces EUR/GBP, BTC y ETH."
+        "desc": "Comparación de Sharpe, tasa de acierto y retorno entre las subclases activas: GOLD, FOREX Majors, CRYPTO BTC y EURGBP rescue (V_W43, 180d OOS)."
       },
       "top_symbols": {
         "title": "Mejores Símbolos por Rendimiento",
-        "desc": "Mejores símbolos individuales por retorno OOS — liderados por Forex majors con 65% de tasa de acierto y criptos con alto ratio R:R por operación."
+        "desc": "Mejores símbolos individuales por retorno OOS — XAUUSD ($19,4k / 101 ops) y BTCUSD ($9,9k / 49 ops) lideran, con Forex majors al 60,6% de tasa de acierto."
       },
       "risk_metrics": {
         "title": "Riesgo y Eficiencia de Capital",
-        "desc": "Ratio Calmar, Sortino y VaR por clase de activo — ilustrando cómo las stops ATR preservan el capital en distintos regímenes de mercado."
+        "desc": "0 incumplimientos del límite diario (3% CLAUDE.md) en ventanas 90d/180d/270d. Sortino, expectancy, ratio payoff por clase con stops ATR estrictos."
       },
       "optimal_params": {
         "title": "Parámetros Óptimos de Estrategia",
-        "desc": "TP/SL/multiplicadores ATR y barras de retención por clase de activo seleccionados en datos TRAIN y validados en OOS no visto."
+        "desc": "Config por activo: GOLD min_score=42 + sesgo 4H + trail 3×ATR; FX Londres 7-15 GMT + score=60 + hold=24; BTC trend_only + ADX≥25 + score=55."
       }
     }
   },
