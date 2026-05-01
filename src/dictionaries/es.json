@@ -192,8 +192,8 @@
     }
   },
   "comparison": {
-    "title": "Las Tres Estrategias ADVECTA",
-    "subtitle": "Nuestro motor principal admite tres perfiles de riesgo, desde la preservación constante del capital hasta la generación de alpha agresiva.",
+    "title": "Estrategias ADVECTA por Activo",
+    "subtitle": "Configuraciones por activo validadas en ventanas OOS de 90d/180d/270d. Cada subclase ejecuta un modo de estrategia alineado con CLAUDE.md según su perfil de volatilidad.",
     "labels": {
       "roi_90d": "ROI 90d",
       "sharpe": "Ratio de Sharpe",
@@ -221,19 +221,19 @@
     "charts": {
       "equity_drawdown": {
         "title": "Curva de Capital y Drawdown",
-        "desc": "Crecimiento OOS de 180 días desde $100k hasta $153,1k junto al perfil de drawdown — drawdown máximo contenido en -5,80% en 4 clases de activos activas (V_W94)."
+        "desc": "Crecimiento OOS de 180 días desde $100k hasta $154,4k junto al perfil de drawdown — drawdown máximo contenido en -5,89% en 5 subclases activas (V_W94)."
       },
       "returns_dist": {
         "title": "Distribución de Retornos Diarios",
-        "desc": "Distribución del P&L diario en 198 operaciones que muestra sesgo positivo con Sharpe 4,92 y profit factor 1,86 de la estrategia V_W94 por activo."
+        "desc": "Distribución del P&L diario en 209 operaciones que muestra sesgo positivo con Sharpe 4,90 y profit factor 1,83 de la estrategia V_W94 por activo."
       },
       "subclass_comparison": {
         "title": "Comparativa por Clase de Activo",
-        "desc": "Comparación de Sharpe, tasa de acierto y retorno entre las subclases activas: GOLD, FOREX Majors, CRYPTO BTC y EURGBP rescue (V_W94, 180d OOS)."
+        "desc": "Comparación de Sharpe, tasa de acierto y retorno entre las subclases activas: GOLD, FOREX Majors, CRYPTO BTC, EURGBP y rescate YEN-cross (V_W94, 180d OOS)."
       },
       "top_symbols": {
         "title": "Mejores Símbolos por Rendimiento",
-        "desc": "Mejores símbolos individuales por retorno OOS — XAUUSD y BTCUSD lideran por contribución total; Forex majors al 50%+ tras la relajación del bloqueo CTX en V_W94."
+        "desc": "Mejores símbolos individuales por retorno OOS — XAUUSD y BTCUSD lideran por contribución total; Forex majors al 64,3% WR con rescate YEN GBPJPY+EURJPY añadido en V_W94."
       },
       "risk_metrics": {
         "title": "Riesgo y Eficiencia de Capital",

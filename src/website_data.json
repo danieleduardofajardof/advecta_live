@@ -1082,7 +1082,7 @@
   "strategy_comparison": {
     "EUR_GBP_CROSSES": {
       "name": "Eur Gbp Crosses",
-      "desc": "V_W43 \u2014 5 trades on 180d OOS",
+      "desc": "V_W94 \u2014 5 trades on 180d OOS",
       "color": "#06b6d4",
       "roi_pct": -0.08,
       "sharpe": -0.37,
@@ -1095,7 +1095,7 @@
     },
     "GOLD": {
       "name": "Gold",
-      "desc": "V_W43 \u2014 104 trades on 180d OOS",
+      "desc": "V_W94 \u2014 104 trades on 180d OOS",
       "color": "#fbbf24",
       "roi_pct": 20.93,
       "sharpe": 4.54,
@@ -1108,7 +1108,7 @@
     },
     "CRYPTO_BTC": {
       "name": "Crypto Btc",
-      "desc": "V_W43 \u2014 49 trades on 180d OOS",
+      "desc": "V_W94 \u2014 49 trades on 180d OOS",
       "color": "#f97316",
       "roi_pct": 9.77,
       "sharpe": 2.95,
@@ -1121,7 +1121,7 @@
     },
     "YEN_CROSSES": {
       "name": "Yen Crosses",
-      "desc": "V_W43 \u2014 9 trades on 180d OOS",
+      "desc": "V_W94 \u2014 9 trades on 180d OOS",
       "color": "#ec4899",
       "roi_pct": 0.44,
       "sharpe": 1.26,
@@ -1134,7 +1134,7 @@
     },
     "FOREX_MAJORS": {
       "name": "Forex Majors",
-      "desc": "V_W43 \u2014 42 trades on 180d OOS",
+      "desc": "V_W94 \u2014 42 trades on 180d OOS",
       "color": "#10b981",
       "roi_pct": 15.88,
       "sharpe": 6.87,
@@ -1249,7 +1249,7 @@
   },
   "combined_strategy": {
     "before": {
-      "name": "V_W73_W62_ACT10",
+      "name": "V_N3_EURGBP_RESCUE (Apr 28 baseline)",
       "daily_pnl_pct": 0.261,
       "sharpe": 4.319,
       "max_dd_pct": -6.27,
@@ -1267,17 +1267,19 @@
       "deployed": "2026-05-01"
     },
     "rescued": [
-      "Removed FX `ny_overlap/GREEN/normal` CTX block (calibrated for old signals)",
-      "Earlier GOLD trail engagement (activation 1.5\u00d7ATR \u2192 1.0\u00d7ATR)",
-      "GOLD min_score floor 48 \u2192 42 (V_W43, kept)",
-      "EURGBP via range_only mode + 4H bias (V_N3, kept)"
+      "GBPJPY + EURJPY YEN-cross rescue at score=70 (V_W94, NEW)",
+      "Tokyo-London hours 6-13 GMT for YEN trend entries (V_W94)",
+      "Removed FX ny_overlap/GREEN/normal CTX block (V_W73)",
+      "Earlier GOLD trail engagement (activation 1.5x \u2192 1.0x ATR; V_W73)",
+      "GOLD min_score floor 48 \u2192 42 (V_W43)",
+      "EURGBP via range_only mode + 4H bias (V_N3)"
     ],
     "generated": [
-      "Block-removal cadence rule for revalidating CTX blocks against v3 signals",
-      "Postmortem-driven audit cycle in READ_BEFORE_NEW_ITERATION.md \u00a711",
-      "Adjustable risk caps (env vars: MAX_DAILY_LOSS_PCT etc)",
-      "VARIANT_FILTER for focused backtest runs",
-      "30+ V_W series experiments documented"
+      "Pareto-optimal trade-count expansion rule (READ_BEFORE \u00a712)",
+      "Block-removal audit cycle for legacy CTX blocks (READ_BEFORE \u00a711)",
+      "Adjustable risk caps via env (MAX_DAILY_LOSS_PCT, etc.)",
+      "VARIANT_FILTER + EXPORT_TRADES env for focused backtests",
+      "40+ V_W series experiments documented in READ_BEFORE"
     ]
   }
 }
