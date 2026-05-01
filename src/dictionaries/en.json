@@ -221,19 +221,19 @@
     "charts": {
       "equity_drawdown": {
         "title": "Equity Curve & Drawdown",
-        "desc": "180-day OOS equity growth from $100k to $153.1k alongside the drawdown profile — max drawdown held to -5.80% across 4 active asset classes (V_W73)."
+        "desc": "180-day OOS equity growth from $100k to $153.1k alongside the drawdown profile — max drawdown held to -5.80% across 4 active asset classes (V_W94)."
       },
       "returns_dist": {
         "title": "Daily Returns Distribution",
-        "desc": "Distribution of daily P&L across 198 trades showing positive skew with Sharpe 4.92 and profit factor 1.86 from the V_W73 asset-specific strategy."
+        "desc": "Distribution of daily P&L across 198 trades showing positive skew with Sharpe 4.92 and profit factor 1.86 from the V_W94 asset-specific strategy."
       },
       "subclass_comparison": {
         "title": "Asset Class Performance Breakdown",
-        "desc": "Side-by-side Sharpe, win rate, and return comparison across active sub-classes: GOLD, FOREX Majors, CRYPTO BTC, and EURGBP rescue (V_W73, 180d OOS)."
+        "desc": "Side-by-side Sharpe, win rate, and return comparison across active sub-classes: GOLD, FOREX Majors, CRYPTO BTC, and EURGBP rescue (V_W94, 180d OOS)."
       },
       "top_symbols": {
         "title": "Top Performing Symbols",
-        "desc": "Best individual symbols by OOS return — XAUUSD and BTCUSD lead by total contribution; Forex majors at 50%+ win rate after CTX-block relaxation in V_W73."
+        "desc": "Best individual symbols by OOS return — XAUUSD and BTCUSD lead by total contribution; Forex majors at 50%+ win rate after CTX-block relaxation in V_W94."
       },
       "risk_metrics": {
         "title": "Risk & Capital Efficiency",
