@@ -221,27 +221,27 @@
     "charts": {
       "equity_drawdown": {
         "title": "Curva de Capital y Drawdown",
-        "desc": "Crecimiento OOS de 180 días desde $100k hasta $147,7k junto al perfil de drawdown — drawdown máximo contenido en -5,84% en 4 clases de activos activas (V_W43)."
+        "desc": "Crecimiento OOS de 180 días desde $100k hasta $153,1k junto al perfil de drawdown — drawdown máximo contenido en -5,80% en 4 clases de activos activas (V_W73)."
       },
       "returns_dist": {
         "title": "Distribución de Retornos Diarios",
-        "desc": "Distribución del P&L diario en 188 operaciones que muestra sesgo positivo con Sharpe 4,64 y profit factor 1,82 de la estrategia V_W43 por activo."
+        "desc": "Distribución del P&L diario en 198 operaciones que muestra sesgo positivo con Sharpe 4,92 y profit factor 1,86 de la estrategia V_W73 por activo."
       },
       "subclass_comparison": {
         "title": "Comparativa por Clase de Activo",
-        "desc": "Comparación de Sharpe, tasa de acierto y retorno entre las subclases activas: GOLD, FOREX Majors, CRYPTO BTC y EURGBP rescue (V_W43, 180d OOS)."
+        "desc": "Comparación de Sharpe, tasa de acierto y retorno entre las subclases activas: GOLD, FOREX Majors, CRYPTO BTC y EURGBP rescue (V_W73, 180d OOS)."
       },
       "top_symbols": {
         "title": "Mejores Símbolos por Rendimiento",
-        "desc": "Mejores símbolos individuales por retorno OOS — XAUUSD ($19,4k / 101 ops) y BTCUSD ($9,9k / 49 ops) lideran, con Forex majors al 60,6% de tasa de acierto."
+        "desc": "Mejores símbolos individuales por retorno OOS — XAUUSD y BTCUSD lideran por contribución total; Forex majors al 50%+ tras la relajación del bloqueo CTX en V_W73."
       },
       "risk_metrics": {
         "title": "Riesgo y Eficiencia de Capital",
-        "desc": "0 incumplimientos del límite diario (3% CLAUDE.md) en ventanas 90d/180d/270d. Sortino, expectancy, ratio payoff por clase con stops ATR estrictos."
+        "desc": "0 incumplimientos del límite diario (3% CLAUDE.md) en ventanas 90d/180d/270d. Sortino, ratio payoff y expectancy por clase con stops ATR estrictos."
       },
       "optimal_params": {
         "title": "Parámetros Óptimos de Estrategia",
-        "desc": "Config por activo: GOLD min_score=42 + sesgo 4H + trail 3×ATR; FX Londres 7-15 GMT + score=60 + hold=24; BTC trend_only + ADX≥25 + score=55."
+        "desc": "Config por activo: GOLD min_score=42 + sesgo 4H + trail 3×ATR (act 1,0×); FX Londres 7-15 GMT + score=60 + hold=24 (ny_overlap desbloqueado); BTC trend_only + ADX≥25 + score=55."
       }
     }
   },

@@ -221,27 +221,27 @@
     "charts": {
       "equity_drawdown": {
         "title": "Equity Curve & Drawdown",
-        "desc": "180-day OOS equity growth from $100k to $147.7k alongside the drawdown profile — max drawdown held to -5.84% across 4 active asset classes (V_W43)."
+        "desc": "180-day OOS equity growth from $100k to $153.1k alongside the drawdown profile — max drawdown held to -5.80% across 4 active asset classes (V_W73)."
       },
       "returns_dist": {
         "title": "Daily Returns Distribution",
-        "desc": "Distribution of daily P&L across 188 trades showing positive skew with Sharpe 4.64 and profit factor 1.82 from the V_W43 asset-specific strategy."
+        "desc": "Distribution of daily P&L across 198 trades showing positive skew with Sharpe 4.92 and profit factor 1.86 from the V_W73 asset-specific strategy."
       },
       "subclass_comparison": {
         "title": "Asset Class Performance Breakdown",
-        "desc": "Side-by-side Sharpe, win rate, and return comparison across active sub-classes: GOLD, FOREX Majors, CRYPTO BTC, and EURGBP rescue (V_W43, 180d OOS)."
+        "desc": "Side-by-side Sharpe, win rate, and return comparison across active sub-classes: GOLD, FOREX Majors, CRYPTO BTC, and EURGBP rescue (V_W73, 180d OOS)."
       },
       "top_symbols": {
         "title": "Top Performing Symbols",
-        "desc": "Best individual symbols by OOS return — XAUUSD ($19.4k / 101 trades) and BTCUSD ($9.9k / 49 trades) lead, with Forex majors at 60.6% win rate."
+        "desc": "Best individual symbols by OOS return — XAUUSD and BTCUSD lead by total contribution; Forex majors at 50%+ win rate after CTX-block relaxation in V_W73."
       },
       "risk_metrics": {
         "title": "Risk & Capital Efficiency",
-        "desc": "0 daily-loss-cap (3% CLAUDE.md) breaches across 90d/180d/270d windows. Sortino, expectancy, payoff ratio per asset class with hard ATR-based stops."
+        "desc": "0 daily-loss-cap (3% CLAUDE.md) breaches across 90d/180d/270d windows. Sortino, payoff ratio, expectancy per asset class with hard ATR-based stops."
       },
       "optimal_params": {
         "title": "Optimal Strategy Parameters",
-        "desc": "Per-asset config: GOLD min_score=42 + 4H bias + 3×ATR trail; FX London 7-15 GMT + score=60 + hold=24; BTC trend_only + ADX≥25 + score=55."
+        "desc": "Per-asset config: GOLD min_score=42 + 4H bias + trail 3×ATR (act 1.0×); FX London 7-15 GMT + score=60 + hold=24 (ny_overlap unblocked); BTC trend_only + ADX≥25 + score=55."
       }
     }
   },
