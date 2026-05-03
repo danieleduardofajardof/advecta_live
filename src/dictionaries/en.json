@@ -221,19 +221,19 @@
     "charts": {
       "equity_drawdown": {
         "title": "Equity Curve & Drawdown",
-        "desc": "180-day OOS equity growth from $100k to $157,0k alongside the drawdown profile — max drawdown held to -5.64% across 5 active sub-classes (V_W152)."
+        "desc": "180-day OOS equity growth from $100k to $157,0k alongside the drawdown profile — max drawdown held to -5.64% across 5 active sub-classes (V_W161)."
       },
       "returns_dist": {
         "title": "Daily Returns Distribution",
-        "desc": "Distribution of daily P&L across 214 trades showing positive skew with Sharpe 4.96 and profit factor 1.83 from the V_W152 asset-specific strategy."
+        "desc": "Distribution of daily P&L across 213 trades showing positive skew with Sharpe 5.09 and profit factor 1.83 from the V_W161 asset-specific strategy."
       },
       "subclass_comparison": {
         "title": "Asset Class Performance Breakdown",
-        "desc": "Side-by-side Sharpe, win rate, and return comparison across active sub-classes: GOLD, FOREX Majors, CRYPTO BTC, EURGBP and YEN-cross rescue (V_W152, 180d OOS)."
+        "desc": "Side-by-side Sharpe, win rate, and return comparison across active sub-classes: GOLD, FOREX Majors, CRYPTO BTC, EURGBP and YEN-cross rescue (V_W161, 180d OOS)."
       },
       "top_symbols": {
         "title": "Top Performing Symbols",
-        "desc": "Best individual symbols by OOS return — XAUUSD and BTCUSD lead by total contribution; Forex majors at 64.3% WR with GBPJPY+EURJPY YEN rescue added in V_W152."
+        "desc": "Best individual symbols by OOS return — XAUUSD and BTCUSD lead by total contribution; Forex majors at 64.3% WR with GBPJPY+EURJPY YEN rescue added in V_W161."
       },
       "risk_metrics": {
         "title": "Risk & Capital Efficiency",
