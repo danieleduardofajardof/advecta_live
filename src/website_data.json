@@ -1,46 +1,46 @@
 {
   "overview": {
-    "total_return_pct": 57.62,
-    "cagr_pct": 151.6,
-    "sharpe": 5.373,
-    "max_dd_pct": -4.74,
-    "win_rate": 0.523,
-    "n_trades": 199,
-    "trades_per_day": 1.11,
-    "final_equity": 157620.0,
-    "strategy": "V_W202 \u2014 Quality-biased (BTC@62 + regime-aware) (CLAUDE.md compliant)",
+    "total_return_pct": 137.77,
+    "cagr_pct": 479.11,
+    "sharpe": 6.089,
+    "max_dd_pct": -8.49,
+    "win_rate": 0.541,
+    "n_trades": 172,
+    "trades_per_day": 0.96,
+    "final_equity": 237770.0,
+    "strategy": "V_W260 \u2014 High-conviction (1% per trade, regime-aware, GOLD@44) (CLAUDE.md compliant)",
     "universe_size": 4,
     "oos_start": "2025-11-05",
     "oos_end": "2026-05-04",
-    "roi_pct": 57.62,
+    "roi_pct": 137.77,
     "starting_capital": 100000,
     "test_days": 180,
     "position_size": 500,
-    "total_trades": 199,
-    "total_pnl": 57620.0,
-    "daily_roi_pct": 0.32,
+    "total_trades": 172,
+    "total_pnl": 137770.0,
+    "daily_roi_pct": 0.765,
     "period": "2025-11-05 \u2192 2026-05-04"
   },
   "kpi_by_period": {
     "Full Period": {
       "actual_days": 180,
       "trading_days": 180,
-      "n_trades": 199,
-      "tpd": 1.11,
-      "trades_per_day": 1.11,
-      "total_pnl": 57620.0,
-      "total_return_pct": 57.62,
-      "cagr_pct": 151.6,
-      "sharpe": 5.373,
-      "max_dd": -0.0474,
-      "max_dd_pct": -4.74,
-      "win_rate": 0.523,
-      "profit_factor": 1.96,
-      "pf": 1.96,
-      "roi_pct": 57.62,
-      "daily_roi_pct": 0.32,
-      "final_equity": 157620.0,
-      "peak_equity": 162360.0
+      "n_trades": 172,
+      "tpd": 0.96,
+      "trades_per_day": 0.96,
+      "total_pnl": 137770.0,
+      "total_return_pct": 137.77,
+      "cagr_pct": 479.11,
+      "sharpe": 6.089,
+      "max_dd": -0.0849,
+      "max_dd_pct": -8.49,
+      "win_rate": 0.541,
+      "profit_factor": 2.09,
+      "pf": 2.09,
+      "roi_pct": 137.77,
+      "daily_roi_pct": 0.765,
+      "final_equity": 237770.0,
+      "peak_equity": 246260.0
     },
     "1 Month": {
       "actual_days": 30,
@@ -48,111 +48,111 @@
       "n_trades": 29,
       "tpd": 0.97,
       "trades_per_day": 0.97,
-      "total_pnl": 5740.34,
-      "total_return_pct": 5.74,
-      "cagr_pct": 97.21,
-      "sharpe": 4.567,
-      "max_dd": -0.0307,
-      "max_dd_pct": -3.07,
+      "total_pnl": 7988.94,
+      "total_return_pct": 7.99,
+      "cagr_pct": 154.75,
+      "sharpe": 5.176,
+      "max_dd": -0.0559,
+      "max_dd_pct": -5.59,
       "win_rate": 0.517,
-      "profit_factor": 1.7,
-      "pf": 1.7,
-      "roi_pct": 5.74,
-      "daily_roi_pct": 0.1913,
-      "final_equity": 105740.34,
-      "peak_equity": 108814.95
+      "profit_factor": 1.54,
+      "pf": 1.54,
+      "roi_pct": 7.99,
+      "daily_roi_pct": 0.2663,
+      "final_equity": 107988.94,
+      "peak_equity": 113574.45
     },
     "90 Days": {
       "actual_days": 90,
       "trading_days": 90,
-      "n_trades": 91,
-      "tpd": 1.01,
-      "trades_per_day": 1.01,
-      "total_pnl": 26400.0,
-      "total_return_pct": 26.4,
-      "cagr_pct": 158.61,
-      "sharpe": 4.947,
-      "max_dd": -0.0474,
-      "max_dd_pct": -4.74,
-      "win_rate": 0.527,
-      "profit_factor": 2.12,
-      "pf": 2.12,
-      "roi_pct": 26.4,
-      "daily_roi_pct": 0.293,
-      "final_equity": 126400.0,
-      "peak_equity": 131140.0
+      "n_trades": 82,
+      "tpd": 0.91,
+      "trades_per_day": 0.91,
+      "total_pnl": 53310.0,
+      "total_return_pct": 53.31,
+      "cagr_pct": 465.71,
+      "sharpe": 5.267,
+      "max_dd": -0.0857,
+      "max_dd_pct": -8.57,
+      "win_rate": 0.524,
+      "profit_factor": 2.18,
+      "pf": 2.18,
+      "roi_pct": 53.31,
+      "daily_roi_pct": 0.592,
+      "final_equity": 153310.0,
+      "peak_equity": 161880.0
     },
     "6 Months": {
       "actual_days": 180,
       "trading_days": 180,
-      "n_trades": 199,
-      "tpd": 1.11,
-      "trades_per_day": 1.11,
-      "total_pnl": 57620.0,
-      "total_return_pct": 57.62,
-      "cagr_pct": 151.6,
-      "sharpe": 5.373,
-      "max_dd": -0.0474,
-      "max_dd_pct": -4.74,
-      "win_rate": 0.523,
-      "profit_factor": 1.96,
-      "pf": 1.96,
-      "roi_pct": 57.62,
-      "daily_roi_pct": 0.32,
-      "final_equity": 157620.0,
-      "peak_equity": 162360.0
+      "n_trades": 172,
+      "tpd": 0.96,
+      "trades_per_day": 0.96,
+      "total_pnl": 137770.0,
+      "total_return_pct": 137.77,
+      "cagr_pct": 479.11,
+      "sharpe": 6.089,
+      "max_dd": -0.0849,
+      "max_dd_pct": -8.49,
+      "win_rate": 0.541,
+      "profit_factor": 2.09,
+      "pf": 2.09,
+      "roi_pct": 137.77,
+      "daily_roi_pct": 0.765,
+      "final_equity": 237770.0,
+      "peak_equity": 246260.0
     },
     "1 Year": {
       "actual_days": 270,
       "trading_days": 270,
-      "n_trades": 299,
-      "tpd": 1.11,
-      "trades_per_day": 1.11,
-      "total_pnl": 61390.0,
-      "total_return_pct": 61.39,
-      "cagr_pct": 90.99,
-      "sharpe": 4.244,
-      "max_dd": -0.0914,
-      "max_dd_pct": -9.14,
-      "win_rate": 0.508,
-      "profit_factor": 1.63,
-      "pf": 1.63,
-      "roi_pct": 61.39,
-      "daily_roi_pct": 0.227,
-      "final_equity": 161390.0,
-      "peak_equity": 170530.0
+      "n_trades": 233,
+      "tpd": 0.86,
+      "trades_per_day": 0.86,
+      "total_pnl": 125480.0,
+      "total_return_pct": 125.48,
+      "cagr_pct": 200.16,
+      "sharpe": 4.498,
+      "max_dd": -0.1672,
+      "max_dd_pct": -16.72,
+      "win_rate": 0.515,
+      "profit_factor": 1.69,
+      "pf": 1.69,
+      "roi_pct": 125.48,
+      "daily_roi_pct": 0.465,
+      "final_equity": 225480.0,
+      "peak_equity": 242200.0
     }
   },
   "asset_breakdown": {
     "GOLD": {
-      "n_trades": 106,
-      "win_rate": 0.462,
-      "mean_pnl": 0.189,
-      "sharpe": 4.613,
-      "total_return": 21.75,
-      "max_dd": -3.68,
+      "n_trades": 85,
+      "win_rate": 0.482,
+      "mean_pnl": 0.489,
+      "sharpe": 5.741,
+      "total_return": 49.51,
+      "max_dd": -6.45,
       "symbols": [
         "XAUUSD"
       ]
     },
     "CRYPTO_BTC": {
-      "n_trades": 32,
+      "n_trades": 30,
       "win_rate": 0.5,
-      "mean_pnl": 0.237,
-      "sharpe": 3.376,
-      "total_return": 7.66,
-      "max_dd": -3.98,
+      "mean_pnl": 0.462,
+      "sharpe": 3.233,
+      "total_return": 14.01,
+      "max_dd": -7.85,
       "symbols": [
         "BTCUSD"
       ]
     },
     "YEN_CROSSES": {
-      "n_trades": 13,
-      "win_rate": 0.462,
-      "mean_pnl": -0.076,
-      "sharpe": -1.941,
-      "total_return": -1.0,
-      "max_dd": -2.09,
+      "n_trades": 12,
+      "win_rate": 0.5,
+      "mean_pnl": -0.019,
+      "sharpe": -0.252,
+      "total_return": -0.3,
+      "max_dd": -3.31,
       "symbols": [
         "GBPJPY",
         "EURJPY"
@@ -161,10 +161,10 @@
     "FOREX_MAJORS": {
       "n_trades": 36,
       "win_rate": 0.694,
-      "mean_pnl": 0.42,
-      "sharpe": 8.57,
-      "total_return": 16.15,
-      "max_dd": -2.46,
+      "mean_pnl": 0.79,
+      "sharpe": 8.554,
+      "total_return": 32.16,
+      "max_dd": -4.88,
       "symbols": [
         "EURUSD",
         "GBPUSD",
@@ -176,12 +176,12 @@
       ]
     },
     "EUR_GBP_CROSSES": {
-      "n_trades": 12,
+      "n_trades": 9,
       "win_rate": 0.667,
-      "mean_pnl": 0.376,
-      "sharpe": 8.926,
-      "total_return": 4.57,
-      "max_dd": -1.21,
+      "mean_pnl": 0.646,
+      "sharpe": 6.648,
+      "total_return": 5.87,
+      "max_dd": -2.42,
       "symbols": [
         "EURGBP",
         "EURCHF",
@@ -193,37 +193,25 @@
   "top_stocks": [
     {
       "ticker": "XAUUSD",
-      "n_trades": 106,
-      "win_rate": 0.462,
-      "win_pct": 46.2,
-      "mean_pnl": 0.189,
-      "avg_pnl_pct": 0.189,
-      "total_pnl": 20058.2,
+      "n_trades": 85,
+      "win_rate": 0.482,
+      "win_pct": 48.2,
+      "mean_pnl": 0.489,
+      "avg_pnl_pct": 0.489,
+      "total_pnl": 41531.6,
       "subclass": "GOLD",
       "exchange": "MT5",
       "session": "London/NY"
     },
     {
       "ticker": "BTCUSD",
-      "n_trades": 32,
+      "n_trades": 30,
       "win_rate": 0.5,
       "win_pct": 50.0,
-      "mean_pnl": 0.237,
-      "avg_pnl_pct": 0.237,
-      "total_pnl": 7579.9,
+      "mean_pnl": 0.462,
+      "avg_pnl_pct": 0.462,
+      "total_pnl": 13865.0,
       "subclass": "CRYPTO_BTC",
-      "exchange": "MT5",
-      "session": "London/NY"
-    },
-    {
-      "ticker": "EURCAD",
-      "n_trades": 6,
-      "win_rate": 0.833,
-      "win_pct": 83.3,
-      "mean_pnl": 0.61,
-      "avg_pnl_pct": 0.61,
-      "total_pnl": 3660.6,
-      "subclass": "EUR_GBP_CROSSES",
       "exchange": "MT5",
       "session": "London/NY"
     },
@@ -232,9 +220,9 @@
       "n_trades": 8,
       "win_rate": 0.625,
       "win_pct": 62.5,
-      "mean_pnl": 0.392,
-      "avg_pnl_pct": 0.392,
-      "total_pnl": 3139.7,
+      "mean_pnl": 0.785,
+      "avg_pnl_pct": 0.785,
+      "total_pnl": 6279.3,
       "subclass": "FOREX_MAJORS",
       "exchange": "MT5",
       "session": "London/NY"
@@ -244,10 +232,22 @@
       "n_trades": 6,
       "win_rate": 0.833,
       "win_pct": 83.3,
-      "mean_pnl": 0.516,
-      "avg_pnl_pct": 0.516,
-      "total_pnl": 3096.2,
+      "mean_pnl": 1.032,
+      "avg_pnl_pct": 1.032,
+      "total_pnl": 6192.3,
       "subclass": "FOREX_MAJORS",
+      "exchange": "MT5",
+      "session": "London/NY"
+    },
+    {
+      "ticker": "EURCAD",
+      "n_trades": 5,
+      "win_rate": 0.8,
+      "win_pct": 80.0,
+      "mean_pnl": 1.113,
+      "avg_pnl_pct": 1.113,
+      "total_pnl": 5565.5,
+      "subclass": "EUR_GBP_CROSSES",
       "exchange": "MT5",
       "session": "London/NY"
     },
@@ -256,22 +256,10 @@
       "n_trades": 5,
       "win_rate": 0.8,
       "win_pct": 80.0,
-      "mean_pnl": 0.479,
-      "avg_pnl_pct": 0.479,
-      "total_pnl": 2397.0,
+      "mean_pnl": 0.777,
+      "avg_pnl_pct": 0.777,
+      "total_pnl": 3884.1,
       "subclass": "FOREX_MAJORS",
-      "exchange": "MT5",
-      "session": "London/NY"
-    },
-    {
-      "ticker": "GBPCHF",
-      "n_trades": 3,
-      "win_rate": 1.0,
-      "win_pct": 100.0,
-      "mean_pnl": 0.706,
-      "avg_pnl_pct": 0.706,
-      "total_pnl": 2117.3,
-      "subclass": "EUR_GBP_CROSSES",
       "exchange": "MT5",
       "session": "London/NY"
     },
@@ -280,9 +268,9 @@
       "n_trades": 6,
       "win_rate": 0.5,
       "win_pct": 50.0,
-      "mean_pnl": 0.311,
-      "avg_pnl_pct": 0.311,
-      "total_pnl": 1867.4,
+      "mean_pnl": 0.622,
+      "avg_pnl_pct": 0.622,
+      "total_pnl": 3734.6,
       "subclass": "FOREX_MAJORS",
       "exchange": "MT5",
       "session": "London/NY"
@@ -292,9 +280,33 @@
       "n_trades": 4,
       "win_rate": 0.75,
       "win_pct": 75.0,
-      "mean_pnl": 0.462,
-      "avg_pnl_pct": 0.462,
-      "total_pnl": 1849.4,
+      "mean_pnl": 0.925,
+      "avg_pnl_pct": 0.925,
+      "total_pnl": 3698.7,
+      "subclass": "FOREX_MAJORS",
+      "exchange": "MT5",
+      "session": "London/NY"
+    },
+    {
+      "ticker": "GBPCHF",
+      "n_trades": 2,
+      "win_rate": 1.0,
+      "win_pct": 100.0,
+      "mean_pnl": 1.372,
+      "avg_pnl_pct": 1.372,
+      "total_pnl": 2744.0,
+      "subclass": "EUR_GBP_CROSSES",
+      "exchange": "MT5",
+      "session": "London/NY"
+    },
+    {
+      "ticker": "EURUSD",
+      "n_trades": 4,
+      "win_rate": 0.75,
+      "win_pct": 75.0,
+      "mean_pnl": 0.608,
+      "avg_pnl_pct": 0.608,
+      "total_pnl": 2432.7,
       "subclass": "FOREX_MAJORS",
       "exchange": "MT5",
       "session": "London/NY"
@@ -304,21 +316,9 @@
       "n_trades": 3,
       "win_rate": 0.667,
       "win_pct": 66.7,
-      "mean_pnl": 0.502,
-      "avg_pnl_pct": 0.502,
-      "total_pnl": 1506.3,
-      "subclass": "FOREX_MAJORS",
-      "exchange": "MT5",
-      "session": "London/NY"
-    },
-    {
-      "ticker": "EURUSD",
-      "n_trades": 4,
-      "win_rate": 0.75,
-      "win_pct": 75.0,
-      "mean_pnl": 0.316,
-      "avg_pnl_pct": 0.316,
-      "total_pnl": 1262.8,
+      "mean_pnl": 0.741,
+      "avg_pnl_pct": 0.741,
+      "total_pnl": 2223.2,
       "subclass": "FOREX_MAJORS",
       "exchange": "MT5",
       "session": "London/NY"
@@ -328,9 +328,21 @@
       "n_trades": 7,
       "win_rate": 0.571,
       "win_pct": 57.1,
-      "mean_pnl": -0.005,
-      "avg_pnl_pct": -0.005,
-      "total_pnl": -33.4,
+      "mean_pnl": -0.01,
+      "avg_pnl_pct": -0.01,
+      "total_pnl": -66.8,
+      "subclass": "YEN_CROSSES",
+      "exchange": "MT5",
+      "session": "London/NY"
+    },
+    {
+      "ticker": "GBPJPY",
+      "n_trades": 5,
+      "win_rate": 0.4,
+      "win_pct": 40.0,
+      "mean_pnl": -0.032,
+      "avg_pnl_pct": -0.032,
+      "total_pnl": -158.0,
       "subclass": "YEN_CROSSES",
       "exchange": "MT5",
       "session": "London/NY"
@@ -340,34 +352,22 @@
       "n_trades": 1,
       "win_rate": 0.0,
       "win_pct": 0.0,
-      "mean_pnl": -0.593,
-      "avg_pnl_pct": -0.593,
-      "total_pnl": -593.0,
+      "mean_pnl": -1.186,
+      "avg_pnl_pct": -1.186,
+      "total_pnl": -1186.0,
       "subclass": "EUR_GBP_CROSSES",
       "exchange": "MT5",
       "session": "London/NY"
     },
     {
       "ticker": "EURGBP",
-      "n_trades": 2,
+      "n_trades": 1,
       "win_rate": 0.0,
       "win_pct": 0.0,
-      "mean_pnl": -0.339,
-      "avg_pnl_pct": -0.339,
-      "total_pnl": -678.8,
+      "mean_pnl": -1.31,
+      "avg_pnl_pct": -1.31,
+      "total_pnl": -1310.5,
       "subclass": "EUR_GBP_CROSSES",
-      "exchange": "MT5",
-      "session": "London/NY"
-    },
-    {
-      "ticker": "GBPJPY",
-      "n_trades": 6,
-      "win_rate": 0.333,
-      "win_pct": 33.3,
-      "mean_pnl": -0.158,
-      "avg_pnl_pct": -0.158,
-      "total_pnl": -949.7,
-      "subclass": "YEN_CROSSES",
       "exchange": "MT5",
       "session": "London/NY"
     }
@@ -381,807 +381,699 @@
     },
     {
       "date": "2025-11-05",
-      "equity": 99471.3,
-      "balance": 99471.3,
-      "drawdown": -0.53
+      "equity": 98942.6,
+      "balance": 98942.6,
+      "drawdown": -1.06
     },
     {
       "date": "2025-11-06",
-      "equity": 99369.14,
-      "balance": 99369.14,
-      "drawdown": -0.63
+      "equity": 98739.27,
+      "balance": 98739.27,
+      "drawdown": -1.26
     },
     {
       "date": "2025-11-07",
-      "equity": 98415.49,
-      "balance": 98415.49,
-      "drawdown": -1.58
+      "equity": 96848.67,
+      "balance": 96848.67,
+      "drawdown": -3.15
     },
     {
       "date": "2025-11-11",
-      "equity": 100087.26,
-      "balance": 100087.26,
+      "equity": 100138.68,
+      "balance": 100138.68,
       "drawdown": 0.0
     },
     {
       "date": "2025-11-12",
-      "equity": 102108.21,
-      "balance": 102108.21,
-      "drawdown": -0.56
+      "equity": 104193.58,
+      "balance": 104193.58,
+      "drawdown": -1.11
     },
     {
       "date": "2025-11-14",
-      "equity": 101209.85,
-      "balance": 101209.85,
-      "drawdown": -1.43
+      "equity": 102363.88,
+      "balance": 102363.88,
+      "drawdown": -2.85
     },
     {
       "date": "2025-11-18",
-      "equity": 101070.24,
-      "balance": 101070.24,
-      "drawdown": -1.57
-    },
-    {
-      "date": "2025-11-19",
-      "equity": 100703.86,
-      "balance": 100703.86,
-      "drawdown": -1.92
+      "equity": 102067.08,
+      "balance": 102067.08,
+      "drawdown": -3.13
     },
     {
       "date": "2025-11-20",
-      "equity": 100164.39,
-      "balance": 100164.39,
-      "drawdown": -2.45
+      "equity": 100973.53,
+      "balance": 100973.53,
+      "drawdown": -4.17
     },
     {
       "date": "2025-11-23",
-      "equity": 99021.32,
-      "balance": 99021.32,
-      "drawdown": -3.56
-    },
-    {
-      "date": "2025-11-24",
-      "equity": 98446.7,
-      "balance": 98446.7,
-      "drawdown": -4.12
-    },
-    {
-      "date": "2025-11-25",
-      "equity": 98955.86,
-      "balance": 98955.86,
-      "drawdown": -3.63
-    },
-    {
-      "date": "2025-11-26",
-      "equity": 99482.4,
-      "balance": 99482.4,
-      "drawdown": -3.11
-    },
-    {
-      "date": "2025-11-27",
-      "equity": 99383.91,
-      "balance": 99383.91,
-      "drawdown": -3.21
-    },
-    {
-      "date": "2025-11-28",
-      "equity": 100321.0,
-      "balance": 100321.0,
-      "drawdown": -2.3
-    },
-    {
-      "date": "2025-12-02",
-      "equity": 99814.94,
-      "balance": 99814.94,
-      "drawdown": -2.79
-    },
-    {
-      "date": "2025-12-03",
-      "equity": 98759.11,
-      "balance": 98759.11,
-      "drawdown": -3.82
-    },
-    {
-      "date": "2025-12-04",
-      "equity": 98240.33,
-      "balance": 98240.33,
-      "drawdown": -4.32
+      "equity": 98669.01,
+      "balance": 98669.01,
+      "drawdown": -6.35
     },
     {
       "date": "2025-12-05",
-      "equity": 99050.59,
-      "balance": 99050.59,
-      "drawdown": -3.53
+      "equity": 99767.98,
+      "balance": 99767.98,
+      "drawdown": -5.31
     },
     {
       "date": "2025-12-07",
-      "equity": 99978.39,
-      "balance": 99978.39,
-      "drawdown": -2.63
+      "equity": 101637.03,
+      "balance": 101637.03,
+      "drawdown": -3.54
     },
     {
       "date": "2025-12-09",
-      "equity": 99897.01,
-      "balance": 99897.01,
-      "drawdown": -2.71
+      "equity": 101471.57,
+      "balance": 101471.57,
+      "drawdown": -3.69
     },
     {
       "date": "2025-12-10",
-      "equity": 99900.81,
-      "balance": 99900.81,
-      "drawdown": -2.71
+      "equity": 101479.18,
+      "balance": 101479.18,
+      "drawdown": -3.69
     },
     {
       "date": "2025-12-11",
-      "equity": 100704.21,
-      "balance": 100704.21,
-      "drawdown": -1.92
+      "equity": 103111.47,
+      "balance": 103111.47,
+      "drawdown": -2.14
     },
     {
       "date": "2025-12-12",
-      "equity": 101076.28,
-      "balance": 101076.28,
-      "drawdown": -1.56
+      "equity": 103862.62,
+      "balance": 103862.62,
+      "drawdown": -1.42
     },
     {
       "date": "2025-12-14",
-      "equity": 102026.9,
-      "balance": 102026.9,
-      "drawdown": -0.63
+      "equity": 105816.38,
+      "balance": 105816.38,
+      "drawdown": 0.0
     },
     {
       "date": "2025-12-15",
-      "equity": 102712.83,
-      "balance": 102712.83,
+      "equity": 107239.29,
+      "balance": 107239.29,
       "drawdown": 0.0
     },
     {
       "date": "2025-12-16",
-      "equity": 102161.57,
-      "balance": 102161.57,
-      "drawdown": -0.54
+      "equity": 106088.19,
+      "balance": 106088.19,
+      "drawdown": -1.07
     },
     {
       "date": "2025-12-17",
-      "equity": 103811.03,
-      "balance": 103811.03,
-      "drawdown": -0.16
+      "equity": 109520.13,
+      "balance": 109520.13,
+      "drawdown": -0.32
     },
     {
       "date": "2025-12-18",
-      "equity": 103239.86,
-      "balance": 103239.86,
-      "drawdown": -0.71
+      "equity": 108314.97,
+      "balance": 108314.97,
+      "drawdown": -1.42
     },
     {
       "date": "2025-12-19",
-      "equity": 104164.06,
-      "balance": 104164.06,
+      "equity": 110254.35,
+      "balance": 110254.35,
       "drawdown": 0.0
     },
     {
       "date": "2025-12-22",
-      "equity": 105415.92,
-      "balance": 105415.92,
-      "drawdown": -2.46
+      "equity": 112820.43,
+      "balance": 112820.43,
+      "drawdown": -4.88
     },
     {
       "date": "2025-12-23",
-      "equity": 106697.7,
-      "balance": 106697.7,
-      "drawdown": -1.28
+      "equity": 115540.99,
+      "balance": 115540.99,
+      "drawdown": -2.59
     },
     {
       "date": "2025-12-24",
-      "equity": 110219.21,
-      "balance": 110219.21,
+      "equity": 122190.14,
+      "balance": 122190.14,
       "drawdown": 0.0
     },
     {
       "date": "2025-12-25",
-      "equity": 110406.47,
-      "balance": 110406.47,
+      "equity": 122605.34,
+      "balance": 122605.34,
       "drawdown": 0.0
     },
     {
       "date": "2025-12-26",
-      "equity": 110788.93,
-      "balance": 110788.93,
-      "drawdown": -0.59
+      "equity": 123441.3,
+      "balance": 123441.3,
+      "drawdown": -1.17
     },
     {
       "date": "2025-12-29",
-      "equity": 111362.37,
-      "balance": 111362.37,
-      "drawdown": -0.07
+      "equity": 124719.16,
+      "balance": 124719.16,
+      "drawdown": -0.15
     },
     {
       "date": "2025-12-30",
-      "equity": 110718.27,
-      "balance": 110718.27,
-      "drawdown": -0.65
+      "equity": 124617.02,
+      "balance": 124617.02,
+      "drawdown": -0.23
     },
     {
       "date": "2025-12-31",
-      "equity": 110194.17,
-      "balance": 110194.17,
-      "drawdown": -1.69
+      "equity": 122668.0,
+      "balance": 122668.0,
+      "drawdown": -3.36
     },
     {
       "date": "2026-01-02",
-      "equity": 111311.1,
-      "balance": 111311.1,
-      "drawdown": -0.69
+      "equity": 125137.18,
+      "balance": 125137.18,
+      "drawdown": -1.41
     },
     {
       "date": "2026-01-05",
-      "equity": 110221.03,
-      "balance": 110221.03,
-      "drawdown": -1.67
+      "equity": 122686.24,
+      "balance": 122686.24,
+      "drawdown": -3.35
     },
     {
       "date": "2026-01-06",
-      "equity": 110763.31,
-      "balance": 110763.31,
-      "drawdown": -1.18
+      "equity": 123893.35,
+      "balance": 123893.35,
+      "drawdown": -2.39
     },
     {
       "date": "2026-01-07",
-      "equity": 110885.38,
-      "balance": 110885.38,
-      "drawdown": -1.07
+      "equity": 124166.29,
+      "balance": 124166.29,
+      "drawdown": -2.18
     },
     {
       "date": "2026-01-09",
-      "equity": 112963.58,
-      "balance": 112963.58,
+      "equity": 128842.11,
+      "balance": 128842.11,
       "drawdown": 0.0
     },
     {
       "date": "2026-01-12",
-      "equity": 114148.85,
-      "balance": 114148.85,
-      "drawdown": -1.11
+      "equity": 131491.3,
+      "balance": 131491.3,
+      "drawdown": -2.22
     },
     {
       "date": "2026-01-13",
-      "equity": 114881.11,
-      "balance": 114881.11,
-      "drawdown": -0.57
+      "equity": 133166.82,
+      "balance": 133166.82,
+      "drawdown": -1.13
     },
     {
       "date": "2026-01-14",
-      "equity": 115958.24,
-      "balance": 115958.24,
+      "equity": 135663.83,
+      "balance": 135663.83,
       "drawdown": 0.0
     },
     {
       "date": "2026-01-15",
-      "equity": 115308.17,
-      "balance": 115308.17,
-      "drawdown": -0.56
+      "equity": 134142.63,
+      "balance": 134142.63,
+      "drawdown": -1.12
     },
     {
       "date": "2026-01-16",
-      "equity": 115214.8,
-      "balance": 115214.8,
-      "drawdown": -0.64
+      "equity": 133923.45,
+      "balance": 133923.45,
+      "drawdown": -1.28
     },
     {
       "date": "2026-01-19",
-      "equity": 117005.04,
-      "balance": 117005.04,
+      "equity": 138100.5,
+      "balance": 138100.5,
       "drawdown": 0.0
     },
     {
       "date": "2026-01-21",
-      "equity": 117512.34,
-      "balance": 117512.34,
+      "equity": 139283.32,
+      "balance": 139283.32,
       "drawdown": 0.0
     },
     {
       "date": "2026-01-22",
-      "equity": 117139.0,
-      "balance": 117139.0,
-      "drawdown": -0.32
+      "equity": 138398.31,
+      "balance": 138398.31,
+      "drawdown": -0.64
     },
     {
       "date": "2026-01-23",
-      "equity": 119864.7,
-      "balance": 119864.7,
+      "equity": 144875.04,
+      "balance": 144875.04,
       "drawdown": 0.0
     },
     {
       "date": "2026-01-25",
-      "equity": 120960.03,
-      "balance": 120960.03,
+      "equity": 147522.77,
+      "balance": 147522.77,
       "drawdown": 0.0
     },
     {
       "date": "2026-01-26",
-      "equity": 120305.03,
-      "balance": 120305.03,
-      "drawdown": -0.54
+      "equity": 145924.95,
+      "balance": 145924.95,
+      "drawdown": -1.08
     },
     {
       "date": "2026-01-27",
-      "equity": 120504.37,
-      "balance": 120504.37,
-      "drawdown": -0.38
+      "equity": 146408.55,
+      "balance": 146408.55,
+      "drawdown": -0.76
     },
     {
       "date": "2026-01-28",
-      "equity": 118743.74,
-      "balance": 118743.74,
-      "drawdown": -1.83
+      "equity": 142145.11,
+      "balance": 142145.11,
+      "drawdown": -3.65
     },
     {
       "date": "2026-01-29",
-      "equity": 120854.66,
-      "balance": 120854.66,
-      "drawdown": -1.09
+      "equity": 147108.73,
+      "balance": 147108.73,
+      "drawdown": -2.19
     },
     {
       "date": "2026-01-31",
-      "equity": 122016.67,
-      "balance": 122016.67,
-      "drawdown": -0.14
+      "equity": 149937.78,
+      "balance": 149937.78,
+      "drawdown": -0.31
     },
     {
       "date": "2026-02-01",
-      "equity": 124056.18,
-      "balance": 124056.18,
+      "equity": 154950.2,
+      "balance": 154950.2,
       "drawdown": 0.0
     },
     {
-      "date": "2026-02-03",
-      "equity": 123994.37,
-      "balance": 123994.37,
-      "drawdown": -0.51
-    },
-    {
       "date": "2026-02-04",
-      "equity": 126381.09,
-      "balance": 126381.09,
+      "equity": 159129.73,
+      "balance": 159129.73,
       "drawdown": 0.0
     },
     {
       "date": "2026-02-05",
-      "equity": 129360.81,
-      "balance": 129360.81,
+      "equity": 166659.44,
+      "balance": 166659.44,
       "drawdown": 0.0
     },
     {
       "date": "2026-02-06",
-      "equity": 128750.87,
-      "balance": 128750.87,
-      "drawdown": -1.01
-    },
-    {
-      "date": "2026-02-09",
-      "equity": 128089.6,
-      "balance": 128089.6,
-      "drawdown": -1.52
+      "equity": 165078.39,
+      "balance": 165078.39,
+      "drawdown": -2.01
     },
     {
       "date": "2026-02-10",
-      "equity": 127409.32,
-      "balance": 127409.32,
-      "drawdown": -2.04
-    },
-    {
-      "date": "2026-02-11",
-      "equity": 127558.01,
-      "balance": 127558.01,
-      "drawdown": -1.92
+      "equity": 163324.93,
+      "balance": 163324.93,
+      "drawdown": -3.05
     },
     {
       "date": "2026-02-12",
-      "equity": 126676.22,
-      "balance": 126676.22,
-      "drawdown": -2.6
+      "equity": 161069.39,
+      "balance": 161069.39,
+      "drawdown": -4.39
     },
     {
       "date": "2026-02-13",
-      "equity": 126957.88,
-      "balance": 126957.88,
-      "drawdown": -2.39
+      "equity": 161778.5,
+      "balance": 161778.5,
+      "drawdown": -3.97
     },
     {
       "date": "2026-02-15",
-      "equity": 126269.01,
-      "balance": 126269.01,
-      "drawdown": -2.92
+      "equity": 160022.88,
+      "balance": 160022.88,
+      "drawdown": -5.01
     },
     {
       "date": "2026-02-17",
-      "equity": 127412.5,
-      "balance": 127412.5,
-      "drawdown": -2.04
+      "equity": 161472.05,
+      "balance": 161472.05,
+      "drawdown": -4.15
     },
     {
       "date": "2026-02-18",
-      "equity": 127574.31,
-      "balance": 127574.31,
-      "drawdown": -1.91
+      "equity": 161431.35,
+      "balance": 161431.35,
+      "drawdown": -4.18
     },
     {
       "date": "2026-02-20",
-      "equity": 127684.54,
-      "balance": 127684.54,
-      "drawdown": -1.83
+      "equity": 161710.31,
+      "balance": 161710.31,
+      "drawdown": -4.01
     },
     {
       "date": "2026-02-26",
-      "equity": 125224.52,
-      "balance": 125224.52,
-      "drawdown": -3.72
-    },
-    {
-      "date": "2026-02-27",
-      "equity": 126323.74,
-      "balance": 126323.74,
-      "drawdown": -2.87
-    },
-    {
-      "date": "2026-03-02",
-      "equity": 125658.52,
-      "balance": 125658.52,
-      "drawdown": -3.39
-    },
-    {
-      "date": "2026-03-04",
-      "equity": 125586.26,
-      "balance": 125586.26,
-      "drawdown": -3.44
-    },
-    {
-      "date": "2026-03-05",
-      "equity": 125517.44,
-      "balance": 125517.44,
-      "drawdown": -3.49
+      "equity": 158128.14,
+      "balance": 158128.14,
+      "drawdown": -6.14
     },
     {
       "date": "2026-03-06",
-      "equity": 126308.86,
-      "balance": 126308.86,
-      "drawdown": -2.89
+      "equity": 160254.98,
+      "balance": 160254.98,
+      "drawdown": -4.87
     },
     {
       "date": "2026-03-09",
-      "equity": 125405.25,
-      "balance": 125405.25,
-      "drawdown": -3.58
+      "equity": 157961.89,
+      "balance": 157961.89,
+      "drawdown": -6.23
     },
     {
       "date": "2026-03-11",
-      "equity": 124671.5,
-      "balance": 124671.5,
-      "drawdown": -4.14
+      "equity": 156113.58,
+      "balance": 156113.58,
+      "drawdown": -7.33
     },
     {
       "date": "2026-03-12",
-      "equity": 123892.55,
-      "balance": 123892.55,
-      "drawdown": -4.74
+      "equity": 154164.01,
+      "balance": 154164.01,
+      "drawdown": -8.49
     },
     {
       "date": "2026-03-13",
-      "equity": 126734.2,
-      "balance": 126734.2,
-      "drawdown": -2.56
+      "equity": 161270.05,
+      "balance": 161270.05,
+      "drawdown": -4.27
     },
     {
       "date": "2026-03-16",
-      "equity": 131091.9,
-      "balance": 131091.9,
-      "drawdown": 0.0
-    },
-    {
-      "date": "2026-03-17",
-      "equity": 131230.07,
-      "balance": 131230.07,
+      "equity": 172410.63,
+      "balance": 172410.63,
       "drawdown": 0.0
     },
     {
       "date": "2026-03-18",
-      "equity": 132522.03,
-      "balance": 132522.03,
+      "equity": 175805.39,
+      "balance": 175805.39,
       "drawdown": 0.0
     },
     {
       "date": "2026-03-19",
-      "equity": 135953.12,
-      "balance": 135953.12,
+      "equity": 184963.93,
+      "balance": 184963.93,
       "drawdown": 0.0
     },
     {
       "date": "2026-03-20",
-      "equity": 136617.76,
-      "balance": 136617.76,
+      "equity": 186753.09,
+      "balance": 186753.09,
       "drawdown": 0.0
     },
     {
       "date": "2026-03-23",
-      "equity": 140440.73,
-      "balance": 140440.73,
-      "drawdown": 0.0
-    },
-    {
-      "date": "2026-03-24",
-      "equity": 140571.2,
-      "balance": 140571.2,
+      "equity": 197205.1,
+      "balance": 197205.1,
       "drawdown": 0.0
     },
     {
       "date": "2026-03-26",
-      "equity": 141014.99,
-      "balance": 141014.99,
+      "equity": 198450.26,
+      "balance": 198450.26,
       "drawdown": 0.0
     },
     {
       "date": "2026-03-27",
-      "equity": 145945.57,
-      "balance": 145945.57,
+      "equity": 212415.69,
+      "balance": 212415.69,
       "drawdown": 0.0
     },
     {
       "date": "2026-03-29",
-      "equity": 146343.85,
-      "balance": 146343.85,
+      "equity": 213575.06,
+      "balance": 213575.06,
       "drawdown": 0.0
     },
     {
       "date": "2026-03-30",
-      "equity": 151555.67,
-      "balance": 151555.67,
+      "equity": 228964.28,
+      "balance": 228964.28,
       "drawdown": 0.0
     },
     {
       "date": "2026-03-31",
-      "equity": 150920.35,
-      "balance": 150920.35,
-      "drawdown": -0.42
+      "equity": 227528.67,
+      "balance": 227528.67,
+      "drawdown": -0.63
     },
     {
       "date": "2026-04-01",
-      "equity": 152995.21,
-      "balance": 152995.21,
+      "equity": 232027.83,
+      "balance": 232027.83,
       "drawdown": 0.0
     },
     {
       "date": "2026-04-02",
-      "equity": 149066.32,
-      "balance": 149066.32,
-      "drawdown": -2.57
+      "equity": 220178.83,
+      "balance": 220178.83,
+      "drawdown": -5.11
     },
     {
       "date": "2026-04-06",
-      "equity": 155752.86,
-      "balance": 155752.86,
+      "equity": 238061.6,
+      "balance": 238061.6,
       "drawdown": 0.0
     },
     {
       "date": "2026-04-08",
-      "equity": 157728.59,
-      "balance": 157728.59,
-      "drawdown": -0.53
+      "equity": 244061.99,
+      "balance": 244061.99,
+      "drawdown": -1.06
     },
     {
       "date": "2026-04-09",
-      "equity": 159241.53,
-      "balance": 159241.53,
+      "equity": 248744.07,
+      "balance": 248744.07,
       "drawdown": 0.0
     },
     {
       "date": "2026-04-10",
-      "equity": 158248.18,
-      "balance": 158248.18,
-      "drawdown": -0.62
+      "equity": 245640.74,
+      "balance": 245640.74,
+      "drawdown": -1.25
     },
     {
       "date": "2026-04-13",
-      "equity": 158253.23,
-      "balance": 158253.23,
-      "drawdown": -0.62
+      "equity": 245617.33,
+      "balance": 245617.33,
+      "drawdown": -1.26
     },
     {
       "date": "2026-04-14",
-      "equity": 157314.79,
-      "balance": 157314.79,
-      "drawdown": -1.21
+      "equity": 242704.31,
+      "balance": 242704.31,
+      "drawdown": -2.43
     },
     {
       "date": "2026-04-16",
-      "equity": 157111.51,
-      "balance": 157111.51,
-      "drawdown": -1.34
+      "equity": 242076.49,
+      "balance": 242076.49,
+      "drawdown": -2.68
     },
     {
       "date": "2026-04-17",
-      "equity": 158263.13,
-      "balance": 158263.13,
-      "drawdown": -0.61
+      "equity": 245615.13,
+      "balance": 245615.13,
+      "drawdown": -1.26
     },
     {
       "date": "2026-04-20",
-      "equity": 157414.36,
-      "balance": 157414.36,
-      "drawdown": -1.15
+      "equity": 242980.41,
+      "balance": 242980.41,
+      "drawdown": -2.32
     },
     {
       "date": "2026-04-21",
-      "equity": 156429.42,
-      "balance": 156429.42,
-      "drawdown": -1.77
+      "equity": 239939.75,
+      "balance": 239939.75,
+      "drawdown": -3.54
     },
     {
       "date": "2026-04-23",
-      "equity": 155188.78,
-      "balance": 155188.78,
-      "drawdown": -2.55
+      "equity": 236133.59,
+      "balance": 236133.59,
+      "drawdown": -5.07
     },
     {
       "date": "2026-04-24",
-      "equity": 154345.48,
-      "balance": 154345.48,
-      "drawdown": -3.07
+      "equity": 234850.44,
+      "balance": 234850.44,
+      "drawdown": -5.59
     },
     {
       "date": "2026-04-27",
-      "equity": 154759.44,
-      "balance": 154759.44,
-      "drawdown": -2.81
+      "equity": 235480.31,
+      "balance": 235480.31,
+      "drawdown": -5.33
     },
     {
       "date": "2026-04-28",
-      "equity": 158417.59,
-      "balance": 158417.59,
-      "drawdown": -0.52
+      "equity": 243347.54,
+      "balance": 243347.54,
+      "drawdown": -2.17
     },
     {
       "date": "2026-04-29",
-      "equity": 157077.47,
-      "balance": 157077.47,
-      "drawdown": -1.36
+      "equity": 236945.51,
+      "balance": 236945.51,
+      "drawdown": -4.74
     },
     {
       "date": "2026-04-30",
-      "equity": 155900.96,
-      "balance": 155900.96,
-      "drawdown": -2.1
+      "equity": 235170.79,
+      "balance": 235170.79,
+      "drawdown": -5.46
     },
     {
       "date": "2026-05-01",
-      "equity": 156871.91,
-      "balance": 156871.91,
-      "drawdown": -1.49
+      "equity": 236635.44,
+      "balance": 236635.44,
+      "drawdown": -4.87
     },
     {
       "date": "2026-05-02",
-      "equity": 157337.2,
-      "balance": 157337.2,
-      "drawdown": -1.2
+      "equity": 237337.3,
+      "balance": 237337.3,
+      "drawdown": -4.59
     },
     {
       "date": "2026-05-03",
-      "equity": 157623.24,
-      "balance": 157623.24,
-      "drawdown": -1.02
+      "equity": 237768.78,
+      "balance": 237768.78,
+      "drawdown": -4.41
     }
   ],
   "advanced_kpis": {
-    "profit_factor": 1.96,
-    "sortino": 14.052,
-    "expectancy": 0.233,
+    "profit_factor": 2.09,
+    "sortino": 15.282,
+    "expectancy": 0.52,
     "total_symbols": 15,
     "total_subclasses": 5,
-    "payoff_ratio": 1.792,
+    "payoff_ratio": 1.777,
     "max_consecutive_wins": 7,
-    "max_consecutive_losses": 6,
+    "max_consecutive_losses": 5,
     "avg_hold_bars": 12.3
   },
   "extra_kpis": {
-    "mean_daily_return_pct": 0.32,
-    "mean_weekly_return_pct": 1.6103,
-    "mean_monthly_return_pct": 6.9395
+    "mean_daily_return_pct": 0.765,
+    "mean_weekly_return_pct": 3.884,
+    "mean_monthly_return_pct": 17.3556
   },
   "session_performance": [
     {
       "session": "NY-Overlap",
-      "n_trades": 114,
-      "win_rate": 0.544,
-      "win_pct": 54.4,
-      "mean_pnl": 0.277,
-      "avg_pnl_pct": 0.277,
-      "total_return": 31.63,
-      "total_pnl": 31630.7
+      "n_trades": 99,
+      "win_rate": 0.535,
+      "win_pct": 53.5,
+      "mean_pnl": 0.541,
+      "avg_pnl_pct": 0.541,
+      "total_return": 53.6,
+      "total_pnl": 53599.7
     },
     {
       "session": "London",
-      "n_trades": 81,
-      "win_rate": 0.506,
-      "win_pct": 50.6,
-      "mean_pnl": 0.191,
-      "avg_pnl_pct": 0.191,
-      "total_return": 15.5,
-      "total_pnl": 15502.7
+      "n_trades": 70,
+      "win_rate": 0.557,
+      "win_pct": 55.7,
+      "mean_pnl": 0.511,
+      "avg_pnl_pct": 0.511,
+      "total_return": 35.8,
+      "total_pnl": 35795.8
     },
     {
       "session": "Asian",
-      "n_trades": 4,
-      "win_rate": 0.25,
-      "win_pct": 25.0,
-      "mean_pnl": -0.213,
-      "avg_pnl_pct": -0.213,
-      "total_return": -0.85,
-      "total_pnl": -853.5
+      "n_trades": 3,
+      "win_rate": 0.333,
+      "win_pct": 33.3,
+      "mean_pnl": 0.011,
+      "avg_pnl_pct": 0.011,
+      "total_return": 0.03,
+      "total_pnl": 34.2
     }
   ],
   "strategy_comparison": {
     "GOLD": {
       "name": "Gold",
-      "desc": "V_W94 \u2014 106 trades on 180d OOS",
+      "desc": "V_W260 \u2014 85 trades on 180d OOS",
       "color": "#fbbf24",
-      "roi_pct": 21.75,
-      "sharpe": 4.61,
-      "max_drawdown": "-3.68%",
-      "max_dd": -3.68,
-      "win_rate": 0.462,
-      "n_trades": 106,
-      "daily_pnl_pct": 0.121,
+      "roi_pct": 49.51,
+      "sharpe": 5.74,
+      "max_drawdown": "-6.45%",
+      "max_dd": -6.45,
+      "win_rate": 0.482,
+      "n_trades": 85,
+      "daily_pnl_pct": 0.275,
       "v_n3_roi_pct": 21.73
     },
     "CRYPTO_BTC": {
       "name": "Crypto Btc",
-      "desc": "V_W94 \u2014 32 trades on 180d OOS",
+      "desc": "V_W260 \u2014 30 trades on 180d OOS",
       "color": "#f97316",
-      "roi_pct": 7.66,
-      "sharpe": 3.38,
-      "max_drawdown": "-3.98%",
-      "max_dd": -3.98,
+      "roi_pct": 14.01,
+      "sharpe": 3.23,
+      "max_drawdown": "-7.85%",
+      "max_dd": -7.85,
       "win_rate": 0.5,
-      "n_trades": 32,
-      "daily_pnl_pct": 0.043,
+      "n_trades": 30,
+      "daily_pnl_pct": 0.078,
       "v_n3_roi_pct": 7.84
     },
     "YEN_CROSSES": {
       "name": "Yen Crosses",
-      "desc": "V_W94 \u2014 13 trades on 180d OOS",
+      "desc": "V_W260 \u2014 12 trades on 180d OOS",
       "color": "#ec4899",
-      "roi_pct": -1.0,
-      "sharpe": -1.94,
-      "max_drawdown": "-2.09%",
-      "max_dd": -2.09,
-      "win_rate": 0.462,
-      "n_trades": 13,
-      "daily_pnl_pct": -0.006,
+      "roi_pct": -0.3,
+      "sharpe": -0.25,
+      "max_drawdown": "-3.31%",
+      "max_dd": -3.31,
+      "win_rate": 0.5,
+      "n_trades": 12,
+      "daily_pnl_pct": -0.002,
       "v_n3_roi_pct": 0
     },
     "FOREX_MAJORS": {
       "name": "Forex Majors",
-      "desc": "V_W94 \u2014 36 trades on 180d OOS",
+      "desc": "V_W260 \u2014 36 trades on 180d OOS",
       "color": "#10b981",
-      "roi_pct": 16.15,
-      "sharpe": 8.57,
-      "max_drawdown": "-2.46%",
-      "max_dd": -2.46,
+      "roi_pct": 32.16,
+      "sharpe": 8.55,
+      "max_drawdown": "-4.88%",
+      "max_dd": -4.88,
       "win_rate": 0.694,
       "n_trades": 36,
-      "daily_pnl_pct": 0.09,
+      "daily_pnl_pct": 0.179,
       "v_n3_roi_pct": 9.99
     },
     "EUR_GBP_CROSSES": {
       "name": "Eur Gbp Crosses",
-      "desc": "V_W94 \u2014 12 trades on 180d OOS",
+      "desc": "V_W260 \u2014 9 trades on 180d OOS",
       "color": "#06b6d4",
-      "roi_pct": 4.57,
-      "sharpe": 8.93,
-      "max_drawdown": "-1.21%",
-      "max_dd": -1.21,
+      "roi_pct": 5.87,
+      "sharpe": 6.65,
+      "max_drawdown": "-2.42%",
+      "max_dd": -2.42,
       "win_rate": 0.667,
-      "n_trades": 12,
-      "daily_pnl_pct": 0.025,
+      "n_trades": 9,
+      "daily_pnl_pct": 0.033,
       "v_n3_roi_pct": -0.78
     }
   },
@@ -1190,100 +1082,100 @@
       "exchange": "GOLD",
       "name": "Gold",
       "asset_class": "GOLD",
-      "n_trades": 106,
-      "total_pnl": 21750.0,
-      "total_return": 21.75,
-      "win_pct": 46.2,
-      "sharpe": 4.613
+      "n_trades": 85,
+      "total_pnl": 49510.0,
+      "total_return": 49.51,
+      "win_pct": 48.2,
+      "sharpe": 5.741
     },
     {
       "exchange": "CRYPTO_BTC",
       "name": "Crypto Btc",
       "asset_class": "CRYPTO_BTC",
-      "n_trades": 32,
-      "total_pnl": 7660.0,
-      "total_return": 7.66,
+      "n_trades": 30,
+      "total_pnl": 14010.0,
+      "total_return": 14.01,
       "win_pct": 50.0,
-      "sharpe": 3.376
+      "sharpe": 3.233
     },
     {
       "exchange": "YEN_CROSSES",
       "name": "Yen Crosses",
       "asset_class": "YEN_CROSSES",
-      "n_trades": 13,
-      "total_pnl": -1000.0,
-      "total_return": -1.0,
-      "win_pct": 46.2,
-      "sharpe": -1.941
+      "n_trades": 12,
+      "total_pnl": -300.0,
+      "total_return": -0.3,
+      "win_pct": 50.0,
+      "sharpe": -0.252
     },
     {
       "exchange": "FOREX_MAJORS",
       "name": "Forex Majors",
       "asset_class": "FOREX_MAJORS",
       "n_trades": 36,
-      "total_pnl": 16150.0,
-      "total_return": 16.15,
+      "total_pnl": 32160.0,
+      "total_return": 32.16,
       "win_pct": 69.4,
-      "sharpe": 8.57
+      "sharpe": 8.554
     },
     {
       "exchange": "EUR_GBP_CROSSES",
       "name": "Eur Gbp Crosses",
       "asset_class": "EUR_GBP_CROSSES",
-      "n_trades": 12,
-      "total_pnl": 4570.0,
-      "total_return": 4.57,
+      "n_trades": 9,
+      "total_pnl": 5870.0,
+      "total_return": 5.87,
       "win_pct": 66.7,
-      "sharpe": 8.926
+      "sharpe": 6.648
     }
   ],
   "horizon_stats": {
     "90-Day": {
-      "n_trades": 91,
-      "total_pnl": 26400.0,
-      "win_rate": 0.527,
-      "win_pct": 52.7,
-      "sharpe": 4.947,
-      "max_dd": -4740.0,
-      "max_dd_pct": -4.74,
-      "trades_per_day": 1.01,
-      "tpd": 1.01,
-      "daily_pnl_pct": 0.293,
-      "total_return_pct": 26.4
+      "n_trades": 82,
+      "total_pnl": 53310.0,
+      "win_rate": 0.524,
+      "win_pct": 52.4,
+      "sharpe": 5.267,
+      "max_dd": -8570.0,
+      "max_dd_pct": -8.57,
+      "trades_per_day": 0.91,
+      "tpd": 0.91,
+      "daily_pnl_pct": 0.592,
+      "total_return_pct": 53.31
     },
     "180-Day": {
-      "n_trades": 199,
-      "total_pnl": 57620.0,
-      "win_rate": 0.523,
-      "win_pct": 52.3,
-      "sharpe": 5.373,
-      "max_dd": -4740.0,
-      "max_dd_pct": -4.74,
-      "trades_per_day": 1.11,
-      "tpd": 1.11,
-      "daily_pnl_pct": 0.32,
-      "total_return_pct": 57.62
+      "n_trades": 172,
+      "total_pnl": 137770.0,
+      "win_rate": 0.541,
+      "win_pct": 54.1,
+      "sharpe": 6.089,
+      "max_dd": -8490.0,
+      "max_dd_pct": -8.49,
+      "trades_per_day": 0.96,
+      "tpd": 0.96,
+      "daily_pnl_pct": 0.765,
+      "total_return_pct": 137.77
     },
     "270-Day": {
-      "n_trades": 299,
-      "total_pnl": 61390.0,
-      "win_rate": 0.508,
-      "win_pct": 50.8,
-      "sharpe": 4.244,
-      "max_dd": -9140.0,
-      "max_dd_pct": -9.14,
-      "trades_per_day": 1.11,
-      "tpd": 1.11,
-      "daily_pnl_pct": 0.227,
-      "total_return_pct": 61.39
+      "n_trades": 233,
+      "total_pnl": 125480.0,
+      "win_rate": 0.515,
+      "win_pct": 51.5,
+      "sharpe": 4.498,
+      "max_dd": -16720.0,
+      "max_dd_pct": -16.72,
+      "trades_per_day": 0.86,
+      "tpd": 0.86,
+      "daily_pnl_pct": 0.465,
+      "total_return_pct": 125.48
     }
   },
   "projected_growth": {
-    "30d": 10059.04,
-    "90d": 33314.42,
-    "180d": 77727.33,
-    "365d": 220956.42,
-    "annual_pct": 220.96,
+    "30d": 25687.27,
+    "90d": 98551.8,
+    "180d": 294228.18,
+    "365d": 1514521.63,
+    "annual_pct": 1514.52,
     "based_on": "180d V_W43 daily PnL = +0.265%"
   },
   "combined_strategy": {
@@ -1297,12 +1189,12 @@
       "deployed": "2026-04-28"
     },
     "after": {
-      "name": "V_W202_BTC_S62",
-      "daily_pnl_pct": 0.32,
-      "sharpe": 5.373,
-      "max_dd_pct": -4.74,
-      "win_rate": 0.523,
-      "total_return": 57.62,
+      "name": "V_W260_GOLD_S44",
+      "daily_pnl_pct": 0.765,
+      "sharpe": 6.089,
+      "max_dd_pct": -8.49,
+      "win_rate": 0.541,
+      "total_return": 137.77,
       "deployed": "2026-05-01"
     },
     "rescued": [
