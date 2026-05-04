@@ -221,19 +221,19 @@
     "charts": {
       "equity_drawdown": {
         "title": "Curva de Capital y Drawdown",
-        "desc": "Crecimiento OOS de 180 días desde $100k hasta $266,7k junto al perfil de drawdown — drawdown máximo contenido en -9,72% en 5 subclases activas (V_W267, 1% por operación)."
+        "desc": "Crecimiento OOS de 180 días desde $100k hasta $212,0k junto al perfil de drawdown — drawdown máximo contenido en -23,49% en 5 subclases activas (V_W272, 1% por operación)."
       },
       "returns_dist": {
         "title": "Distribución de Retornos Diarios",
-        "desc": "Distribución del P&L diario en 212 operaciones que muestra sesgo positivo con Sharpe 6,39 y profit factor 1,83 de la estrategia V_W267 por activo."
+        "desc": "Distribución del P&L diario en 212 operaciones que muestra sesgo positivo con Sharpe 5,96 y profit factor 1,83 de la estrategia V_W272 por activo."
       },
       "subclass_comparison": {
         "title": "Comparativa por Clase de Activo",
-        "desc": "Comparación de Sharpe, tasa de acierto y retorno entre las subclases activas: GOLD, FOREX Majors, CRYPTO BTC, EURGBP y rescate YEN-cross (V_W267, 180d OOS)."
+        "desc": "Comparación de Sharpe, tasa de acierto y retorno entre las subclases activas: GOLD, FOREX Majors, CRYPTO BTC, EURGBP y rescate YEN-cross (V_W272, 180d OOS)."
       },
       "top_symbols": {
         "title": "Mejores Símbolos por Rendimiento",
-        "desc": "Mejores símbolos individuales por retorno OOS — XAUUSD y BTCUSD lideran por contribución total; Forex majors al 64,3% WR con rescate YEN GBPJPY+EURJPY añadido en V_W267."
+        "desc": "Mejores símbolos individuales por retorno OOS — XAUUSD y BTCUSD lideran por contribución total; Forex majors al 64,3% WR con rescate YEN GBPJPY+EURJPY añadido en V_W272."
       },
       "risk_metrics": {
         "title": "Riesgo y Eficiencia de Capital",
